@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ChatBubble } from "@/components/ui/ChatBubble";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -15,8 +17,8 @@ interface DemoCard {
 const cards: DemoCard[] = [
   {
     title: "Fragment Reconstruction",
-    input: ["7xKp3mN  [partial CA]", "⟶ fragment detected"],
-    output: "7xKp3mNQrL9vWZ2...full44charCA",
+    input: ["7xKp3mN  [partial fragment]", "⟶ lookup initiated"],
+    output: "Full CA reconstructed · <500ms",
     stat: "< 500ms",
     blocked: false,
     highlight: "7xKp3mN",
@@ -38,7 +40,7 @@ const cards: DemoCard[] = [
     highlight: "DO NOT BUY",
   },
   {
-    title: "Website Link",
+    title: "Website Extraction",
     input: ["check the contract:", "https://tokensiteXYZ.io"],
     output: "CA extracted from page",
     stat: "auto-scraped",
@@ -54,127 +56,165 @@ const cards: DemoCard[] = [
   },
 ];
 
+function ProofCard({ card, index }: { card: DemoCard; index: number }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <FadeIn delay={index * 0.08} style={{ height: "100%" }}>
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        style={{
+          background: "var(--color-surface)",
+          border: `1px solid ${
+            card.blocked
+              ? "rgba(190,27,42,0.2)"
+              : hovered
+              ? "var(--color-accent)"
+              : "var(--color-border)"
+          }`,
+          borderRadius: 8,
+          padding: "1.35rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.85rem",
+          height: "100%",
+          transform: hovered ? "translateY(-3px)" : "translateY(0)",
+          boxShadow: hovered
+            ? "0 8px 24px rgba(0,0,0,0.08)"
+            : "0 1px 3px rgba(0,0,0,0.05)",
+          transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
+        }}
+      >
+        {/* Card label */}
+        <p
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.6rem",
+            color: "var(--color-accent)",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            margin: 0,
+          }}
+        >
+          {card.title}
+        </p>
+
+        {/* Input bubble */}
+        <ChatBubble
+          lines={card.input}
+          blocked={card.blocked}
+          highlight={card.highlight}
+        />
+
+        {/* Arrow */}
+        <div
+          style={{
+            textAlign: "center",
+            color: "var(--color-text-muted)",
+            fontSize: "0.85rem",
+            lineHeight: 1,
+          }}
+        >
+          ↓
+        </div>
+
+        {/* Output chip */}
+        <div
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.67rem",
+            padding: "0.5rem 0.75rem",
+            background: card.blocked
+              ? "rgba(190,27,42,0.06)"
+              : "rgba(22,163,74,0.07)",
+            border: `1px solid ${
+              card.blocked ? "rgba(190,27,42,0.18)" : "rgba(22,163,74,0.2)"
+            }`,
+            borderRadius: 4,
+            color: card.blocked ? "var(--color-accent)" : "var(--color-pass)",
+            wordBreak: "break-all",
+          }}
+        >
+          {card.output}
+        </div>
+
+        {/* Stat */}
+        <p
+          style={{
+            fontSize: "0.63rem",
+            color: "var(--color-text-muted)",
+            textAlign: "right",
+            fontFamily: "var(--font-mono)",
+            margin: 0,
+          }}
+        >
+          {card.stat}
+        </p>
+      </div>
+    </FadeIn>
+  );
+}
+
 export function ProofSection() {
   return (
-    <section style={{ padding: "6rem 1.5rem" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <SectionLabel>What Sentinel Handles</SectionLabel>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2rem, 5vw, 3.2rem)",
-              letterSpacing: "0.03em",
-              lineHeight: 1,
-            }}
-          >
-            EVERY FORMAT.<br />EVERY EDGE CASE.
-          </h2>
-        </div>
+    <section
+      style={{
+        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
+        background: "var(--color-bg)",
+      }}
+    >
+      <div style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}>
+        <FadeIn>
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <SectionLabel>What Sentinel Resolves</SectionLabel>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+                fontSize: "clamp(2rem, 5vw, 3.2rem)",
+                letterSpacing: "-0.01em",
+                lineHeight: 1.05,
+                color: "var(--color-text)",
+              }}
+            >
+              Five patterns. Zero misses.
+            </h2>
+          </div>
+        </FadeIn>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(195px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "1rem",
           }}
         >
           {cards.map((card, index) => (
-            <FadeIn key={card.title} delay={index * 0.08} style={{ height: "100%" }}>
-              <div
-                style={{
-                  background: "var(--color-surface)",
-                  border: `1px solid ${card.blocked ? "rgba(239,68,68,0.25)" : "var(--color-border)"}`,
-                  borderRadius: 8,
-                  padding: "1.25rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.75rem",
-                  height: "100%",
-                }}
-              >
-                {/* Card label */}
-                <p
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.62rem",
-                    color: "var(--color-accent)",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    margin: 0,
-                  }}
-                >
-                  {card.title}
-                </p>
-
-                {/* Input bubble */}
-                <ChatBubble
-                  lines={card.input}
-                  blocked={card.blocked}
-                  highlight={card.highlight}
-                />
-
-                {/* Arrow */}
-                <div
-                  style={{
-                    textAlign: "center",
-                    color: "var(--color-neutral)",
-                    fontSize: "0.9rem",
-                    lineHeight: 1,
-                  }}
-                >
-                  ↓
-                </div>
-
-                {/* Output */}
-                <div
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.68rem",
-                    padding: "0.5rem 0.75rem",
-                    background: card.blocked
-                      ? "rgba(239,68,68,0.07)"
-                      : "rgba(34,197,94,0.07)",
-                    border: `1px solid ${card.blocked ? "rgba(239,68,68,0.2)" : "rgba(34,197,94,0.2)"}`,
-                    borderRadius: 4,
-                    color: card.blocked ? "var(--color-block)" : "var(--color-pass)",
-                    wordBreak: "break-all",
-                  }}
-                >
-                  {card.output}
-                </div>
-
-                {/* Stat */}
-                <p
-                  style={{
-                    fontSize: "0.65rem",
-                    color: "var(--color-neutral)",
-                    textAlign: "right",
-                    fontFamily: "var(--font-mono)",
-                    margin: 0,
-                  }}
-                >
-                  {card.stat}
-                </p>
-              </div>
-            </FadeIn>
+            <ProofCard key={card.title} card={card} index={index} />
           ))}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-          <Link
-            href="/product"
-            style={{
-              color: "var(--color-accent)",
-              fontSize: "0.82rem",
-              textDecoration: "none",
-              fontFamily: "var(--font-mono)",
-              letterSpacing: "0.06em",
-            }}
-          >
-            See all capabilities →
-          </Link>
-        </div>
+        <FadeIn delay={0.3}>
+          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+            <Link
+              href="/product"
+              style={{
+                color: "var(--color-accent)",
+                fontSize: "0.82rem",
+                textDecoration: "none",
+                fontFamily: "var(--font-body)",
+                fontWeight: 500,
+                letterSpacing: "0.02em",
+                borderBottom: "1px solid rgba(190,27,42,0.3)",
+                paddingBottom: "1px",
+                transition: "border-color var(--motion-fast) ease",
+              }}
+            >
+              Full technical breakdown →
+            </Link>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

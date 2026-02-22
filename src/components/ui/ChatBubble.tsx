@@ -8,14 +8,14 @@ export function ChatBubble({ lines, highlight, blocked = false }: ChatBubbleProp
   return (
     <div
       style={{
-        background: "var(--color-surface)",
-        border: `1px solid ${blocked ? "var(--color-block)" : "var(--color-border-hi)"}`,
+        background: "var(--color-bg-alt)",
+        border: `1px solid ${blocked ? "rgba(190,27,42,0.35)" : "var(--color-border)"}`,
         borderRadius: 8,
         padding: "0.75rem 1rem",
         fontFamily: "var(--font-mono)",
         fontSize: "0.72rem",
         lineHeight: 1.65,
-        color: "#c0c0c8",
+        color: "var(--color-text-secondary)",
       }}
     >
       {lines.map((line, i) => {
