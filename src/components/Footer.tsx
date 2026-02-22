@@ -93,7 +93,7 @@ export function Footer() {
           }}
         >
           <a
-            href="https://discord.gg/placeholder"
+            href="https://discord.gg/saES7e6W"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -108,7 +108,7 @@ export function Footer() {
             Discord
           </a>
           <a
-            href="https://t.me/placeholder"
+            href="https://t.me/sentinelextension"
             target="_blank"
             rel="noopener noreferrer"
             style={{

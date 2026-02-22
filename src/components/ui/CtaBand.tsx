@@ -75,16 +75,60 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
         </FadeIn>
 
         <FadeIn delay={0.18}>
-          <p
+          <div
             style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: "0.65rem",
-              letterSpacing: "0.08em",
-              color: "rgba(255,255,255,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1.5rem",
             }}
           >
-            Private beta · Invite-only expansion
-          </p>
+            <p
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.65rem",
+                letterSpacing: "0.08em",
+                color: "rgba(255,255,255,0.3)",
+              }}
+            >
+              Private beta · Invite-only expansion
+            </p>
+            <span style={{ color: "rgba(255,255,255,0.15)", fontSize: "0.6rem" }}>·</span>
+            <a
+              href="https://discord.gg/saES7e6W"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.65rem",
+                letterSpacing: "0.08em",
+                color: "rgba(255,255,255,0.35)",
+                textDecoration: "none",
+                transition: "color 0.15s ease",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
+            >
+              Discord
+            </a>
+            <a
+              href="https://t.me/sentinelextension"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.65rem",
+                letterSpacing: "0.08em",
+                color: "rgba(255,255,255,0.35)",
+                textDecoration: "none",
+                transition: "color 0.15s ease",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
+            >
+              Telegram
+            </a>
+          </div>
         </FadeIn>
       </div>
     </section>

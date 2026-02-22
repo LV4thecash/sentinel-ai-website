@@ -200,6 +200,36 @@ export function SocialProofSection() {
                 <p style={{ fontSize: "0.82rem", color: "var(--color-text-muted)", lineHeight: 1.6, margin: 0 }}>
                   Expanding when precision benchmarks are met.
                 </p>
+                <div style={{ display: "flex", gap: "1rem", marginTop: "0.5rem" }}>
+                  <a
+                    href="https://discord.gg/saES7e6W"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.7rem",
+                      color: "var(--color-accent)",
+                      textDecoration: "none",
+                      letterSpacing: "0.04em",
+                    }}
+                  >
+                    Discord →
+                  </a>
+                  <a
+                    href="https://t.me/sentinelextension"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.7rem",
+                      color: "var(--color-accent)",
+                      textDecoration: "none",
+                      letterSpacing: "0.04em",
+                    }}
+                  >
+                    Telegram →
+                  </a>
+                </div>
               </div>
             </div>
           </FadeIn>
