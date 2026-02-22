@@ -55,7 +55,7 @@ export function Nav() {
       >
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <Image src="/brand/logo.png" alt="Sentinel AI" width={30} height={30} />
+          <Image src="/brand/logo.png" alt="Sentinel AI" width={34} height={34} />
           <span
             style={{
               fontFamily: "var(--font-display)",
