@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
@@ -26,6 +28,8 @@ const steps = [
 ];
 
 export function HowItWorksSection() {
+  const [hoveredStep, setHoveredStep] = useState<string | null>(null);
+
   return (
     <section
       style={{
@@ -61,17 +65,30 @@ export function HowItWorksSection() {
         >
           {steps.map((step, i) => (
             <FadeIn key={step.n} delay={i * 0.08}>
-              <div style={{ position: "relative", paddingTop: "0.5rem" }}>
+              <div
+                onMouseEnter={() => setHoveredStep(step.n)}
+                onMouseLeave={() => setHoveredStep(null)}
+                style={{
+                  position: "relative",
+                  paddingTop: "0.5rem",
+                  padding: "1rem 0.75rem",
+                  borderRadius: 8,
+                  background: hoveredStep === step.n ? "rgba(0,0,0,0.015)" : "transparent",
+                  transform: hoveredStep === step.n ? "translateY(-2px)" : "translateY(0)",
+                  transition: `transform var(--motion-fast) var(--motion-ease-out), background var(--motion-fast) ease`,
+                }}
+              >
                 {/* Watermark step number */}
                 <p
                   style={{
                     fontFamily: "var(--font-display)",
                     fontWeight: 900,
                     fontSize: "5rem",
-                    color: "var(--color-border)",
+                    color: hoveredStep === step.n ? "var(--color-border-hi)" : "var(--color-border)",
                     lineHeight: 1,
                     marginBottom: "0.25rem",
                     userSelect: "none",
+                    transition: `color var(--motion-fast) ease`,
                   }}
                 >
                   {step.n}

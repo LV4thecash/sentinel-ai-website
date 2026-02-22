@@ -78,6 +78,7 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
+              className="nav-link"
               style={{
                 fontSize: "0.82rem",
                 fontFamily: "var(--font-body)",

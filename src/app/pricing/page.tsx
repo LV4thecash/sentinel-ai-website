@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 
 const tiers = [
@@ -37,6 +39,8 @@ const objections = [
 ];
 
 export default function PricingPage() {
+  const [hoveredTier, setHoveredTier] = useState<string | null>(null);
+
   return (
     <main>
       {/* Hero */}
@@ -80,104 +84,129 @@ export default function PricingPage() {
             gap: "1.25rem",
           }}
         >
-          {tiers.map((t) => (
-            <div
-              key={t.id}
-              style={{
-                background: "var(--color-surface)",
-                border: `1px solid ${t.popular ? "var(--color-accent)" : "var(--color-border)"}`,
-                borderRadius: 8,
-                padding: "2rem 1.5rem",
-                position: "relative",
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem",
-              }}
-            >
-              {t.popular && (
-                <span
-                  style={{
-                    position: "absolute",
-                    top: -12,
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    background: "var(--color-accent)",
-                    color: "#fff",
-                    fontSize: "0.62rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    padding: "0.25rem 0.85rem",
-                    borderRadius: 20,
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Most Popular
-                </span>
-              )}
-
-              <p
+          {tiers.map((t) => {
+            const isHovered = hoveredTier === t.id;
+            return (
+              <div
+                key={t.id}
+                onMouseEnter={() => setHoveredTier(t.id)}
+                onMouseLeave={() => setHoveredTier(null)}
                 style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1.4rem",
-                  letterSpacing: "0.06em",
-                  color: "var(--color-text)",
+                  background: "var(--color-surface)",
+                  border: `1px solid ${t.popular ? "var(--color-accent)" : isHovered ? "var(--color-border-hi)" : "var(--color-border)"}`,
+                  borderRadius: 8,
+                  padding: "2rem 1.5rem",
+                  position: "relative",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
+                  transform: isHovered ? "translateY(-4px)" : "translateY(0)",
+                  boxShadow: isHovered
+                    ? t.popular
+                      ? "0 12px 32px rgba(190,27,42,0.18)"
+                      : "0 12px 32px rgba(0,0,0,0.08)"
+                    : t.popular
+                    ? "0 2px 8px rgba(190,27,42,0.1)"
+                    : "0 1px 3px rgba(0,0,0,0.05)",
+                  transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
                 }}
               >
-                {t.label}
-              </p>
+                {t.popular && (
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: -12,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "var(--color-accent)",
+                      color: "#fff",
+                      fontSize: "0.62rem",
+                      fontWeight: 700,
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      padding: "0.25rem 0.85rem",
+                      borderRadius: 20,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Most Popular
+                  </span>
+                )}
 
-              <div>
-                <span
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "3rem",
-                    color: t.popular ? "var(--color-accent)" : "var(--color-text)",
-                    lineHeight: 1,
-                  }}
-                >
-                  {t.price}
-                </span>
-                <span style={{ color: "var(--color-neutral)", fontSize: "0.85rem", marginLeft: "0.25rem" }}>
-                  {t.period}
-                </span>
-              </div>
-
-              {t.effective && (
                 <p
                   style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.7rem",
-                    color: "var(--color-pass)",
+                    fontFamily: "var(--font-display)",
+                    fontSize: "1.4rem",
+                    letterSpacing: "0.06em",
+                    color: "var(--color-text)",
                   }}
                 >
-                  {t.effective} · {t.save}
+                  {t.label}
                 </p>
-              )}
 
-              <Link
-                href="/waitlist"
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  background: t.popular ? "var(--color-accent)" : "transparent",
-                  color: t.popular ? "#fff" : "var(--color-text)",
-                  border: `1px solid ${t.popular ? "var(--color-accent)" : "var(--color-border-hi)"}`,
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 700,
-                  fontSize: "0.75rem",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  padding: "0.8rem",
-                  borderRadius: 4,
-                  textDecoration: "none",
-                  marginTop: "auto",
-                }}
-              >
-                Apply for Access
-              </Link>
-            </div>
-          ))}
+                <div>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "3rem",
+                      color: t.popular ? "var(--color-accent)" : "var(--color-text)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    {t.price}
+                  </span>
+                  <span style={{ color: "var(--color-neutral)", fontSize: "0.85rem", marginLeft: "0.25rem" }}>
+                    {t.period}
+                  </span>
+                </div>
+
+                {t.effective && (
+                  <p
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.7rem",
+                      color: "var(--color-pass)",
+                    }}
+                  >
+                    {t.effective} · {t.save}
+                  </p>
+                )}
+
+                <Link
+                  href="/waitlist"
+                  style={{
+                    display: "block",
+                    textAlign: "center",
+                    background: t.popular ? "var(--color-accent)" : "transparent",
+                    color: t.popular ? "#fff" : "var(--color-text)",
+                    border: `1px solid ${t.popular ? "var(--color-accent)" : "var(--color-border-hi)"}`,
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 700,
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    padding: "0.8rem",
+                    borderRadius: 4,
+                    textDecoration: "none",
+                    marginTop: "auto",
+                    transition: `background var(--motion-fast) ease, box-shadow var(--motion-fast) ease`,
+                  }}
+                  onMouseEnter={(e) => {
+                    if (t.popular) {
+                      e.currentTarget.style.background = "var(--color-accent-hi)";
+                    } else {
+                      e.currentTarget.style.background = "var(--color-bg-alt)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = t.popular ? "var(--color-accent)" : "transparent";
+                  }}
+                >
+                  Apply for Access
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </section>
 

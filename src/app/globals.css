@@ -105,3 +105,43 @@ body {
   60%  { transform: scale(2.2); opacity: 0; }
   100% { transform: scale(1);   opacity: 0; }
 }
+
+/* ─── Nav link underline animation ─────────────────────────── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-text);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.18s var(--motion-ease);
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* ─── Enhanced form focus ────────────────────────────────────── */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent) !important;
+  outline-offset: 0;
+  box-shadow: 0 0 0 4px rgba(190, 27, 42, 0.08) !important;
+}
+
+/* ─── Prefers-reduced-motion ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

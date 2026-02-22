@@ -1,4 +1,7 @@
+"use client";
+import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { FadeIn } from "@/components/ui/FadeIn";
 import { CtaBand } from "@/components/ui/CtaBand";
 import Link from "next/link";
 import React from "react";
@@ -65,51 +68,68 @@ const miniQA: [string, string][] = [
 ];
 
 export default function HowItWorksPage() {
+  const [hoveredStep, setHoveredStep] = useState<string | null>(null);
+
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem 1.5rem", textAlign: "center" }}>
-        <h1
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(2.5rem, 7vw, 5rem)",
-            letterSpacing: "0.03em",
-            lineHeight: 0.95,
-            marginBottom: "1.25rem",
-          }}
-        >
-          SETUP IN<br />~10 MINUTES
-        </h1>
-        <p
-          style={{
-            color: "var(--color-text-secondary)",
-            maxWidth: 480,
-            margin: "0 auto 2.5rem",
-            lineHeight: 1.65,
-          }}
-        >
-          Step by step. Then it runs itself.
-        </p>
-        <Link
-          href="/waitlist"
-          style={{
-            background: "var(--color-accent)",
-            color: "#fff",
-            fontWeight: 700,
-            padding: "0.85rem 2rem",
-            borderRadius: 4,
-            textDecoration: "none",
-            fontSize: "0.85rem",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-          }}
-        >
-          Apply for Access
-        </Link>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
+        <FadeIn>
+          <h1
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2.5rem, 7vw, 5rem)",
+              letterSpacing: "0.03em",
+              lineHeight: 0.95,
+              marginBottom: "1.25rem",
+              color: "var(--color-text)",
+            }}
+          >
+            SETUP IN<br />~10 MINUTES
+          </h1>
+          <p
+            style={{
+              color: "var(--color-text-secondary)",
+              maxWidth: 480,
+              margin: "0 auto 2.5rem",
+              lineHeight: 1.65,
+            }}
+          >
+            Step by step. Then it runs itself.
+          </p>
+          <Link
+            href="/waitlist"
+            style={{
+              background: "var(--color-accent)",
+              color: "#fff",
+              fontWeight: 700,
+              padding: "0.85rem 2rem",
+              borderRadius: 4,
+              textDecoration: "none",
+              fontSize: "0.85rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              display: "inline-block",
+              transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "var(--color-accent-hi)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow = "0 6px 20px rgba(190,27,42,0.28)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "var(--color-accent)";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
+          >
+            Apply for Access
+          </Link>
+        </FadeIn>
       </section>
 
       {/* Steps */}
-      <section style={{ padding: "4rem 1.5rem" }}>
+      <section style={{ padding: "4rem clamp(1.5rem, 5vw, 4rem)" }}>
         <div
           style={{
             maxWidth: 720,
@@ -120,186 +140,200 @@ export default function HowItWorksPage() {
           }}
         >
           {steps.map((step, i) => (
-            <div
-              key={step.n}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "auto 1fr",
-                gap: "1.5rem",
-                paddingBottom: "2.5rem",
-              }}
-            >
-              {/* Step number circle */}
+            <FadeIn key={step.n} delay={i * 0.07}>
               <div
+                onMouseEnter={() => setHoveredStep(step.n)}
+                onMouseLeave={() => setHoveredStep(null)}
                 style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  background: "var(--color-surface)",
-                  border: `1px solid ${i === 0 ? "var(--color-accent)" : "var(--color-border-hi)"}`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.65rem",
-                  color: i === 0 ? "var(--color-accent)" : "var(--color-neutral)",
-                  flexShrink: 0,
+                  display: "grid",
+                  gridTemplateColumns: "auto 1fr",
+                  gap: "1.5rem",
+                  paddingBottom: "2.5rem",
+                  borderRadius: 8,
+                  padding: "1rem",
+                  background: hoveredStep === step.n ? "rgba(0,0,0,0.015)" : "transparent",
+                  transition: `background var(--motion-fast) ease`,
                 }}
               >
-                {step.n}
-              </div>
-
-              {/* Content */}
-              <div>
-                <h3
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "0.98rem",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {step.label}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.85rem",
-                    color: "var(--color-text-secondary)",
-                    lineHeight: 1.65,
-                    marginBottom: step.note ? "0.75rem" : 0,
-                  }}
-                >
-                  {step.desc}
-                </p>
-                {step.note && (
-                  <div
-                    style={{
-                      padding: "0.6rem 0.85rem",
-                      background: "var(--color-accent-lo)",
-                      border: "1px solid rgba(190,27,42,0.25)",
-                      borderRadius: 4,
-                      fontSize: "0.75rem",
-                      color: "var(--color-text-secondary)",
-                      fontFamily: "var(--font-mono)",
-                      lineHeight: 1.6,
-                      marginBottom: "0.75rem",
-                    }}
-                  >
-                    ↳ {step.note}
-                  </div>
-                )}
-                {/* Screenshot placeholder */}
+                {/* Step number circle */}
                 <div
                   style={{
-                    marginTop: "0.75rem",
-                    height: 72,
+                    width: 44,
+                    height: 44,
+                    borderRadius: "50%",
                     background: "var(--color-surface)",
-                    border: "1px solid var(--color-border)",
-                    borderRadius: 6,
+                    border: `1px solid ${hoveredStep === step.n ? "var(--color-accent)" : i === 0 ? "var(--color-accent)" : "var(--color-border-hi)"}`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.65rem",
+                    color: hoveredStep === step.n ? "var(--color-accent)" : i === 0 ? "var(--color-accent)" : "var(--color-neutral)",
+                    flexShrink: 0,
+                    transition: `border-color var(--motion-fast) ease, color var(--motion-fast) ease`,
                   }}
                 >
-                  <span
+                  {step.n}
+                </div>
+
+                {/* Content */}
+                <div>
+                  <h3
                     style={{
-                      fontSize: "0.65rem",
-                      color: "var(--color-neutral)",
-                      fontFamily: "var(--font-mono)",
+                      fontWeight: 600,
+                      fontSize: "0.98rem",
+                      marginBottom: "0.5rem",
+                      color: "var(--color-text)",
                     }}
                   >
-                    [screenshot placeholder — step {step.n}]
-                  </span>
+                    {step.label}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "0.85rem",
+                      color: "var(--color-text-secondary)",
+                      lineHeight: 1.65,
+                      marginBottom: step.note ? "0.75rem" : 0,
+                    }}
+                  >
+                    {step.desc}
+                  </p>
+                  {step.note && (
+                    <div
+                      style={{
+                        padding: "0.6rem 0.85rem",
+                        background: "var(--color-accent-lo)",
+                        border: "1px solid rgba(190,27,42,0.25)",
+                        borderRadius: 4,
+                        fontSize: "0.75rem",
+                        color: "var(--color-text-secondary)",
+                        fontFamily: "var(--font-mono)",
+                        lineHeight: 1.6,
+                        marginBottom: "0.75rem",
+                      }}
+                    >
+                      ↳ {step.note}
+                    </div>
+                  )}
+                  {/* Screenshot placeholder */}
+                  <div
+                    style={{
+                      marginTop: "0.75rem",
+                      height: 72,
+                      background: "var(--color-surface)",
+                      border: "1px solid var(--color-border)",
+                      borderRadius: 6,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.65rem",
+                        color: "var(--color-neutral)",
+                        fontFamily: "var(--font-mono)",
+                      }}
+                    >
+                      [screenshot placeholder — step {step.n}]
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </section>
 
       {/* Daily workflow */}
-      <section
-        style={{
-          padding: "4rem 1.5rem",
-          background: "var(--color-surface)",
-          borderTop: "1px solid var(--color-border)",
-        }}
-      >
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <SectionLabel>Daily Workflow</SectionLabel>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: "0.5rem",
-              marginTop: "1.5rem",
-            }}
-          >
-            {workflow.map((w, i) => (
-              <React.Fragment key={w}>
-                <div
-                  style={{
-                    padding: "0.45rem 0.8rem",
-                    background: "var(--color-bg)",
-                    border: "1px solid var(--color-border)",
-                    borderRadius: 6,
-                    fontSize: "0.75rem",
-                    color: "var(--color-text-secondary)",
-                  }}
-                >
-                  {w}
-                </div>
-                {i < workflow.length - 1 && (
-                  <span
-                    style={{ color: "var(--color-border-hi)", fontSize: "0.9rem" }}
+      <FadeIn>
+        <section
+          style={{
+            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
+            background: "var(--color-surface)",
+            borderTop: "1px solid var(--color-border)",
+          }}
+        >
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <SectionLabel>Daily Workflow</SectionLabel>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "0.5rem",
+                marginTop: "1.5rem",
+              }}
+            >
+              {workflow.map((w, i) => (
+                <React.Fragment key={w}>
+                  <div
+                    style={{
+                      padding: "0.45rem 0.8rem",
+                      background: "var(--color-bg)",
+                      border: "1px solid var(--color-border)",
+                      borderRadius: 6,
+                      fontSize: "0.75rem",
+                      color: "var(--color-text-secondary)",
+                    }}
                   >
-                    →
-                  </span>
-                )}
-              </React.Fragment>
-            ))}
+                    {w}
+                  </div>
+                  {i < workflow.length - 1 && (
+                    <span
+                      style={{ color: "var(--color-border-hi)", fontSize: "0.9rem" }}
+                    >
+                      →
+                    </span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeIn>
 
       {/* Mini FAQ */}
-      <section style={{ padding: "4rem 1.5rem" }}>
-        <div style={{ maxWidth: 700, margin: "0 auto" }}>
-          <SectionLabel>Common Questions</SectionLabel>
-          <div style={{ marginTop: "0.5rem" }}>
-            {miniQA.map(([q, a]) => (
-              <details
-                key={q}
-                style={{
-                  borderBottom: "1px solid var(--color-border)",
-                  padding: "1rem 0",
-                }}
-              >
-                <summary
+      <FadeIn>
+        <section style={{ padding: "4rem clamp(1.5rem, 5vw, 4rem)" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+            <SectionLabel>Common Questions</SectionLabel>
+            <div style={{ marginTop: "0.5rem" }}>
+              {miniQA.map(([q, a]) => (
+                <details
+                  key={q}
                   style={{
-                    cursor: "pointer",
-                    fontWeight: 600,
-                    fontSize: "0.88rem",
-                    listStyle: "none",
+                    borderBottom: "1px solid var(--color-border)",
+                    padding: "1rem 0",
                   }}
                 >
-                  {q}
-                </summary>
-                <p
-                  style={{
-                    marginTop: "0.75rem",
-                    fontSize: "0.82rem",
-                    color: "var(--color-text-secondary)",
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {a}
-                </p>
-              </details>
-            ))}
+                  <summary
+                    style={{
+                      cursor: "pointer",
+                      fontWeight: 600,
+                      fontSize: "0.88rem",
+                      listStyle: "none",
+                      color: "var(--color-text)",
+                    }}
+                  >
+                    {q}
+                  </summary>
+                  <p
+                    style={{
+                      marginTop: "0.75rem",
+                      fontSize: "0.82rem",
+                      color: "var(--color-text-secondary)",
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    {a}
+                  </p>
+                </details>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeIn>
 
       <CtaBand />
     </main>

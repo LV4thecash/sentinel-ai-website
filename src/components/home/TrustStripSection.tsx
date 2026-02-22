@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
@@ -24,6 +26,58 @@ const items = [
     description: "No asset custody, no trade execution, no positions. Sentinel only forwards contract addresses.",
   },
 ];
+
+function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <FadeIn delay={index * 0.07}>
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.5rem",
+          padding: "1.35rem 1.5rem",
+          background: "var(--color-surface)",
+          border: `1px solid ${hovered ? "var(--color-accent)" : "var(--color-border)"}`,
+          borderRadius: 8,
+          boxShadow: hovered
+            ? "0 8px 24px rgba(0,0,0,0.08)"
+            : "0 1px 3px rgba(0,0,0,0.04)",
+          transform: hovered ? "translateY(-3px)" : "translateY(0)",
+          transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
+          cursor: "default",
+          height: "100%",
+        }}
+      >
+        <span style={{ fontSize: "1rem", lineHeight: 1 }}>{item.icon}</span>
+        <p
+          style={{
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
+            fontSize: "0.88rem",
+            color: "var(--color-text)",
+            margin: 0,
+          }}
+        >
+          {item.label}
+        </p>
+        <p
+          style={{
+            fontSize: "0.78rem",
+            color: "var(--color-text-muted)",
+            lineHeight: 1.6,
+            margin: 0,
+          }}
+        >
+          {item.description}
+        </p>
+      </div>
+    </FadeIn>
+  );
+}
 
 export function TrustStripSection() {
   return (
@@ -73,43 +127,7 @@ export function TrustStripSection() {
           }}
         >
           {items.map((item, i) => (
-            <FadeIn key={item.label} delay={i * 0.07}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.5rem",
-                  padding: "1.35rem 1.5rem",
-                  background: "var(--color-surface)",
-                  border: "1px solid var(--color-border)",
-                  borderRadius: 8,
-                  boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-                }}
-              >
-                <span style={{ fontSize: "1rem", lineHeight: 1 }}>{item.icon}</span>
-                <p
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 700,
-                    fontSize: "0.88rem",
-                    color: "var(--color-text)",
-                    margin: 0,
-                  }}
-                >
-                  {item.label}
-                </p>
-                <p
-                  style={{
-                    fontSize: "0.78rem",
-                    color: "var(--color-text-muted)",
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
-                  {item.description}
-                </p>
-              </div>
-            </FadeIn>
+            <TrustCard key={item.label} item={item} index={i} />
           ))}
         </div>
 

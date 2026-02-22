@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
 
@@ -10,6 +12,22 @@ const phase1Features = [
 ];
 
 export function SocialProofSection() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+
+  const cardStyle = (id: string, dimmed = false): React.CSSProperties => ({
+    background: "var(--color-surface)",
+    border: `1px solid ${hoveredCard === id ? "var(--color-border-hi)" : "var(--color-border)"}`,
+    borderRadius: 8,
+    padding: "1.75rem",
+    boxShadow: hoveredCard === id
+      ? "0 8px 24px rgba(0,0,0,0.07)"
+      : "0 1px 3px rgba(0,0,0,0.04)",
+    opacity: dimmed && hoveredCard !== id ? 0.7 : 1,
+    transform: hoveredCard === id ? "translateY(-2px)" : "translateY(0)",
+    transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease, opacity var(--motion-fast) ease`,
+    cursor: "default",
+  });
+
   return (
     <section
       style={{
@@ -59,13 +77,9 @@ export function SocialProofSection() {
           {/* Phase 1 — Live */}
           <FadeIn delay={0.07}>
             <div
-              style={{
-                background: "var(--color-surface)",
-                border: "1px solid var(--color-border)",
-                borderRadius: 8,
-                padding: "1.75rem",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-              }}
+              onMouseEnter={() => setHoveredCard("phase1")}
+              onMouseLeave={() => setHoveredCard(null)}
+              style={cardStyle("phase1")}
             >
               <div
                 style={{
@@ -131,13 +145,9 @@ export function SocialProofSection() {
           {/* Evaluation — Active */}
           <FadeIn delay={0.14}>
             <div
-              style={{
-                background: "var(--color-surface)",
-                border: "1px solid var(--color-border)",
-                borderRadius: 8,
-                padding: "1.75rem",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-              }}
+              onMouseEnter={() => setHoveredCard("evaluation")}
+              onMouseLeave={() => setHoveredCard(null)}
+              style={cardStyle("evaluation")}
             >
               <div
                 style={{
@@ -197,14 +207,9 @@ export function SocialProofSection() {
           {/* Phase 2 — Planned */}
           <FadeIn delay={0.21}>
             <div
-              style={{
-                background: "var(--color-surface)",
-                border: "1px solid var(--color-border)",
-                borderRadius: 8,
-                padding: "1.75rem",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-                opacity: 0.7,
-              }}
+              onMouseEnter={() => setHoveredCard("phase2")}
+              onMouseLeave={() => setHoveredCard(null)}
+              style={cardStyle("phase2", true)}
             >
               <div
                 style={{

@@ -1,3 +1,4 @@
+import { FadeIn } from "@/components/ui/FadeIn";
 import { CtaBand } from "@/components/ui/CtaBand";
 
 interface FaqCluster {
@@ -100,32 +101,35 @@ const faqs: FaqCluster[] = [
 export default function FaqPage() {
   return (
     <main>
-      <section style={{ padding: "5rem 1.5rem", textAlign: "center" }}>
-        <h1
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-            letterSpacing: "0.03em",
-            lineHeight: 0.95,
-            marginBottom: "1rem",
-          }}
-        >
-          COMMON QUESTIONS
-        </h1>
-        <p style={{ color: "var(--color-text-secondary)", marginTop: "0.75rem" }}>
-          Not answered here?{" "}
-          <a
-            href="https://discord.gg/placeholder"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "var(--color-accent)", textDecoration: "none" }}
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
+        <FadeIn>
+          <h1
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+              letterSpacing: "0.03em",
+              lineHeight: 0.95,
+              marginBottom: "1rem",
+              color: "var(--color-text)",
+            }}
           >
-            Join our Discord.
-          </a>
-        </p>
+            COMMON QUESTIONS
+          </h1>
+          <p style={{ color: "var(--color-text-secondary)", marginTop: "0.75rem" }}>
+            Not answered here?{" "}
+            <a
+              href="https://discord.gg/placeholder"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--color-accent)", textDecoration: "none" }}
+            >
+              Join our Discord.
+            </a>
+          </p>
+        </FadeIn>
       </section>
 
-      <section style={{ padding: "2rem 1.5rem 6rem" }}>
+      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 6rem" }}>
         <div
           style={{
             maxWidth: 720,
@@ -135,51 +139,54 @@ export default function FaqPage() {
             gap: "3rem",
           }}
         >
-          {faqs.map((faqCluster) => (
-            <div key={faqCluster.cluster}>
-              <p
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.62rem",
-                  color: "var(--color-accent)",
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  marginBottom: "0.75rem",
-                }}
-              >
-                {faqCluster.cluster}
-              </p>
-              {faqCluster.items.map(([q, a]) => (
-                <details
-                  key={q}
+          {faqs.map((faqCluster, clusterIndex) => (
+            <FadeIn key={faqCluster.cluster} delay={clusterIndex * 0.06}>
+              <div>
+                <p
                   style={{
-                    borderBottom: "1px solid var(--color-border)",
-                    padding: "1rem 0",
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.62rem",
+                    color: "var(--color-accent)",
+                    letterSpacing: "0.15em",
+                    textTransform: "uppercase",
+                    marginBottom: "0.75rem",
                   }}
                 >
-                  <summary
+                  {faqCluster.cluster}
+                </p>
+                {faqCluster.items.map(([q, a]) => (
+                  <details
+                    key={q}
                     style={{
-                      cursor: "pointer",
-                      fontWeight: 600,
-                      fontSize: "0.88rem",
-                      listStyle: "none",
+                      borderBottom: "1px solid var(--color-border)",
+                      padding: "1rem 0",
                     }}
                   >
-                    {q}
-                  </summary>
-                  <p
-                    style={{
-                      marginTop: "0.75rem",
-                      fontSize: "0.82rem",
-                      color: "var(--color-text-secondary)",
-                      lineHeight: 1.7,
-                    }}
-                  >
-                    {a}
-                  </p>
-                </details>
-              ))}
-            </div>
+                    <summary
+                      style={{
+                        cursor: "pointer",
+                        fontWeight: 600,
+                        fontSize: "0.88rem",
+                        listStyle: "none",
+                        color: "var(--color-text)",
+                      }}
+                    >
+                      {q}
+                    </summary>
+                    <p
+                      style={{
+                        marginTop: "0.75rem",
+                        fontSize: "0.82rem",
+                        color: "var(--color-text-secondary)",
+                        lineHeight: 1.7,
+                      }}
+                    >
+                      {a}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </FadeIn>
           ))}
         </div>
       </section>
