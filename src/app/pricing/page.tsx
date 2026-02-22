@@ -35,7 +35,7 @@ const tiers = [
 const objections = [
   "Cancel anytime on monthly",
   "No wallet access required beyond payment",
-  "SOL-denominated — pay with Phantom or Solflare",
+  "SOL-denominated. Pay with Phantom or Solflare.",
 ];
 
 export default function PricingPage() {

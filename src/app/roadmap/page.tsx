@@ -130,7 +130,7 @@ export default function RoadmapPage() {
               <p style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)", lineHeight: 1.7 }}>
                 Optional direct bot integration. When Phase 2 ships, Sentinel will
                 execute trades directly from the intelligence layer at 1% per trade
-                side — industry standard. Community feedback shapes the priority.
+                side, industry standard. Community feedback shapes the priority.
                 No timeline commitments.
               </p>
             </div>

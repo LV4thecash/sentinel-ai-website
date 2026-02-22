@@ -94,7 +94,7 @@ export function RoadmapSection() {
             </h3>
             <p style={{ fontSize: "0.82rem", color: "#8888a0", lineHeight: 1.7 }}>
               Optional bot integration. Sentinel will execute directly from the
-              intelligence layer — 1% per trade side, industry standard. No
+              intelligence layer. 1% per trade side, industry standard. No
               timeline commitment.
             </p>
           </div>

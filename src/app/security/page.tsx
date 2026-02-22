@@ -305,7 +305,7 @@ export default function SecurityPage() {
                 }}
               >
                 It does not request wallet access. It does not sign transactions. It
-                never could — there is no wallet integration in the codebase.
+                never could. There is no wallet integration in the codebase.
               </p>
             </div>
           </div>

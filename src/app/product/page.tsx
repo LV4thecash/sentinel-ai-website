@@ -87,7 +87,7 @@ export default function ProductPage() {
             }}
           >
             Sentinel is the layer that turns hostile Telegram noise into clean
-            contract addresses — ready for your bot to act on.
+            contract addresses, ready for your bot to act on.
           </p>
           <Link
             href="/waitlist"

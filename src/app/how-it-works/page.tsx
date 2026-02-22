@@ -22,7 +22,7 @@ const steps = [
   {
     n: "03",
     label: "Enter Auth Code",
-    desc: "Telegram sends a one-time auth code to your account. Enter it in the extension. This authenticates your local session — no server ever receives your credentials.",
+    desc: "Telegram sends a one-time auth code to your account. Enter it in the extension. This authenticates your local session. No server ever receives your credentials.",
     note: null,
   },
   {
@@ -55,7 +55,7 @@ const miniQA: [string, string][] = [
   ],
   [
     "Can I monitor multiple chats?",
-    "Yes — add as many source chats as you need. Sentinel listens to all simultaneously.",
+    "Yes, add as many source chats as you need. Sentinel listens to all simultaneously.",
   ],
   [
     "What happens if the extension loses connection?",
@@ -63,7 +63,7 @@ const miniQA: [string, string][] = [
   ],
   [
     "Do I need to keep the browser open?",
-    "Yes — Sentinel runs inside Chrome. The browser must be open and the extension must be active.",
+    "Yes, Sentinel runs inside Chrome. The browser must be open and the extension must be active.",
   ],
 ];
 

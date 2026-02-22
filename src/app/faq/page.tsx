@@ -20,7 +20,7 @@ const faqs: FaqCluster[] = [
       ],
       [
         "What happens if the extension is updated?",
-        "Extension updates do not affect your credentials — they are stored locally in your browser's extension storage, not on any server.",
+        "Extension updates do not affect your credentials. They are stored locally in your browser's extension storage, not on any server.",
       ],
     ],
   },
@@ -58,7 +58,7 @@ const faqs: FaqCluster[] = [
       ],
       [
         "Can I monitor multiple chats?",
-        "Yes — add as many source chats as you want.",
+        "Yes, add as many source chats as you want.",
       ],
       [
         "What forwarding destinations are supported?",
@@ -75,7 +75,7 @@ const faqs: FaqCluster[] = [
       ],
       [
         "Can I upgrade from monthly to annual?",
-        "Yes — upgrade at any time from within the extension. The remaining monthly period is prorated.",
+        "Yes, upgrade at any time from within the extension. The remaining monthly period is prorated.",
       ],
       [
         "What wallets are supported for payment?",
@@ -88,7 +88,7 @@ const faqs: FaqCluster[] = [
     items: [
       [
         "Which execution bots does Sentinel work with?",
-        "Any bot that accepts a Telegram message containing a contract address — BonkBot, Trojan, custom bots, etc. Sentinel forwards a clean CA to the destination you define; the bot does the rest.",
+        "Any bot that accepts a Telegram message containing a contract address: BonkBot, Trojan, custom bots, and more. Sentinel forwards a clean CA to the destination you define. The bot does the rest.",
       ],
       [
         "What Telegram chat types are supported?",

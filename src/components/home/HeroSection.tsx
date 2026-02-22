@@ -180,7 +180,7 @@ export function HeroSection() {
             margin: "0 auto 2.5rem",
           }}
         >
-          Sentinel sits between Telegram&apos;s noise and your bot — reconstructing
+          Sentinel sits between Telegram&apos;s noise and your bot, reconstructing
           contract addresses from fragments, filtering scam context, and delivering
           clean CAs before the launch window closes.
         </motion.p>

@@ -62,7 +62,7 @@ export function SocialProofSection() {
               }}
             >
               Sentinel is in controlled testing with 20 selected Solana traders.
-              We&apos;re expanding access carefully — precision over growth.
+              We&apos;re expanding access carefully. Precision over growth.
             </p>
           </div>
         </FadeIn>
@@ -195,7 +195,7 @@ export function SocialProofSection() {
                   20 traders. Invite-only.
                 </p>
                 <p style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)", lineHeight: 1.6, margin: 0 }}>
-                  Controlled rollout — not yet open to the public.
+                  Controlled rollout. Not yet open to the public.
                 </p>
                 <p style={{ fontSize: "0.82rem", color: "var(--color-text-muted)", lineHeight: 1.6, margin: 0 }}>
                   Expanding when precision benchmarks are met.

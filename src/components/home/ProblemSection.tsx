@@ -42,9 +42,9 @@ export function ProblemSection() {
             }}
           >
             {[
-              "Fragments posted deliberately to avoid snipers — the full CA never appears",
+              "Fragments posted deliberately to avoid snipers. The full CA never appears.",
               "Multiple CAs in one message, no instruction on which to act",
-              "CA buried inside a link inside another link — two hops to find it",
+              "CA buried inside a link inside another link. Two hops to find it.",
             ].map((pain) => (
               <li
                 key={pain}

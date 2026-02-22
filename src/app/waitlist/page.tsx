@@ -162,7 +162,7 @@ export default function WaitlistPage() {
                 letterSpacing: "0.08em",
               }}
             >
-              2,000+ applications received
+              200+ applications received
             </p>
           </div>
         ) : (
@@ -257,7 +257,7 @@ export default function WaitlistPage() {
                 style={selectStyle}
               >
                 <option value="" disabled>How active are you as a trader?</option>
-                <option value="casual">Casual — a few times a week</option>
+                <option value="casual">Casual, a few times a week</option>
                 <option value="daily">Active daily trader</option>
                 <option value="professional">Professional / full-time</option>
                 <option value="group_admin">Group admin or KOL</option>
@@ -303,7 +303,7 @@ export default function WaitlistPage() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Be specific — applications with context get priority
+                  Be specific. Applications with context get priority.
                 </p>
               </div>
 
@@ -369,7 +369,7 @@ export default function WaitlistPage() {
                 fontWeight: 600,
               }}
             >
-              2,000+ applications received
+              200+ applications received
             </p>
           </>
         )}
