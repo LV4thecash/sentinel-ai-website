@@ -167,43 +167,6 @@ export default function WaitlistPage() {
           </div>
         ) : (
           <>
-            {/* Status badge */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                marginBottom: "2rem",
-                border: "1px solid var(--color-border)",
-                borderRadius: 100,
-                padding: "5px 14px 5px 10px",
-                background: "var(--color-surface)",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
-              }}
-            >
-              <span
-                style={{
-                  width: 7,
-                  height: 7,
-                  borderRadius: "50%",
-                  background: "#16a34a",
-                  display: "inline-block",
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "10px",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: "var(--color-text-muted)",
-                }}
-              >
-                Private Beta · Evaluation Phase
-              </span>
-            </div>
-
             {/* Headlines */}
             <h1
               style={{

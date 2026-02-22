@@ -245,7 +245,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Daily workflow */}
+      {/* Docs coming soon */}
       <FadeIn>
         <section
           style={{
@@ -255,39 +255,52 @@ export default function HowItWorksPage() {
           }}
         >
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
-            <SectionLabel>Daily Workflow</SectionLabel>
+            <SectionLabel>Documentation</SectionLabel>
             <div
               style={{
+                marginTop: "1.5rem",
+                padding: "1.5rem 2rem",
+                border: "1px solid var(--color-border)",
+                borderRadius: 8,
                 display: "flex",
                 alignItems: "center",
-                flexWrap: "wrap",
-                gap: "0.5rem",
-                marginTop: "1.5rem",
+                gap: "1.25rem",
+                background: "var(--color-bg)",
               }}
             >
-              {workflow.map((w, i) => (
-                <React.Fragment key={w}>
-                  <div
-                    style={{
-                      padding: "0.45rem 0.8rem",
-                      background: "var(--color-bg)",
-                      border: "1px solid var(--color-border)",
-                      borderRadius: 6,
-                      fontSize: "0.75rem",
-                      color: "var(--color-text-secondary)",
-                    }}
-                  >
-                    {w}
-                  </div>
-                  {i < workflow.length - 1 && (
-                    <span
-                      style={{ color: "var(--color-border-hi)", fontSize: "0.9rem" }}
-                    >
-                      →
-                    </span>
-                  )}
-                </React.Fragment>
-              ))}
+              <span
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "1.4rem",
+                  lineHeight: 1,
+                  opacity: 0.4,
+                }}
+              >
+                📖
+              </span>
+              <div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 700,
+                    fontSize: "0.95rem",
+                    color: "var(--color-text)",
+                    marginBottom: "0.3rem",
+                  }}
+                >
+                  Full documentation on GitBook — coming soon.
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.72rem",
+                    color: "var(--color-text-muted)",
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  Setup guides, configuration reference, and edge-case walkthroughs.
+                </p>
+              </div>
             </div>
           </div>
         </section>
