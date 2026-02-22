@@ -1,4 +1,5 @@
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
 
 const steps = [
@@ -19,87 +20,121 @@ const steps = [
   },
   {
     n: "04",
-    label: "Done",
-    desc: "Sentinel runs automatically. CAs arrive. Your bot executes.",
+    label: "Done.",
+    desc: "Sentinel runs automatically. Clean CAs arrive. Your bot executes.",
   },
 ];
 
 export function HowItWorksSection() {
   return (
-    <section style={{ padding: "6rem 1.5rem" }}>
-      <div style={{ maxWidth: 960, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <SectionLabel>Setup</SectionLabel>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2rem, 5vw, 3.2rem)",
-              letterSpacing: "0.03em",
-              lineHeight: 1,
-            }}
-          >
-            RUNNING IN ~10 MINUTES
-          </h2>
-        </div>
+    <section
+      style={{
+        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
+        background: "var(--color-bg)",
+      }}
+    >
+      <div style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}>
+        <FadeIn>
+          <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+            <SectionLabel>Setup</SectionLabel>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+                fontSize: "clamp(2rem, 5vw, 3.2rem)",
+                letterSpacing: "-0.01em",
+                lineHeight: 1.05,
+                color: "var(--color-text)",
+              }}
+            >
+              Running in ~10 minutes.
+            </h2>
+          </div>
+        </FadeIn>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-            gap: "1.5rem",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "0.5rem 2rem",
           }}
         >
           {steps.map((step, i) => (
-            <div key={step.n} style={{ position: "relative" }}>
-              <p
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "3.5rem",
-                  color: "var(--color-border-hi)",
-                  lineHeight: 1,
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {step.n}
-              </p>
-              <p style={{ fontWeight: 600, fontSize: "0.95rem", marginBottom: "0.35rem" }}>
-                {step.label}
-              </p>
-              <p style={{ fontSize: "0.82rem", color: "#8888a0", lineHeight: 1.6 }}>
-                {step.desc}
-              </p>
-              {i < steps.length - 1 && (
-                <span
-                  aria-hidden
+            <FadeIn key={step.n} delay={i * 0.08}>
+              <div style={{ position: "relative", paddingTop: "0.5rem" }}>
+                {/* Watermark step number */}
+                <p
                   style={{
-                    position: "absolute",
-                    top: "1.6rem",
-                    right: "-0.85rem",
-                    color: "var(--color-border-hi)",
-                    fontSize: "1.1rem",
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 900,
+                    fontSize: "5rem",
+                    color: "var(--color-border)",
+                    lineHeight: 1,
+                    marginBottom: "0.25rem",
+                    userSelect: "none",
                   }}
                 >
-                  →
-                </span>
-              )}
-            </div>
+                  {step.n}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 700,
+                    fontSize: "1rem",
+                    color: "var(--color-text)",
+                    marginBottom: "0.4rem",
+                  }}
+                >
+                  {step.label}
+                </p>
+                <p
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "var(--color-text-secondary)",
+                    lineHeight: 1.65,
+                  }}
+                >
+                  {step.desc}
+                </p>
+
+                {/* Connector arrow — desktop only */}
+                {i < steps.length - 1 && (
+                  <span
+                    aria-hidden
+                    style={{
+                      position: "absolute",
+                      top: "2.75rem",
+                      right: "-1.2rem",
+                      color: "var(--color-border-hi)",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    →
+                  </span>
+                )}
+              </div>
+            </FadeIn>
           ))}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-          <Link
-            href="/how-it-works"
-            style={{
-              color: "var(--color-accent)",
-              fontSize: "0.82rem",
-              fontFamily: "var(--font-mono)",
-              textDecoration: "none",
-              letterSpacing: "0.06em",
-            }}
-          >
-            Full setup guide →
-          </Link>
-        </div>
+        <FadeIn delay={0.32}>
+          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+            <Link
+              href="/how-it-works"
+              style={{
+                color: "var(--color-accent)",
+                fontSize: "0.82rem",
+                textDecoration: "none",
+                fontFamily: "var(--font-body)",
+                fontWeight: 500,
+                borderBottom: "1px solid rgba(190,27,42,0.3)",
+                paddingBottom: "1px",
+              }}
+            >
+              Full setup documentation →
+            </Link>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

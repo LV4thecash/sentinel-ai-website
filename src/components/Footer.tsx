@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 const pages = [
@@ -15,8 +16,9 @@ export function Footer() {
     <footer
       style={{
         borderTop: "1px solid var(--color-border)",
-        padding: "3rem 1.5rem",
+        padding: "2.5rem clamp(1.5rem, 5vw, 4rem)",
         marginTop: "auto",
+        background: "var(--color-bg)",
       }}
     >
       <div
@@ -26,7 +28,7 @@ export function Footer() {
           display: "grid",
           gridTemplateColumns: "1fr auto 1fr",
           gap: "2rem",
-          alignItems: "start",
+          alignItems: "center",
         }}
       >
         {/* Left: brand */}
@@ -34,18 +36,19 @@ export function Footer() {
           <span
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "1.1rem",
-              letterSpacing: "0.06em",
-              color: "#fff",
+              fontWeight: 800,
+              fontSize: "0.9rem",
+              letterSpacing: "0.08em",
+              color: "var(--color-text)",
             }}
           >
-            SENTINEL AI
+            SENTINEL<span style={{ color: "var(--color-accent)" }}>AI</span>
           </span>
           <p
             style={{
-              color: "var(--color-neutral)",
-              fontSize: "0.78rem",
-              marginTop: "0.5rem",
+              color: "var(--color-text-muted)",
+              fontSize: "0.75rem",
+              marginTop: "0.4rem",
               lineHeight: 1.5,
             }}
           >
@@ -58,7 +61,7 @@ export function Footer() {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: "0.5rem 1.5rem",
+            gap: "0.4rem 1.25rem",
             justifyContent: "center",
           }}
         >
@@ -67,10 +70,13 @@ export function Footer() {
               key={p.href}
               href={p.href}
               style={{
-                color: "var(--color-neutral)",
-                fontSize: "0.78rem",
+                color: "var(--color-text-muted)",
+                fontSize: "0.75rem",
                 textDecoration: "none",
+                transition: "color 0.15s ease",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
             >
               {p.label}
             </Link>
@@ -90,7 +96,14 @@ export function Footer() {
             href="https://discord.gg/placeholder"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "var(--color-neutral)", fontSize: "0.82rem", textDecoration: "none" }}
+            style={{
+              color: "var(--color-text-muted)",
+              fontSize: "0.75rem",
+              textDecoration: "none",
+              transition: "color 0.15s ease",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
           >
             Discord
           </a>
@@ -98,7 +111,14 @@ export function Footer() {
             href="https://t.me/placeholder"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "var(--color-neutral)", fontSize: "0.82rem", textDecoration: "none" }}
+            style={{
+              color: "var(--color-text-muted)",
+              fontSize: "0.75rem",
+              textDecoration: "none",
+              transition: "color 0.15s ease",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
           >
             Telegram
           </a>
