@@ -1,25 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  /* Core palette — brand dark charcoal with signal red accent */
-  --color-bg:        #0f1010;
-  --color-surface:   #191b1b;
-  --color-border:    #262929;
-  --color-border-hi: #323636;
+  /* ─── Brand palette ─────────────────────────────────────── */
+  --color-bg:          #FAFAFA;
+  --color-bg-alt:      #F5F5F5;
+  --color-surface:     #FFFFFF;
+  --color-border:      #E4E4E7;
+  --color-border-hi:   #D4D4D8;
 
-  /* Accent — brand red #BE1B2A */
+  /* ─── Text hierarchy ────────────────────────────────────── */
+  --color-text:          #212323;
+  --color-text-secondary:#52525B;
+  --color-text-muted:    #A1A1AA;
+
+  /* ─── Accent — brand red #BE1B2A ────────────────────────── */
   --color-accent:    #BE1B2A;
-  --color-accent-lo: rgba(190, 27, 42, 0.10);
-  --color-accent-hi: #d42030;
+  --color-accent-lo: rgba(190, 27, 42, 0.08);
+  --color-accent-hi: #D42030;
 
-  /* Status colors */
-  --color-pass:    #22c55e;
-  --color-block:   #ef4444;
-  --color-neutral: #6b7280;
+  /* ─── Status ────────────────────────────────────────────── */
+  --color-pass:    #16a34a;
+  --color-block:   #BE1B2A;
+  --color-neutral: #71717A;
 
-  /* Spacing scale */
-  --section-gap:    7rem;
-  --section-gap-sm: 4rem;
+  /* ─── Layout ────────────────────────────────────────────── */
+  --nav-height:      60px;
+  --content-width:   1120px;
+  --section-gap:     7.5rem;
+  --section-gap-sm:  4.5rem;
+
+  /* ─── Motion tokens ─────────────────────────────────────── */
+  --motion-fast:     0.2s;
+  --motion-base:     0.45s;
+  --motion-slow:     0.7s;
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-stagger:  0.07s;
 }
 
 *,
@@ -30,19 +46,32 @@
 
 html {
   background: var(--color-bg);
-  color: #e8e8ea;
+  color: var(--color-text);
   font-family: var(--font-body), system-ui, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: var(--nav-height);
 }
 
-/* Utility: CA monospace string */
+/* ─── Section utilities ─────────────────────────────────────── */
+.section    { padding: var(--section-gap) 0; }
+.section-sm { padding: var(--section-gap-sm) 0; }
+.section-alt { background: var(--color-bg-alt); }
+
+.content-wrap {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+}
+
+/* ─── CA monospace string ───────────────────────────────────── */
 .ca-string {
   font-family: var(--font-mono);
   font-size: 0.8em;
@@ -53,17 +82,19 @@ body {
   border-radius: 3px;
 }
 
-/* Utility: section padding */
-.section    { padding: var(--section-gap) 0; }
-.section-sm { padding: var(--section-gap-sm) 0; }
-
-/* Mobile nav visibility helpers */
+/* ─── Nav visibility helpers ────────────────────────────────── */
 @media (max-width: 768px) {
-  .desktop-nav       { display: none !important; }
-  .mobile-menu-btn   { display: block !important; }
+  .desktop-nav     { display: none !important; }
+  .mobile-menu-btn { display: block !important; }
 }
 
-/* Thin scrollbar */
+/* ─── Thin scrollbar ────────────────────────────────────────── */
 ::-webkit-scrollbar              { width: 4px; }
 ::-webkit-scrollbar-track        { background: var(--color-bg); }
 ::-webkit-scrollbar-thumb        { background: var(--color-border-hi); border-radius: 2px; }
+
+/* ─── Focus ring ────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

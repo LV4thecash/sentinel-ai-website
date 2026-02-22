@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sentinelai.bot"),
   title: "Sentinel AI — The Intelligence Layer",
   description:
     "Sentinel reconstructs Solana contract addresses from any Telegram message format and forwards clean CAs to your bot before the launch window closes.",

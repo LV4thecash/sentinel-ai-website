@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const links = [
   { href: "/product",      label: "Product" },
@@ -12,26 +12,42 @@ const links = [
 ];
 
 export function Nav() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen]       = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const navBg      = scrolled ? "rgba(250,250,250,0.92)" : "transparent";
+  const navBorder  = scrolled ? "1px solid #E4E4E7"      : "1px solid transparent";
+  const navShadow  = scrolled ? "0 1px 0 rgba(0,0,0,0.04)" : "none";
 
   return (
     <nav
       style={{
-        position: "sticky",
+        position: "fixed",
         top: 0,
+        left: 0,
+        right: 0,
         zIndex: 50,
-        background: "rgba(10,10,11,0.88)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        borderBottom: "1px solid var(--color-border)",
+        background: navBg,
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
+        borderBottom: navBorder,
+        boxShadow: navShadow,
+        transition: "background 0.22s var(--motion-ease), border-color 0.22s var(--motion-ease), box-shadow 0.22s var(--motion-ease)",
       }}
     >
       <div
         style={{
           maxWidth: 1200,
           margin: "0 auto",
-          padding: "0 1.5rem",
-          height: 60,
+          padding: "0 clamp(1.5rem, 5vw, 2.5rem)",
+          height: "var(--nav-height)",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -39,16 +55,17 @@ export function Nav() {
       >
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <Image src="/brand/logo.png" alt="Sentinel AI" width={32} height={32} />
+          <Image src="/brand/logo.png" alt="Sentinel AI" width={30} height={30} />
           <span
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "1.2rem",
-              letterSpacing: "0.06em",
-              color: "#fff",
+              fontWeight: 800,
+              fontSize: "1rem",
+              letterSpacing: "0.08em",
+              color: "var(--color-text)",
             }}
           >
-            SENTINEL AI
+            SENTINEL<span style={{ color: "var(--color-accent)" }}>AI</span>
           </span>
         </Link>
 
@@ -63,30 +80,46 @@ export function Nav() {
               href={l.href}
               style={{
                 fontSize: "0.82rem",
-                color: "var(--color-neutral)",
+                fontFamily: "var(--font-body)",
+                fontWeight: 500,
+                color: "var(--color-text-secondary)",
                 textDecoration: "none",
-                letterSpacing: "0.04em",
-                transition: "color 0.15s",
+                letterSpacing: "0.02em",
+                transition: "color var(--motion-fast) ease",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-secondary)")}
             >
               {l.label}
             </Link>
           ))}
           <Link
-            href="/#waitlist"
+            href="/waitlist"
             style={{
               background: "var(--color-accent)",
-              color: "#000",
+              color: "#fff",
+              fontFamily: "var(--font-display)",
               fontWeight: 700,
-              fontSize: "0.75rem",
-              padding: "0.45rem 1.1rem",
+              fontSize: "0.72rem",
+              padding: "0.48rem 1.1rem",
               borderRadius: 4,
               textDecoration: "none",
-              letterSpacing: "0.07em",
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
+              transition: "background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "var(--color-accent-hi)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+              e.currentTarget.style.boxShadow = "0 4px 14px rgba(190,27,42,0.28)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "var(--color-accent)";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
             }}
           >
-            Join Waitlist
+            Request Access
           </Link>
         </div>
 
@@ -97,7 +130,7 @@ export function Nav() {
           style={{
             background: "none",
             border: "none",
-            color: "#fff",
+            color: "var(--color-text)",
             cursor: "pointer",
             fontSize: "1.3rem",
             display: "none",
@@ -114,11 +147,13 @@ export function Nav() {
         <div
           style={{
             borderTop: "1px solid var(--color-border)",
-            padding: "1rem 1.5rem",
+            padding: "1.25rem clamp(1.5rem, 5vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
-            background: "var(--color-bg)",
+            background: "rgba(250,250,250,0.97)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
           }}
         >
           {links.map((l) => (
@@ -126,28 +161,34 @@ export function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              style={{ color: "#e8e8ea", textDecoration: "none", fontSize: "1rem" }}
+              style={{
+                color: "var(--color-text)",
+                textDecoration: "none",
+                fontSize: "1rem",
+                fontWeight: 500,
+              }}
             >
               {l.label}
             </Link>
           ))}
           <Link
-            href="/#waitlist"
+            href="/waitlist"
             onClick={() => setOpen(false)}
             style={{
               background: "var(--color-accent)",
-              color: "#000",
+              color: "#fff",
+              fontFamily: "var(--font-display)",
               fontWeight: 700,
               padding: "0.75rem 1rem",
               borderRadius: 4,
               textAlign: "center",
               textDecoration: "none",
-              fontSize: "0.85rem",
-              letterSpacing: "0.07em",
+              fontSize: "0.8rem",
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
             }}
           >
-            Join Waitlist
+            Request Access
           </Link>
         </div>
       )}
