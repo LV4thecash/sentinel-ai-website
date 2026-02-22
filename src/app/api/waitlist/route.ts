@@ -4,8 +4,8 @@ import { Resend } from "resend";
 export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
-  const body = await req.json() as { email: string; telegram?: string };
-  const { email, telegram } = body;
+  const body = await req.json() as { email: string; telegram?: string; activity?: string; tools?: string; reason?: string };
+  const { email, telegram, activity, tools, reason } = body;
 
   if (!email || !email.includes("@")) {
     return NextResponse.json({ error: "Valid email required" }, { status: 400 });
@@ -37,6 +37,18 @@ export async function POST(req: NextRequest) {
             <tr>
               <td style="padding:0.6rem 0;color:#71717a;">Telegram</td>
               <td style="padding:0.6rem 0;color:#212323;">${telegram ?? "not provided"}</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0;color:#71717a;">Activity</td>
+              <td style="padding:0.6rem 0;color:#212323;">${activity ?? "not provided"}</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0;color:#71717a;">Tools used</td>
+              <td style="padding:0.6rem 0;color:#212323;">${tools ?? "not provided"}</td>
+            </tr>
+            <tr>
+              <td style="padding:0.6rem 0;color:#71717a;vertical-align:top;">Why beta</td>
+              <td style="padding:0.6rem 0;color:#212323;">${reason ?? "not provided"}</td>
             </tr>
           </table>
         </div>
