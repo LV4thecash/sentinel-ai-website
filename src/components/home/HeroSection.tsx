@@ -26,8 +26,8 @@ export function HeroSection() {
           inset: 0,
           zIndex: 0,
           backgroundImage: `
-            linear-gradient(rgba(245,166,35,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(245,166,35,0.04) 1px, transparent 1px)
+            linear-gradient(rgba(190,27,42,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(190,27,42,0.06) 1px, transparent 1px)
           `,
           backgroundSize: "40px 40px",
           pointerEvents: "none",
@@ -56,6 +56,7 @@ export function HeroSection() {
           <h1
             style={{
               fontFamily: "var(--font-display)",
+              fontWeight: 900,
               fontSize: "clamp(3rem, 10vw, 7.5rem)",
               lineHeight: 0.92,
               letterSpacing: "0.02em",

@@ -1,21 +1,21 @@
-import { Space_Mono, Bebas_Neue, DM_Sans } from "next/font/google";
+import { Montserrat, Poppins, IBM_Plex_Mono } from "next/font/google";
 
-// Display headline font — industrial, high-contrast
-export const displayFont = Bebas_Neue({
-  weight: "400",
+// Display/heading font — brand-specified Montserrat Bold/SemiBold
+export const displayFont = Montserrat({
   subsets: ["latin"],
   variable: "--font-display",
+  weight: ["600", "700", "800", "900"],
 });
 
-// Body + UI font — clean, readable at small sizes
-export const bodyFont = DM_Sans({
+// Body + subheading font — brand-specified Poppins
+export const bodyFont = Poppins({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600"],
 });
 
 // Monospace — for CA strings, code, technical labels
-export const monoFont = Space_Mono({
+export const monoFont = IBM_Plex_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   weight: ["400", "700"],

@@ -275,8 +275,8 @@ export default function SecurityPage() {
           <div
             style={{
               padding: "1.5rem",
-              background: "rgba(245,166,35,0.05)",
-              border: "1px solid rgba(245,166,35,0.2)",
+              background: "rgba(190,27,42,0.07)",
+              border: "1px solid rgba(190,27,42,0.25)",
               borderRadius: 8,
             }}
           >

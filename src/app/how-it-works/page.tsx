@@ -175,7 +175,7 @@ export default function HowItWorksPage() {
                     style={{
                       padding: "0.6rem 0.85rem",
                       background: "var(--color-accent-lo)",
-                      border: "1px solid rgba(245,166,35,0.2)",
+                      border: "1px solid rgba(190,27,42,0.25)",
                       borderRadius: 4,
                       fontSize: "0.75rem",
                       color: "#c0c0a8",
