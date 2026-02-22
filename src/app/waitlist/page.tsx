@@ -116,21 +116,26 @@ export default function WaitlistPage() {
         {state === "success" ? (
           /* ── Success state ── */
           <div style={{ textAlign: "center", paddingTop: "2rem" }}>
+            {/* Video */}
             <div
               style={{
-                width: 48,
-                height: 48,
-                borderRadius: "50%",
-                background: "rgba(22,163,74,0.08)",
-                border: "1px solid rgba(22,163,74,0.3)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                margin: "0 auto 1.5rem",
-                fontSize: "1.2rem",
+                width: "100%",
+                maxWidth: 320,
+                margin: "0 auto 2rem",
+                borderRadius: 10,
+                overflow: "hidden",
+                border: "1px solid var(--color-border)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
               }}
             >
-              ✓
+              <video
+                src="/brand/animation.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ width: "100%", display: "block" }}
+              />
             </div>
             <p
               style={{
