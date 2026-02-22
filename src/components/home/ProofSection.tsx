@@ -1,5 +1,6 @@
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ChatBubble } from "@/components/ui/ChatBubble";
+import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
 
 interface DemoCard {
@@ -78,83 +79,85 @@ export function ProofSection() {
             gap: "1rem",
           }}
         >
-          {cards.map((card) => (
-            <div
-              key={card.title}
-              style={{
-                background: "var(--color-surface)",
-                border: `1px solid ${card.blocked ? "rgba(239,68,68,0.25)" : "var(--color-border)"}`,
-                borderRadius: 8,
-                padding: "1.25rem",
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.75rem",
-              }}
-            >
-              {/* Card label */}
-              <p
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.62rem",
-                  color: "var(--color-accent)",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  margin: 0,
-                }}
-              >
-                {card.title}
-              </p>
-
-              {/* Input bubble */}
-              <ChatBubble
-                lines={card.input}
-                blocked={card.blocked}
-                highlight={card.highlight}
-              />
-
-              {/* Arrow */}
+          {cards.map((card, index) => (
+            <FadeIn key={card.title} delay={index * 0.08} style={{ height: "100%" }}>
               <div
                 style={{
-                  textAlign: "center",
-                  color: "var(--color-neutral)",
-                  fontSize: "0.9rem",
-                  lineHeight: 1,
+                  background: "var(--color-surface)",
+                  border: `1px solid ${card.blocked ? "rgba(239,68,68,0.25)" : "var(--color-border)"}`,
+                  borderRadius: 8,
+                  padding: "1.25rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.75rem",
+                  height: "100%",
                 }}
               >
-                ↓
-              </div>
+                {/* Card label */}
+                <p
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.62rem",
+                    color: "var(--color-accent)",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    margin: 0,
+                  }}
+                >
+                  {card.title}
+                </p>
 
-              {/* Output */}
-              <div
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.68rem",
-                  padding: "0.5rem 0.75rem",
-                  background: card.blocked
-                    ? "rgba(239,68,68,0.07)"
-                    : "rgba(34,197,94,0.07)",
-                  border: `1px solid ${card.blocked ? "rgba(239,68,68,0.2)" : "rgba(34,197,94,0.2)"}`,
-                  borderRadius: 4,
-                  color: card.blocked ? "var(--color-block)" : "var(--color-pass)",
-                  wordBreak: "break-all",
-                }}
-              >
-                {card.output}
-              </div>
+                {/* Input bubble */}
+                <ChatBubble
+                  lines={card.input}
+                  blocked={card.blocked}
+                  highlight={card.highlight}
+                />
 
-              {/* Stat */}
-              <p
-                style={{
-                  fontSize: "0.65rem",
-                  color: "var(--color-neutral)",
-                  textAlign: "right",
-                  fontFamily: "var(--font-mono)",
-                  margin: 0,
-                }}
-              >
-                {card.stat}
-              </p>
-            </div>
+                {/* Arrow */}
+                <div
+                  style={{
+                    textAlign: "center",
+                    color: "var(--color-neutral)",
+                    fontSize: "0.9rem",
+                    lineHeight: 1,
+                  }}
+                >
+                  ↓
+                </div>
+
+                {/* Output */}
+                <div
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    fontSize: "0.68rem",
+                    padding: "0.5rem 0.75rem",
+                    background: card.blocked
+                      ? "rgba(239,68,68,0.07)"
+                      : "rgba(34,197,94,0.07)",
+                    border: `1px solid ${card.blocked ? "rgba(239,68,68,0.2)" : "rgba(34,197,94,0.2)"}`,
+                    borderRadius: 4,
+                    color: card.blocked ? "var(--color-block)" : "var(--color-pass)",
+                    wordBreak: "break-all",
+                  }}
+                >
+                  {card.output}
+                </div>
+
+                {/* Stat */}
+                <p
+                  style={{
+                    fontSize: "0.65rem",
+                    color: "var(--color-neutral)",
+                    textAlign: "right",
+                    fontFamily: "var(--font-mono)",
+                    margin: 0,
+                  }}
+                >
+                  {card.stat}
+                </p>
+              </div>
+            </FadeIn>
           ))}
         </div>
 

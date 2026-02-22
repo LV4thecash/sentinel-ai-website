@@ -1,5 +1,6 @@
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { Counter } from "@/components/ui/Counter";
+import { FadeIn } from "@/components/ui/FadeIn";
 
 export function HeroSection() {
   return (
@@ -35,55 +36,65 @@ export function HeroSection() {
 
       <div style={{ position: "relative", zIndex: 1, maxWidth: 760 }}>
         {/* Eyebrow */}
-        <p
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: "0.68rem",
-            letterSpacing: "0.2em",
-            color: "var(--color-accent)",
-            marginBottom: "1.5rem",
-            textTransform: "uppercase",
-          }}
-        >
-          Intelligence Layer · Solana · Phase 1 Live
-        </p>
+        <FadeIn delay={0}>
+          <p
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.68rem",
+              letterSpacing: "0.2em",
+              color: "var(--color-accent)",
+              marginBottom: "1.5rem",
+              textTransform: "uppercase",
+            }}
+          >
+            Intelligence Layer · Solana · Phase 1 Live
+          </p>
+        </FadeIn>
 
         {/* Main headline */}
-        <h1
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(3rem, 10vw, 7.5rem)",
-            lineHeight: 0.92,
-            letterSpacing: "0.02em",
-            color: "#fff",
-            marginBottom: "1.5rem",
-          }}
-        >
-          AI TRADING<br />
-          IS FASTER<br />
-          <span style={{ color: "var(--color-accent)" }}>THAN YOU ARE</span>
-        </h1>
+        <FadeIn delay={0.1}>
+          <h1
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(3rem, 10vw, 7.5rem)",
+              lineHeight: 0.92,
+              letterSpacing: "0.02em",
+              color: "#fff",
+              marginBottom: "1.5rem",
+            }}
+          >
+            AI TRADING<br />
+            IS FASTER<br />
+            <span style={{ color: "var(--color-accent)" }}>THAN YOU ARE</span>
+          </h1>
+        </FadeIn>
 
         {/* Subline */}
-        <p
-          style={{
-            fontSize: "clamp(1rem, 2.2vw, 1.2rem)",
-            color: "#8888a0",
-            maxWidth: 560,
-            margin: "0 auto 2.5rem",
-            lineHeight: 1.65,
-          }}
-        >
-          Sentinel sits between Telegram&apos;s noise and your execution bot —
-          reconstructing contract addresses from fragments, filtering scam contexts,
-          and delivering clean CAs before the launch window closes.
-        </p>
+        <FadeIn delay={0.2} style={{ maxWidth: 560, margin: "0 auto 2.5rem" }}>
+          <p
+            style={{
+              fontSize: "clamp(1rem, 2.2vw, 1.2rem)",
+              color: "#8888a0",
+              lineHeight: 1.65,
+            }}
+          >
+            Sentinel sits between Telegram&apos;s noise and your execution bot —
+            reconstructing contract addresses from fragments, filtering scam contexts,
+            and delivering clean CAs before the launch window closes.
+          </p>
+        </FadeIn>
 
         {/* Waitlist form */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <WaitlistForm size="lg" />
-        </div>
-        <Counter />
+        <FadeIn delay={0.3}>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <WaitlistForm size="lg" />
+          </div>
+        </FadeIn>
+
+        {/* Counter */}
+        <FadeIn delay={0.4}>
+          <Counter />
+        </FadeIn>
       </div>
     </section>
   );
