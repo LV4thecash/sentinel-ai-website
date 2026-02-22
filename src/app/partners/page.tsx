@@ -210,7 +210,7 @@ export default function PartnersPage() {
                 border: "1px solid var(--color-border)",
                 borderRadius: 6,
                 fontSize: "0.75rem",
-                color: "#7878908",
+                color: "#787890",
                 lineHeight: 1.6,
               }}
             >
