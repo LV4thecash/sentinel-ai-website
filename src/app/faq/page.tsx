@@ -112,7 +112,7 @@ export default function FaqPage() {
         >
           COMMON QUESTIONS
         </h1>
-        <p style={{ color: "#8888a0", marginTop: "0.75rem" }}>
+        <p style={{ color: "var(--color-text-secondary)", marginTop: "0.75rem" }}>
           Not answered here?{" "}
           <a
             href="https://discord.gg/placeholder"
@@ -171,7 +171,7 @@ export default function FaqPage() {
                     style={{
                       marginTop: "0.75rem",
                       fontSize: "0.82rem",
-                      color: "#8888a0",
+                      color: "var(--color-text-secondary)",
                       lineHeight: 1.7,
                     }}
                   >

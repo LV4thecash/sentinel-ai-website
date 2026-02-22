@@ -72,7 +72,7 @@ export default function ProductPage() {
         </h1>
         <p
           style={{
-            color: "#8888a0",
+            color: "var(--color-text-secondary)",
             maxWidth: 520,
             margin: "0 auto 2.5rem",
             lineHeight: 1.65,
@@ -83,10 +83,10 @@ export default function ProductPage() {
           contract addresses — ready for your bot to act on.
         </p>
         <Link
-          href="/#waitlist"
+          href="/waitlist"
           style={{
             background: "var(--color-accent)",
-            color: "#000",
+            color: "#fff",
             fontWeight: 700,
             padding: "0.85rem 2rem",
             borderRadius: 4,
@@ -96,7 +96,7 @@ export default function ProductPage() {
             textTransform: "uppercase",
           }}
         >
-          Join Waitlist
+          Apply for Access
         </Link>
       </section>
 
@@ -143,7 +143,7 @@ export default function ProductPage() {
                   {p.bullets.map((b) => (
                     <p
                       key={b}
-                      style={{ fontSize: "0.78rem", color: "#8888a0", lineHeight: 1.55 }}
+                      style={{ fontSize: "0.78rem", color: "var(--color-text-secondary)", lineHeight: 1.55 }}
                     >
                       · {b}
                     </p>
@@ -241,12 +241,12 @@ export default function ProductPage() {
                   style={{
                     fontFamily: "var(--font-mono)",
                     fontSize: "0.72rem",
-                    color: "#e8e8ea",
+                    color: "var(--color-text)",
                   }}
                 >
                   {label}
                 </p>
-                <p style={{ fontSize: "0.82rem", color: "#8888a0" }}>{desc}</p>
+                <p style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)" }}>{desc}</p>
               </div>
             ))}
           </div>

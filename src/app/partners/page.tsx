@@ -34,7 +34,7 @@ export default function PartnersPage() {
         </h1>
         <p
           style={{
-            color: "#8888a0",
+            color: "var(--color-text-secondary)",
             maxWidth: 520,
             margin: "0 auto",
             lineHeight: 1.65,
@@ -78,7 +78,7 @@ export default function PartnersPage() {
                 >
                   {vp.label}
                 </p>
-                <p style={{ fontSize: "0.82rem", color: "#8888a0", lineHeight: 1.6 }}>
+                <p style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
                   {vp.desc}
                 </p>
               </div>
@@ -109,7 +109,7 @@ export default function PartnersPage() {
                   style={{
                     background: "var(--color-surface)",
                     border: "1px solid var(--color-border-hi)",
-                    color: "#e8e8ea",
+                    color: "var(--color-text)",
                     padding: "0.85rem 1rem",
                     borderRadius: 4,
                     fontSize: "0.9rem",
@@ -126,7 +126,7 @@ export default function PartnersPage() {
                 style={{
                   background: "var(--color-surface)",
                   border: "1px solid var(--color-border-hi)",
-                  color: "#9090a0",
+                  color: "var(--color-text-muted)",
                   padding: "0.85rem 1rem",
                   borderRadius: 4,
                   fontSize: "0.9rem",
@@ -149,7 +149,7 @@ export default function PartnersPage() {
                 style={{
                   background: "var(--color-surface)",
                   border: "1px solid var(--color-border-hi)",
-                  color: "#9090a0",
+                  color: "var(--color-text-muted)",
                   padding: "0.85rem 1rem",
                   borderRadius: 4,
                   fontSize: "0.9rem",
@@ -172,7 +172,7 @@ export default function PartnersPage() {
                 style={{
                   background: "var(--color-surface)",
                   border: "1px solid var(--color-border-hi)",
-                  color: "#e8e8ea",
+                  color: "var(--color-text)",
                   padding: "0.85rem 1rem",
                   borderRadius: 4,
                   fontSize: "0.9rem",
@@ -186,7 +186,7 @@ export default function PartnersPage() {
                 type="submit"
                 style={{
                   background: "var(--color-accent)",
-                  color: "#000",
+                  color: "#fff",
                   fontWeight: 700,
                   fontSize: "0.85rem",
                   letterSpacing: "0.08em",
@@ -210,7 +210,7 @@ export default function PartnersPage() {
                 border: "1px solid var(--color-border)",
                 borderRadius: 6,
                 fontSize: "0.75rem",
-                color: "#787890",
+                color: "var(--color-text-muted)",
                 lineHeight: 1.6,
               }}
             >

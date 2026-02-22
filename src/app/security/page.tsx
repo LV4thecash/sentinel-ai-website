@@ -55,7 +55,7 @@ export default function SecurityPage() {
         </h1>
         <p
           style={{
-            color: "#8888a0",
+            color: "var(--color-text-secondary)",
             maxWidth: 560,
             margin: "0 auto",
             lineHeight: 1.65,
@@ -141,7 +141,7 @@ export default function SecurityPage() {
                     padding: "0.85rem 1.5rem",
                     borderRight: "1px solid var(--color-border)",
                     fontSize: "0.82rem",
-                    color: "#c0c0c8",
+                    color: "var(--color-text-secondary)",
                   }}
                 >
                   <span style={{ color: "var(--color-pass)", marginRight: "0.5rem" }}>
@@ -153,7 +153,7 @@ export default function SecurityPage() {
                   style={{
                     padding: "0.85rem 1.5rem",
                     fontSize: "0.82rem",
-                    color: "#c0c0c8",
+                    color: "var(--color-text-secondary)",
                   }}
                 >
                   <span style={{ color: "var(--color-block)", marginRight: "0.5rem" }}>
@@ -180,7 +180,7 @@ export default function SecurityPage() {
           >
             YOUR SESSION LIVES IN YOUR BROWSER
           </h2>
-          <p style={{ color: "#8888a0", lineHeight: 1.7, fontSize: "0.88rem" }}>
+          <p style={{ color: "var(--color-text-secondary)", lineHeight: 1.7, fontSize: "0.88rem" }}>
             Sentinel uses Telegram&apos;s official MTProto protocol. When you
             enter your API credentials, they authenticate a local session inside
             your Chrome extension. Your API keys never leave your machine. There
@@ -195,7 +195,7 @@ export default function SecurityPage() {
               borderRadius: 6,
               fontFamily: "var(--font-mono)",
               fontSize: "0.72rem",
-              color: "#9090a0",
+              color: "var(--color-text-muted)",
               lineHeight: 1.7,
             }}
           >
@@ -259,7 +259,7 @@ export default function SecurityPage() {
                   {perm}
                 </div>
                 <div
-                  style={{ padding: "0.85rem 1rem", fontSize: "0.78rem", color: "#8888a0" }}
+                  style={{ padding: "0.85rem 1rem", fontSize: "0.78rem", color: "var(--color-text-secondary)" }}
                 >
                   {reason}
                 </div>
@@ -285,7 +285,7 @@ export default function SecurityPage() {
             </p>
             <p
               style={{
-                color: "#8888a0",
+                color: "var(--color-text-secondary)",
                 fontSize: "0.82rem",
                 marginTop: "0.5rem",
                 lineHeight: 1.65,
@@ -319,7 +319,7 @@ export default function SecurityPage() {
           </h2>
           <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             {dataPolicy.map((item) => (
-              <li key={item} style={{ fontSize: "0.82rem", color: "#8888a0", lineHeight: 1.6 }}>
+              <li key={item} style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
                 · {item}
               </li>
             ))}

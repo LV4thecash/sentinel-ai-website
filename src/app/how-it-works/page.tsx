@@ -82,7 +82,7 @@ export default function HowItWorksPage() {
         </h1>
         <p
           style={{
-            color: "#8888a0",
+            color: "var(--color-text-secondary)",
             maxWidth: 480,
             margin: "0 auto 2.5rem",
             lineHeight: 1.65,
@@ -91,10 +91,10 @@ export default function HowItWorksPage() {
           Step by step. Then it runs itself.
         </p>
         <Link
-          href="/#waitlist"
+          href="/waitlist"
           style={{
             background: "var(--color-accent)",
-            color: "#000",
+            color: "#fff",
             fontWeight: 700,
             padding: "0.85rem 2rem",
             borderRadius: 4,
@@ -104,7 +104,7 @@ export default function HowItWorksPage() {
             textTransform: "uppercase",
           }}
         >
-          Join Waitlist
+          Apply for Access
         </Link>
       </section>
 
@@ -163,7 +163,7 @@ export default function HowItWorksPage() {
                 <p
                   style={{
                     fontSize: "0.85rem",
-                    color: "#8888a0",
+                    color: "var(--color-text-secondary)",
                     lineHeight: 1.65,
                     marginBottom: step.note ? "0.75rem" : 0,
                   }}
@@ -178,7 +178,7 @@ export default function HowItWorksPage() {
                       border: "1px solid rgba(190,27,42,0.25)",
                       borderRadius: 4,
                       fontSize: "0.75rem",
-                      color: "#c0c0a8",
+                      color: "var(--color-text-secondary)",
                       fontFamily: "var(--font-mono)",
                       lineHeight: 1.6,
                       marginBottom: "0.75rem",
@@ -244,7 +244,7 @@ export default function HowItWorksPage() {
                     border: "1px solid var(--color-border)",
                     borderRadius: 6,
                     fontSize: "0.75rem",
-                    color: "#b0b0c0",
+                    color: "var(--color-text-secondary)",
                   }}
                 >
                   {w}
@@ -289,7 +289,7 @@ export default function HowItWorksPage() {
                   style={{
                     marginTop: "0.75rem",
                     fontSize: "0.82rem",
-                    color: "#8888a0",
+                    color: "var(--color-text-secondary)",
                     lineHeight: 1.7,
                   }}
                 >

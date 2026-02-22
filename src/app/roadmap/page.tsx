@@ -76,7 +76,7 @@ export default function RoadmapPage() {
               }}
             >
               {phase1Features.map((f) => (
-                <li key={f} style={{ fontSize: "0.82rem", color: "#8888a0" }}>
+                <li key={f} style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)" }}>
                   <span style={{ color: "var(--color-pass)", marginRight: "0.5rem" }}>
                     ✓
                   </span>
@@ -118,7 +118,7 @@ export default function RoadmapPage() {
             >
               EXECUTION LAYER
             </h2>
-            <p style={{ fontSize: "0.82rem", color: "#8888a0", lineHeight: 1.7 }}>
+            <p style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)", lineHeight: 1.7 }}>
               Optional direct bot integration. When Phase 2 ships, Sentinel will
               execute trades directly from the intelligence layer at 1% per trade
               side — industry standard. Community feedback shapes the priority.

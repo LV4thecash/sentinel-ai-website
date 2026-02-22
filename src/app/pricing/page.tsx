@@ -1,5 +1,4 @@
-import { Counter } from "@/components/ui/Counter";
-import { WaitlistForm } from "@/components/WaitlistForm";
+import Link from "next/link";
 
 const tiers = [
   {
@@ -41,7 +40,7 @@ export default function PricingPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem 1.5rem", textAlign: "center" }}>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
         <h1
           style={{
             fontFamily: "var(--font-display)",
@@ -49,18 +48,29 @@ export default function PricingPage() {
             letterSpacing: "0.03em",
             lineHeight: 0.95,
             marginBottom: "1rem",
+            color: "var(--color-text)",
           }}
         >
           ONE SUBSCRIPTION.<br />THREE TIERS.
         </h1>
-        <p style={{ color: "#8888a0", marginTop: "1rem", lineHeight: 1.65 }}>
+        <p style={{ color: "var(--color-text-secondary)", marginTop: "1rem", lineHeight: 1.65 }}>
           SOL-denominated. Simple pricing. No hidden fees.
         </p>
-        <Counter />
+        <p
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.7rem",
+            letterSpacing: "0.08em",
+            color: "var(--color-text-muted)",
+            marginTop: "1.5rem",
+          }}
+        >
+          Access is invite-only during private beta.
+        </p>
       </section>
 
       {/* Tiers */}
-      <section style={{ padding: "2rem 1.5rem 5rem" }}>
+      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 5rem" }}>
         <div
           style={{
             maxWidth: 960,
@@ -92,7 +102,7 @@ export default function PricingPage() {
                     left: "50%",
                     transform: "translateX(-50%)",
                     background: "var(--color-accent)",
-                    color: "#000",
+                    color: "#fff",
                     fontSize: "0.62rem",
                     fontWeight: 700,
                     letterSpacing: "0.1em",
@@ -111,6 +121,7 @@ export default function PricingPage() {
                   fontFamily: "var(--font-display)",
                   fontSize: "1.4rem",
                   letterSpacing: "0.06em",
+                  color: "var(--color-text)",
                 }}
               >
                 {t.label}
@@ -121,7 +132,7 @@ export default function PricingPage() {
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "3rem",
-                    color: t.popular ? "var(--color-accent)" : "#fff",
+                    color: t.popular ? "var(--color-accent)" : "var(--color-text)",
                     lineHeight: 1,
                   }}
                 >
@@ -144,7 +155,27 @@ export default function PricingPage() {
                 </p>
               )}
 
-              <WaitlistForm size="sm" />
+              <Link
+                href="/waitlist"
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  background: t.popular ? "var(--color-accent)" : "transparent",
+                  color: t.popular ? "#fff" : "var(--color-text)",
+                  border: `1px solid ${t.popular ? "var(--color-accent)" : "var(--color-border-hi)"}`,
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  padding: "0.8rem",
+                  borderRadius: 4,
+                  textDecoration: "none",
+                  marginTop: "auto",
+                }}
+              >
+                Apply for Access
+              </Link>
             </div>
           ))}
         </div>
@@ -153,7 +184,7 @@ export default function PricingPage() {
       {/* Setup preview */}
       <section
         style={{
-          padding: "2rem 1.5rem",
+          padding: "2rem clamp(1.5rem, 5vw, 4rem)",
           background: "var(--color-surface)",
           borderTop: "1px solid var(--color-border)",
         }}
@@ -168,7 +199,7 @@ export default function PricingPage() {
             gap: "0.75rem",
             flexWrap: "wrap",
             fontSize: "0.78rem",
-            color: "#8888a0",
+            color: "var(--color-text-secondary)",
             fontFamily: "var(--font-mono)",
           }}
         >
@@ -182,7 +213,7 @@ export default function PricingPage() {
       </section>
 
       {/* Objections */}
-      <section style={{ padding: "3rem 1.5rem" }}>
+      <section style={{ padding: "3rem clamp(1.5rem, 5vw, 4rem)" }}>
         <div
           style={{
             maxWidth: 700,
@@ -201,7 +232,7 @@ export default function PricingPage() {
                 border: "1px solid var(--color-border)",
                 borderRadius: 6,
                 fontSize: "0.8rem",
-                color: "#8888a0",
+                color: "var(--color-text-secondary)",
               }}
             >
               <span style={{ color: "var(--color-pass)", marginRight: "0.5rem" }}>✓</span>
@@ -214,15 +245,15 @@ export default function PricingPage() {
       {/* Referral */}
       <section
         style={{
-          padding: "3rem 1.5rem",
+          padding: "3rem clamp(1.5rem, 5vw, 4rem)",
           textAlign: "center",
           borderTop: "1px solid var(--color-border)",
         }}
       >
-        <p style={{ fontWeight: 600, fontSize: "0.95rem" }}>
+        <p style={{ fontWeight: 600, fontSize: "0.95rem", color: "var(--color-text)" }}>
           Refer a trader, earn subscription credits.
         </p>
-        <p style={{ color: "#8888a0", fontSize: "0.82rem", marginTop: "0.5rem" }}>
+        <p style={{ color: "var(--color-text-secondary)", fontSize: "0.82rem", marginTop: "0.5rem" }}>
           Join the waitlist to unlock your referral link at launch.
         </p>
       </section>
