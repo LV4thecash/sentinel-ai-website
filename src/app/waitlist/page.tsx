@@ -44,8 +44,8 @@ export default function WaitlistPage() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "clamp(3rem, 8vh, 5rem) clamp(1.5rem, 5vw, 4rem)",
+        justifyContent: "flex-start",
+        padding: "clamp(4rem, 10vh, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vh, 5rem)",
         background: "var(--color-bg)",
         position: "relative",
       }}
@@ -166,7 +166,7 @@ export default function WaitlistPage() {
           }}
         >
           Sentinel is in private evaluation with 20 selected traders. We&apos;re
-          expanding access carefully — quality over speed. Apply below and
+          expanding access carefully, quality over speed. Apply below and
           we&apos;ll reach out if you&apos;re selected.
         </p>
 
@@ -235,7 +235,7 @@ export default function WaitlistPage() {
                   letterSpacing: "0.04em",
                 }}
               >
-                Optional — helps us reach you directly
+                Helps us reach you directly
               </p>
             </div>
 
