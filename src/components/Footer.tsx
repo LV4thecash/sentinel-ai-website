@@ -73,7 +73,7 @@ export function Footer() {
                 color: "var(--color-text-muted)",
                 fontSize: "0.75rem",
                 textDecoration: "none",
-                transition: "color 0.15s ease",
+                transition: "color var(--motion-fast) ease",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
@@ -100,7 +100,7 @@ export function Footer() {
               color: "var(--color-text-muted)",
               fontSize: "0.75rem",
               textDecoration: "none",
-              transition: "color 0.15s ease",
+              transition: "color var(--motion-fast) ease",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
@@ -115,7 +115,7 @@ export function Footer() {
               color: "var(--color-text-muted)",
               fontSize: "0.75rem",
               textDecoration: "none",
-              transition: "color 0.15s ease",
+              transition: "color var(--motion-fast) ease",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}

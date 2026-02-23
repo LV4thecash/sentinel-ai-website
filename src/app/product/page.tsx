@@ -153,7 +153,7 @@ export default function ProductPage() {
                       padding: "1rem 1.1rem",
                       transform: hoveredPipeline === p.label ? "translateY(-2px)" : "translateY(0)",
                       boxShadow: hoveredPipeline === p.label ? "0 6px 16px rgba(0,0,0,0.07)" : "none",
-                      transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
+                      transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
                     }}
                   >
                     <p

@@ -60,7 +60,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
               borderRadius: "var(--radius-sm)",
               textDecoration: "none",
               marginBottom: "1.5rem",
-              transition: "opacity 0.15s ease, transform 0.15s ease",
+              transition: "opacity var(--motion-fast) ease, transform var(--motion-fast) var(--motion-spring)",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9";
@@ -105,7 +105,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
                 letterSpacing: "0.08em",
                 color: "rgba(255,255,255,0.35)",
                 textDecoration: "none",
-                transition: "color 0.15s ease",
+                transition: "color var(--motion-fast) ease",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
@@ -122,7 +122,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
                 letterSpacing: "0.08em",
                 color: "rgba(255,255,255,0.35)",
                 textDecoration: "none",
-                transition: "color 0.15s ease",
+                transition: "color var(--motion-fast) ease",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}

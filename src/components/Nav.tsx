@@ -39,7 +39,7 @@ export function Nav() {
         WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
         borderBottom: navBorder,
         boxShadow: navShadow,
-        transition: "background 0.22s var(--motion-ease), border-color 0.22s var(--motion-ease), box-shadow 0.22s var(--motion-ease)",
+        transition: "background var(--motion-fast) var(--motion-ease), border-color var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease)",
       }}
     >
       <div

@@ -93,7 +93,7 @@ export function WaitlistForm({ size = "lg" }: WaitlistFormProps) {
           cursor: state === "loading" ? "wait" : "pointer",
           width: "100%",
           opacity: state === "loading" ? 0.7 : 1,
-          transition: "opacity 0.15s",
+          transition: "opacity var(--motion-fast) ease",
         }}
       >
         {state === "loading" ? "Joining…" : "Join Waitlist"}

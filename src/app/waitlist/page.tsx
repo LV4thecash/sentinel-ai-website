@@ -43,7 +43,7 @@ export default function WaitlistPage() {
     fontFamily: "var(--font-body)",
     color: "var(--color-text)",
     outline: "none",
-    transition: "border-color 0.15s ease",
+    transition: "border-color var(--motion-fast) ease",
   };
 
   const selectStyle: React.CSSProperties = {
@@ -105,7 +105,7 @@ export default function WaitlistPage() {
             color: "var(--color-text-muted)",
             textDecoration: "none",
             marginBottom: "3rem",
-            transition: "color 0.15s ease",
+            transition: "color var(--motion-fast) ease",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
@@ -308,7 +308,7 @@ export default function WaitlistPage() {
                   borderRadius: "var(--radius-sm)",
                   cursor: state === "loading" ? "not-allowed" : "pointer",
                   width: "100%",
-                  transition: "background 0.15s ease, transform 0.15s ease",
+                  transition: "background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-spring)",
                   marginTop: "0.25rem",
                 }}
               >
