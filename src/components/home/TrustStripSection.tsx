@@ -42,7 +42,7 @@ function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
           padding: "1.35rem 1.5rem",
           background: "var(--color-surface)",
           border: `1px solid ${hovered ? "var(--color-accent)" : "var(--color-border)"}`,
-          borderRadius: "var(--radius-md)",
+          borderRadius: 8,
           boxShadow: hovered
             ? "var(--shadow-hover)"
             : "var(--shadow-sm), var(--shadow-inset)",
@@ -67,8 +67,8 @@ function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
         </span>
         <p
           style={{
-            fontFamily: "var(--font-body)",
-            fontWeight: 600,
+            fontFamily: "var(--font-display)",
+            fontWeight: 700,
             fontSize: "0.88rem",
             color: "var(--color-text)",
             margin: 0,
@@ -95,7 +95,7 @@ export function TrustStripSection() {
   return (
     <section
       style={{
-        padding: "var(--section-gap) var(--gutter)",
+        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         background: "var(--color-bg-alt)",
       }}
     >
@@ -106,7 +106,7 @@ export function TrustStripSection() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
+                fontWeight: 800,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
@@ -134,7 +134,7 @@ export function TrustStripSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(220px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
             gap: "1rem",
           }}
         >

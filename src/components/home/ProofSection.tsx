@@ -73,7 +73,7 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
               ? "var(--color-accent)"
               : "var(--color-border)"
           }`,
-          borderRadius: "var(--radius-md)",
+          borderRadius: 8,
           padding: "1.35rem",
           display: "flex",
           flexDirection: "column",
@@ -131,7 +131,7 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
             border: `1px solid ${
               card.blocked ? "rgba(190,27,42,0.18)" : "rgba(22,163,74,0.2)"
             }`,
-            borderRadius: "var(--radius-sm)",
+            borderRadius: 4,
             color: card.blocked ? "var(--color-accent)" : "var(--color-pass)",
             wordBreak: "break-all",
           }}
@@ -160,7 +160,7 @@ export function ProofSection() {
   return (
     <section
       style={{
-        padding: "var(--section-gap) var(--gutter)",
+        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         background: "var(--color-bg)",
       }}
     >
@@ -171,7 +171,7 @@ export function ProofSection() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
+                fontWeight: 800,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
@@ -186,7 +186,7 @@ export function ProofSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "1rem",
           }}
         >

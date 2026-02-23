@@ -6,8 +6,8 @@ export function ProblemSection() {
   return (
     <section
       style={{
-        padding: "var(--section-gap) var(--gutter)",
-        background: "var(--color-bg-deep)",
+        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
+        background: "var(--color-bg-alt)",
       }}
     >
       <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>
@@ -16,8 +16,7 @@ export function ProblemSection() {
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 400,
-              fontStyle: "italic",
+              fontWeight: 800,
               fontSize: "clamp(2rem, 5vw, 3.5rem)",
               letterSpacing: "-0.02em",
               lineHeight: 1.02,

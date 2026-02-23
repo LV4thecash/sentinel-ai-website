@@ -45,7 +45,7 @@ export function WaitlistForm({ size = "lg" }: WaitlistFormProps) {
     border: "1px solid var(--color-border-hi)",
     color: "#e8e8ea",
     padding: size === "lg" ? "0.85rem 1rem" : "0.6rem 0.85rem",
-    borderRadius: "var(--radius-sm)",
+    borderRadius: 4,
     fontSize: size === "lg" ? "1rem" : "0.875rem",
     outline: "none",
     width: "100%",
@@ -89,11 +89,11 @@ export function WaitlistForm({ size = "lg" }: WaitlistFormProps) {
           textTransform: "uppercase",
           padding: size === "lg" ? "0.9rem 2rem" : "0.65rem 1.2rem",
           border: "none",
-          borderRadius: "var(--radius-sm)",
+          borderRadius: 4,
           cursor: state === "loading" ? "wait" : "pointer",
           width: "100%",
           opacity: state === "loading" ? 0.7 : 1,
-          transition: "opacity var(--motion-fast) ease",
+          transition: "opacity 0.15s",
         }}
       >
         {state === "loading" ? "Joining…" : "Join Waitlist"}

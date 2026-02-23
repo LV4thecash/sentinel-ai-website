@@ -1,18 +1,17 @@
-import { Instrument_Serif, Figtree, IBM_Plex_Mono } from "next/font/google";
+import { Montserrat, Poppins, IBM_Plex_Mono } from "next/font/google";
 
-// Display/heading font — Instrument Serif: high-contrast editorial serif
-export const displayFont = Instrument_Serif({
+// Display/heading font — brand-specified Montserrat Bold/SemiBold
+export const displayFont = Montserrat({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400"],
-  style: ["normal", "italic"],
+  weight: ["600", "700", "800", "900"],
 });
 
-// Body + subheading font — Figtree: warm, legible grotesque
-export const bodyFont = Figtree({
+// Body + subheading font — brand-specified Poppins
+export const bodyFont = Poppins({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
 // Monospace — for CA strings, code, technical labels

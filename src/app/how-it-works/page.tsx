@@ -73,21 +73,19 @@ export default function HowItWorksPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 400,
-              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 7vw, 5rem)",
-              letterSpacing: "-0.01em",
+              letterSpacing: "0.03em",
               lineHeight: 0.95,
               marginBottom: "1.25rem",
               color: "var(--color-text)",
             }}
           >
-            Setup in<br />~10 minutes
+            SETUP IN<br />~10 MINUTES
           </h1>
           <p
             style={{
@@ -106,7 +104,7 @@ export default function HowItWorksPage() {
               color: "#fff",
               fontWeight: 700,
               padding: "0.85rem 2rem",
-              borderRadius: "var(--radius-sm)",
+              borderRadius: 4,
               textDecoration: "none",
               fontSize: "0.85rem",
               letterSpacing: "0.08em",
@@ -131,10 +129,10 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Steps */}
-      <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
+      <section style={{ padding: "4rem clamp(1.5rem, 5vw, 4rem)" }}>
         <div
           style={{
-            maxWidth: "var(--content-width-narrow)",
+            maxWidth: 720,
             margin: "0 auto",
             display: "flex",
             flexDirection: "column",
@@ -151,7 +149,7 @@ export default function HowItWorksPage() {
                   gridTemplateColumns: "auto 1fr",
                   gap: "1.5rem",
                   paddingBottom: "2.5rem",
-                  borderRadius: "var(--radius-md)",
+                  borderRadius: 8,
                   padding: "1rem",
                   background: hoveredStep === step.n ? "rgba(0,0,0,0.015)" : "transparent",
                   transition: `background var(--motion-fast) ease`,
@@ -206,7 +204,7 @@ export default function HowItWorksPage() {
                         padding: "0.6rem 0.85rem",
                         background: "var(--color-accent-lo)",
                         border: "1px solid rgba(190,27,42,0.25)",
-                        borderRadius: "var(--radius-sm)",
+                        borderRadius: 4,
                         fontSize: "0.75rem",
                         color: "var(--color-text-secondary)",
                         fontFamily: "var(--font-mono)",
@@ -251,19 +249,19 @@ export default function HowItWorksPage() {
       <FadeIn>
         <section
           style={{
-            padding: "var(--section-gap-inner) var(--gutter)",
+            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: "var(--content-width-mid)", margin: "0 auto" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <SectionLabel>Documentation</SectionLabel>
             <div
               style={{
                 marginTop: "1.5rem",
                 padding: "1.5rem 2rem",
                 border: "1px solid var(--color-border)",
-                borderRadius: "var(--radius-md)",
+                borderRadius: 8,
                 display: "flex",
                 alignItems: "center",
                 gap: "1.25rem",
@@ -283,8 +281,8 @@ export default function HowItWorksPage() {
               <div>
                 <p
                   style={{
-                    fontFamily: "var(--font-body)",
-                    fontWeight: 600,
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 700,
                     fontSize: "0.95rem",
                     color: "var(--color-text)",
                     marginBottom: "0.3rem",
@@ -310,8 +308,8 @@ export default function HowItWorksPage() {
 
       {/* Mini FAQ */}
       <FadeIn>
-        <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
-          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
+        <section style={{ padding: "4rem clamp(1.5rem, 5vw, 4rem)" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
             <SectionLabel>Common Questions</SectionLabel>
             <div style={{ marginTop: "0.5rem" }}>
               {miniQA.map(([q, a]) => (

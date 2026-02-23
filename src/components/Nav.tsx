@@ -39,14 +39,14 @@ export function Nav() {
         WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
         borderBottom: navBorder,
         boxShadow: navShadow,
-        transition: "background var(--motion-fast) var(--motion-ease), border-color var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease)",
+        transition: "background 0.22s var(--motion-ease), border-color 0.22s var(--motion-ease), box-shadow 0.22s var(--motion-ease)",
       }}
     >
       <div
         style={{
-          maxWidth: "var(--content-width)",
+          maxWidth: 1200,
           margin: "0 auto",
-          padding: "0 var(--gutter)",
+          padding: "0 clamp(1.5rem, 5vw, 2.5rem)",
           height: "var(--nav-height)",
           display: "flex",
           alignItems: "center",
@@ -58,8 +58,8 @@ export function Nav() {
           <Image src="/brand/logo.png" alt="Sentinel AI" width={34} height={34} />
           <span
             style={{
-              fontFamily: "var(--font-body)",
-              fontWeight: 700,
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
               fontSize: "1rem",
               letterSpacing: "0.08em",
               color: "var(--color-text)",
@@ -99,11 +99,11 @@ export function Nav() {
             style={{
               background: "var(--color-accent)",
               color: "#fff",
-              fontFamily: "var(--font-body)",
-              fontWeight: 600,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "0.72rem",
               padding: "0.48rem 1.1rem",
-              borderRadius: "var(--radius-sm)",
+              borderRadius: 4,
               textDecoration: "none",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
@@ -135,7 +135,7 @@ export function Nav() {
             cursor: "pointer",
             fontSize: "1.3rem",
             display: "none",
-            padding: "0.75rem 0.5rem",
+            padding: "0.25rem",
           }}
           aria-label={open ? "Close menu" : "Open menu"}
         >
@@ -148,7 +148,7 @@ export function Nav() {
         <div
           style={{
             borderTop: "1px solid var(--color-border)",
-            padding: "1.25rem var(--gutter)",
+            padding: "1.25rem clamp(1.5rem, 5vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
@@ -178,10 +178,10 @@ export function Nav() {
             style={{
               background: "var(--color-accent)",
               color: "#fff",
-              fontFamily: "var(--font-body)",
-              fontWeight: 600,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               padding: "0.75rem 1rem",
-              borderRadius: "var(--radius-sm)",
+              borderRadius: 4,
               textAlign: "center",
               textDecoration: "none",
               fontSize: "0.8rem",

@@ -49,7 +49,7 @@ export default function ProductPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
         <FadeIn>
           <nav
             aria-label="Breadcrumb"
@@ -68,16 +68,14 @@ export default function ProductPage() {
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 400,
-              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 7vw, 5.5rem)",
-              letterSpacing: "-0.01em",
+              letterSpacing: "0.03em",
               lineHeight: 0.95,
               marginBottom: "1.25rem",
               color: "var(--color-text)",
             }}
           >
-            Intelligence,<br />not execution.
+            INTELLIGENCE,<br />NOT EXECUTION.
           </h1>
           <p
             style={{
@@ -98,7 +96,7 @@ export default function ProductPage() {
               color: "#fff",
               fontWeight: 700,
               padding: "0.85rem 2rem",
-              borderRadius: "var(--radius-sm)",
+              borderRadius: 4,
               textDecoration: "none",
               fontSize: "0.85rem",
               letterSpacing: "0.08em",
@@ -126,17 +124,17 @@ export default function ProductPage() {
       <FadeIn>
         <section
           style={{
-            padding: "var(--section-gap-inner) var(--gutter)",
+            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}>
+          <div style={{ maxWidth: 1060, margin: "0 auto" }}>
             <SectionLabel>System Architecture</SectionLabel>
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
                 gap: "1rem",
                 marginTop: "1.5rem",
               }}
@@ -153,7 +151,7 @@ export default function ProductPage() {
                       padding: "1rem 1.1rem",
                       transform: hoveredPipeline === p.label ? "translateY(-2px)" : "translateY(0)",
                       boxShadow: hoveredPipeline === p.label ? "0 6px 16px rgba(0,0,0,0.07)" : "none",
-                      transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
+                      transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
                     }}
                   >
                     <p
@@ -207,7 +205,7 @@ export default function ProductPage() {
       <FadeIn>
         <section
           style={{
-            padding: "var(--section-gap-inner) var(--gutter)",
+            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
@@ -217,7 +215,7 @@ export default function ProductPage() {
               maxWidth: 960,
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(180px, 100%), 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
               gap: "1rem",
               textAlign: "center",
             }}
@@ -228,7 +226,6 @@ export default function ProductPage() {
                   <p
                     style={{
                       fontFamily: "var(--font-display)",
-                      fontWeight: 400,
                       fontSize: "2.8rem",
                       color: "var(--color-accent)",
                       lineHeight: 1,
@@ -248,8 +245,8 @@ export default function ProductPage() {
 
       {/* Config options */}
       <FadeIn>
-        <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
-          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
+        <section style={{ padding: "4rem clamp(1.5rem, 5vw, 4rem)" }}>
+          <div style={{ maxWidth: 720, margin: "0 auto" }}>
             <SectionLabel>Configuration</SectionLabel>
             <div
               style={{
@@ -264,7 +261,7 @@ export default function ProductPage() {
                   key={label}
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "minmax(min(160px, 100%), 200px) 1fr",
+                    gridTemplateColumns: "200px 1fr",
                     gap: "1rem",
                     padding: "0.85rem 1rem",
                     background: "var(--color-surface)",

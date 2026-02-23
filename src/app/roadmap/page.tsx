@@ -13,31 +13,29 @@ const phase1Features = [
 export default function RoadmapPage() {
   return (
     <main>
-      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 400,
-              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              letterSpacing: "-0.01em",
+              letterSpacing: "0.03em",
               lineHeight: 0.95,
               color: "var(--color-text)",
             }}
           >
-            Roadmap
+            ROADMAP
           </h1>
         </FadeIn>
       </section>
 
-      <section style={{ padding: "2rem var(--gutter) var(--section-gap-sm)" }}>
+      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 6rem" }}>
         <div
           style={{
-            maxWidth: "var(--content-width-mid)",
+            maxWidth: 860,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
             gap: "1.5rem",
           }}
         >
@@ -47,9 +45,8 @@ export default function RoadmapPage() {
               style={{
                 background: "var(--color-surface)",
                 border: "1px solid rgba(34,197,94,0.3)",
-                borderRadius: "var(--radius-md)",
+                borderRadius: 8,
                 padding: "2rem",
-                boxShadow: "var(--shadow-sm), var(--shadow-inset)",
               }}
             >
               <p
@@ -67,14 +64,13 @@ export default function RoadmapPage() {
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontWeight: 400,
                   fontSize: "1.8rem",
-                  letterSpacing: "-0.01em",
+                  letterSpacing: "0.05em",
                   marginBottom: "1.25rem",
                   color: "var(--color-text)",
                 }}
               >
-                Intelligence Layer
+                INTELLIGENCE LAYER
               </h2>
               <ul
                 style={{
@@ -103,10 +99,9 @@ export default function RoadmapPage() {
               style={{
                 background: "var(--color-surface)",
                 border: "1px dashed var(--color-border)",
-                borderRadius: "var(--radius-md)",
+                borderRadius: 8,
                 padding: "2rem",
                 opacity: 0.6,
-                boxShadow: "var(--shadow-sm), var(--shadow-inset)",
               }}
             >
               <p
@@ -124,14 +119,13 @@ export default function RoadmapPage() {
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontWeight: 400,
                   fontSize: "1.8rem",
-                  letterSpacing: "-0.01em",
+                  letterSpacing: "0.05em",
                   marginBottom: "1.25rem",
                   color: "var(--color-text)",
                 }}
               >
-                Execution Layer
+                EXECUTION LAYER
               </h2>
               <p style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)", lineHeight: 1.7 }}>
                 Optional direct bot integration. When Phase 2 ships, Sentinel will

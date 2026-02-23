@@ -17,7 +17,7 @@ export function SocialProofSection() {
   const cardStyle = (id: string, dimmed = false): React.CSSProperties => ({
     background: "var(--color-surface)",
     border: `1px solid ${hoveredCard === id ? "var(--color-border-hi)" : "var(--color-border)"}`,
-    borderRadius: "var(--radius-md)",
+    borderRadius: 8,
     padding: "1.75rem",
     boxShadow: hoveredCard === id
       ? "var(--shadow-hover)"
@@ -31,8 +31,8 @@ export function SocialProofSection() {
   return (
     <section
       style={{
-        padding: "var(--section-gap) var(--gutter)",
-        background: "var(--color-bg-deep)",
+        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
+        background: "var(--color-bg-alt)",
       }}
     >
       <div style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}>
@@ -42,7 +42,7 @@ export function SocialProofSection() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
+                fontWeight: 800,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
@@ -70,7 +70,7 @@ export function SocialProofSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             gap: "1rem",
           }}
         >
@@ -113,7 +113,7 @@ export function SocialProofSection() {
               </div>
               <p
                 style={{
-                  fontFamily: "var(--font-body)",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 700,
                   fontSize: "1rem",
                   color: "var(--color-text)",
@@ -181,8 +181,8 @@ export function SocialProofSection() {
               </div>
               <p
                 style={{
-                  fontFamily: "var(--font-body)",
-                  fontWeight: 600,
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
                   fontSize: "1rem",
                   color: "var(--color-text)",
                   marginBottom: "1rem",
@@ -273,8 +273,8 @@ export function SocialProofSection() {
               </div>
               <p
                 style={{
-                  fontFamily: "var(--font-body)",
-                  fontWeight: 600,
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
                   fontSize: "1rem",
                   color: "var(--color-text)",
                   marginBottom: "1rem",

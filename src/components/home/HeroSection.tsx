@@ -14,7 +14,7 @@ export function HeroSection() {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        padding: "clamp(4rem, 10vh, 6rem) var(--gutter)",
+        padding: "clamp(4rem, 10vh, 6rem) clamp(1.5rem, 5vw, 4rem)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -70,7 +70,7 @@ export function HeroSection() {
             gap: 8,
             marginBottom: "2.25rem",
             border: "1px solid var(--color-border)",
-            borderRadius: "var(--radius-pill)",
+            borderRadius: 100,
             padding: "5px 14px 5px 10px",
             background: "var(--color-surface)",
             boxShadow: "var(--shadow-xs)",
@@ -115,8 +115,7 @@ export function HeroSection() {
         <h1
           style={{
             fontFamily: "var(--font-display)",
-            fontWeight: 400,
-            fontStyle: "italic",
+            fontWeight: 900,
             fontSize: "clamp(3.2rem, 10vw, 7.5rem)",
             lineHeight: 0.92,
             letterSpacing: "-0.02em",
@@ -130,7 +129,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1, ease }}
             style={{ display: "block" }}
           >
-            AI trading
+            AI TRADING
           </motion.span>
 
           <motion.span
@@ -139,7 +138,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2, ease }}
             style={{ display: "block" }}
           >
-            is{" "}
+            IS{" "}
             <span
               style={{
                 position: "relative",
@@ -162,7 +161,7 @@ export function HeroSection() {
                   zIndex: -1,
                 }}
               />
-              faster
+              FASTER
             </span>
           </motion.span>
 
@@ -172,7 +171,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.3, ease }}
             style={{ display: "block" }}
           >
-            than you are.
+            THAN YOU ARE.
           </motion.span>
         </h1>
 
@@ -207,13 +206,13 @@ export function HeroSection() {
               display: "inline-block",
               background: "var(--color-accent)",
               color: "#fff",
-              fontFamily: "var(--font-body)",
-              fontWeight: 600,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "0.78rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               padding: "0.9rem 2.25rem",
-              borderRadius: "var(--radius-sm)",
+              borderRadius: 4,
               textDecoration: "none",
               transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,
             }}

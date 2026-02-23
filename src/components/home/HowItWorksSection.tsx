@@ -33,7 +33,7 @@ export function HowItWorksSection() {
   return (
     <section
       style={{
-        padding: "var(--section-gap) var(--gutter)",
+        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         background: "var(--color-bg)",
       }}
     >
@@ -44,7 +44,7 @@ export function HowItWorksSection() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
+                fontWeight: 800,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
@@ -59,7 +59,7 @@ export function HowItWorksSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "0.5rem 2rem",
           }}
         >
@@ -72,7 +72,7 @@ export function HowItWorksSection() {
                   position: "relative",
                   paddingTop: "0.5rem",
                   padding: "1rem 0.75rem",
-                  borderRadius: "var(--radius-md)",
+                  borderRadius: 8,
                   background: hoveredStep === step.n ? "rgba(0,0,0,0.015)" : "transparent",
                   transform: hoveredStep === step.n ? "translateY(-2px)" : "translateY(0)",
                   transition: `transform var(--motion-fast) var(--motion-ease-out), background var(--motion-fast) ease`,
@@ -82,7 +82,7 @@ export function HowItWorksSection() {
                 <p
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontWeight: 400,
+                    fontWeight: 900,
                     fontSize: "5rem",
                     color: hoveredStep === step.n ? "var(--color-border-hi)" : "var(--color-border)",
                     lineHeight: 1,
@@ -95,8 +95,8 @@ export function HowItWorksSection() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "var(--font-body)",
-                    fontWeight: 600,
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 700,
                     fontSize: "1rem",
                     color: "var(--color-text)",
                     marginBottom: "0.4rem",

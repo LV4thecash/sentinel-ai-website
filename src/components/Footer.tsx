@@ -16,15 +16,14 @@ export function Footer() {
     <footer
       style={{
         borderTop: "1px solid var(--color-border)",
-        padding: "2.5rem var(--gutter)",
+        padding: "2.5rem clamp(1.5rem, 5vw, 4rem)",
         marginTop: "auto",
         background: "var(--color-bg)",
       }}
     >
       <div
-        className="footer-grid"
         style={{
-          maxWidth: "var(--content-width)",
+          maxWidth: 1200,
           margin: "0 auto",
           display: "grid",
           gridTemplateColumns: "1fr auto 1fr",
@@ -36,8 +35,8 @@ export function Footer() {
         <div>
           <span
             style={{
-              fontFamily: "var(--font-body)",
-              fontWeight: 700,
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
               fontSize: "0.9rem",
               letterSpacing: "0.08em",
               color: "var(--color-text)",
@@ -74,7 +73,7 @@ export function Footer() {
                 color: "var(--color-text-muted)",
                 fontSize: "0.75rem",
                 textDecoration: "none",
-                transition: "color var(--motion-fast) ease",
+                transition: "color 0.15s ease",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
@@ -86,7 +85,6 @@ export function Footer() {
 
         {/* Right: social */}
         <div
-          className="footer-social"
           style={{
             display: "flex",
             gap: "1.25rem",
@@ -102,7 +100,7 @@ export function Footer() {
               color: "var(--color-text-muted)",
               fontSize: "0.75rem",
               textDecoration: "none",
-              transition: "color var(--motion-fast) ease",
+              transition: "color 0.15s ease",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
@@ -117,7 +115,7 @@ export function Footer() {
               color: "var(--color-text-muted)",
               fontSize: "0.75rem",
               textDecoration: "none",
-              transition: "color var(--motion-fast) ease",
+              transition: "color 0.15s ease",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}

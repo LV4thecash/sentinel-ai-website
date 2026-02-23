@@ -21,21 +21,19 @@ export default function PartnersPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 400,
-              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              letterSpacing: "-0.01em",
+              letterSpacing: "0.03em",
               lineHeight: 0.95,
               marginBottom: "1.25rem",
               color: "var(--color-text)",
             }}
           >
-            Partner with<br />Sentinel AI
+            PARTNER WITH<br />SENTINEL AI
           </h1>
           <p
             style={{
@@ -52,12 +50,12 @@ export default function PartnersPage() {
       </section>
 
       {/* Value props */}
-      <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
+      <section style={{ padding: "3rem clamp(1.5rem, 5vw, 4rem)" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(220px, 100%), 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
               gap: "1rem",
               marginBottom: "4rem",
             }}
@@ -68,7 +66,7 @@ export default function PartnersPage() {
                   style={{
                     background: "var(--color-surface)",
                     border: "1px solid var(--color-border)",
-                    borderRadius: "var(--radius-md)",
+                    borderRadius: 8,
                     padding: "1.5rem",
                     height: "100%",
                   }}
@@ -120,7 +118,7 @@ export default function PartnersPage() {
                       border: "1px solid var(--color-border-hi)",
                       color: "var(--color-text)",
                       padding: "0.85rem 1rem",
-                      borderRadius: "var(--radius-sm)",
+                      borderRadius: 4,
                       fontSize: "0.9rem",
                       outline: "none",
                       width: "100%",
@@ -138,7 +136,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text-muted)",
                     padding: "0.85rem 1rem",
-                    borderRadius: "var(--radius-sm)",
+                    borderRadius: 4,
                     fontSize: "0.9rem",
                     width: "100%",
                   }}
@@ -161,7 +159,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text-muted)",
                     padding: "0.85rem 1rem",
-                    borderRadius: "var(--radius-sm)",
+                    borderRadius: 4,
                     fontSize: "0.9rem",
                     width: "100%",
                   }}
@@ -184,7 +182,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text)",
                     padding: "0.85rem 1rem",
-                    borderRadius: "var(--radius-sm)",
+                    borderRadius: 4,
                     fontSize: "0.9rem",
                     resize: "vertical",
                     outline: "none",
@@ -204,7 +202,7 @@ export default function PartnersPage() {
                     textTransform: "uppercase",
                     padding: "0.9rem",
                     border: "none",
-                    borderRadius: "var(--radius-sm)",
+                    borderRadius: 4,
                     cursor: "pointer",
                     width: "100%",
                     transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,

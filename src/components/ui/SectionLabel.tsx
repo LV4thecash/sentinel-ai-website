@@ -3,15 +3,14 @@ export function SectionLabel({ children }: { children: React.ReactNode }) {
     <span
       style={{
         fontFamily: "var(--font-mono)",
-        fontSize: "0.68rem",
-        letterSpacing: "0.2em",
+        fontSize: "0.72rem",
+        letterSpacing: "0.18em",
         textTransform: "uppercase",
         color: "var(--color-accent)",
-        opacity: 0.8,
         display: "inline-flex",
         alignItems: "center",
-        gap: "0.65rem",
-        marginBottom: "0.85rem",
+        gap: "0.6rem",
+        marginBottom: "1rem",
       }}
     >
       <span

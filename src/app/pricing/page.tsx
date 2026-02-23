@@ -44,20 +44,18 @@ export default function PricingPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
         <h1
           style={{
             fontFamily: "var(--font-display)",
-            fontWeight: 400,
-            fontStyle: "italic",
             fontSize: "clamp(2.5rem, 6vw, 5rem)",
-            letterSpacing: "-0.01em",
+            letterSpacing: "0.03em",
             lineHeight: 0.95,
             marginBottom: "1rem",
             color: "var(--color-text)",
           }}
         >
-          One subscription.<br />Three tiers.
+          ONE SUBSCRIPTION.<br />THREE TIERS.
         </h1>
         <p style={{ color: "var(--color-text-secondary)", marginTop: "1rem", lineHeight: 1.65 }}>
           SOL-denominated. Simple pricing. No hidden fees.
@@ -76,13 +74,13 @@ export default function PricingPage() {
       </section>
 
       {/* Tiers */}
-      <section style={{ padding: "2rem var(--gutter) var(--section-gap-sm)" }}>
+      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 5rem" }}>
         <div
           style={{
             maxWidth: 960,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
             gap: "1.25rem",
           }}
         >
@@ -96,7 +94,7 @@ export default function PricingPage() {
                 style={{
                   background: "var(--color-surface)",
                   border: `1px solid ${t.popular ? "var(--color-accent)" : isHovered ? "var(--color-border-hi)" : "var(--color-border)"}`,
-                  borderRadius: "var(--radius-md)",
+                  borderRadius: 8,
                   padding: "2rem 1.5rem",
                   position: "relative",
                   display: "flex",
@@ -127,7 +125,7 @@ export default function PricingPage() {
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
                       padding: "0.25rem 0.85rem",
-                      borderRadius: "var(--radius-pill)",
+                      borderRadius: 20,
                       whiteSpace: "nowrap",
                     }}
                   >
@@ -182,13 +180,13 @@ export default function PricingPage() {
                     background: t.popular ? "var(--color-accent)" : "transparent",
                     color: t.popular ? "#fff" : "var(--color-text)",
                     border: `1px solid ${t.popular ? "var(--color-accent)" : "var(--color-border-hi)"}`,
-                    fontFamily: "var(--font-body)",
-                    fontWeight: 600,
-                    fontSize: "0.78rem",
-                    letterSpacing: "0.1em",
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 700,
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    padding: "0.85rem",
-                    borderRadius: "var(--radius-sm)",
+                    padding: "0.8rem",
+                    borderRadius: 4,
                     textDecoration: "none",
                     marginTop: "auto",
                     transition: `background var(--motion-fast) ease, box-shadow var(--motion-fast) ease`,
@@ -215,14 +213,14 @@ export default function PricingPage() {
       {/* Setup preview */}
       <section
         style={{
-          padding: "2rem var(--gutter)",
+          padding: "2rem clamp(1.5rem, 5vw, 4rem)",
           background: "var(--color-surface)",
           borderTop: "1px solid var(--color-border)",
         }}
       >
         <div
           style={{
-            maxWidth: "var(--content-width-narrow)",
+            maxWidth: 700,
             margin: "0 auto",
             display: "flex",
             alignItems: "center",
@@ -244,13 +242,13 @@ export default function PricingPage() {
       </section>
 
       {/* Objections */}
-      <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
+      <section style={{ padding: "3rem clamp(1.5rem, 5vw, 4rem)" }}>
         <div
           style={{
-            maxWidth: "var(--content-width-narrow)",
+            maxWidth: 700,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "1rem",
           }}
         >
@@ -276,7 +274,7 @@ export default function PricingPage() {
       {/* Referral */}
       <section
         style={{
-          padding: "var(--section-gap-inner) var(--gutter)",
+          padding: "3rem clamp(1.5rem, 5vw, 4rem)",
           textAlign: "center",
           borderTop: "1px solid var(--color-border)",
         }}

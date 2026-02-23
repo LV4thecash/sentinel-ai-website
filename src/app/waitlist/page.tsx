@@ -35,15 +35,15 @@ export default function WaitlistPage() {
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "var(--color-surface)",
+    background: "#fff",
     border: "1px solid var(--color-border-hi)",
-    borderRadius: "var(--radius-sm)",
+    borderRadius: 4,
     padding: "0.85rem 1rem",
     fontSize: "0.9rem",
     fontFamily: "var(--font-body)",
     color: "var(--color-text)",
     outline: "none",
-    transition: "border-color var(--motion-fast) ease",
+    transition: "border-color 0.15s ease",
   };
 
   const selectStyle: React.CSSProperties = {
@@ -64,7 +64,7 @@ export default function WaitlistPage() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
-        padding: "clamp(4rem, 10vh, 6rem) var(--gutter) clamp(3rem, 8vh, 5rem)",
+        padding: "clamp(4rem, 10vh, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vh, 5rem)",
         background: "var(--color-bg)",
         position: "relative",
       }}
@@ -105,7 +105,7 @@ export default function WaitlistPage() {
             color: "var(--color-text-muted)",
             textDecoration: "none",
             marginBottom: "3rem",
-            transition: "color var(--motion-fast) ease",
+            transition: "color 0.15s ease",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
           onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
@@ -118,8 +118,8 @@ export default function WaitlistPage() {
           <div style={{ textAlign: "center", paddingTop: "2rem" }}>
             <p
               style={{
-                fontFamily: "var(--font-body)",
-                fontWeight: 600,
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
                 fontSize: "1.4rem",
                 color: "var(--color-text)",
                 marginBottom: "0.75rem",
@@ -155,8 +155,7 @@ export default function WaitlistPage() {
             <h1
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
-                fontStyle: "italic",
+                fontWeight: 900,
                 fontSize: "clamp(2.8rem, 8vw, 4.5rem)",
                 lineHeight: 0.95,
                 letterSpacing: "-0.01em",
@@ -168,8 +167,8 @@ export default function WaitlistPage() {
             </h1>
             <p
               style={{
-                fontFamily: "var(--font-body)",
-                fontWeight: 500,
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
                 fontSize: "clamp(1.2rem, 3vw, 1.6rem)",
                 color: "var(--color-text-secondary)",
                 marginBottom: "1.5rem",
@@ -298,17 +297,17 @@ export default function WaitlistPage() {
                 style={{
                   background: state === "loading" ? "rgba(190,27,42,0.6)" : "var(--color-accent)",
                   color: "#fff",
-                  fontFamily: "var(--font-body)",
-                  fontWeight: 600,
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
                   fontSize: "0.78rem",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   padding: "0.9rem",
                   border: "none",
-                  borderRadius: "var(--radius-sm)",
+                  borderRadius: 4,
                   cursor: state === "loading" ? "not-allowed" : "pointer",
                   width: "100%",
-                  transition: "background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-spring)",
+                  transition: "background 0.15s ease, transform 0.15s ease",
                   marginTop: "0.25rem",
                 }}
               >

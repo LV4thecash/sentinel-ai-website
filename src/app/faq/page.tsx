@@ -101,21 +101,19 @@ const faqs: FaqCluster[] = [
 export default function FaqPage() {
   return (
     <main>
-      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 400,
-              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-              letterSpacing: "-0.01em",
+              letterSpacing: "0.03em",
               lineHeight: 0.95,
               marginBottom: "1rem",
               color: "var(--color-text)",
             }}
           >
-            Common Questions
+            COMMON QUESTIONS
           </h1>
           <p style={{ color: "var(--color-text-secondary)", marginTop: "0.75rem" }}>
             Not answered here?{" "}
@@ -131,10 +129,10 @@ export default function FaqPage() {
         </FadeIn>
       </section>
 
-      <section style={{ padding: "2rem var(--gutter) var(--section-gap-sm)" }}>
+      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 6rem" }}>
         <div
           style={{
-            maxWidth: "var(--content-width-narrow)",
+            maxWidth: 720,
             margin: "0 auto",
             display: "flex",
             flexDirection: "column",

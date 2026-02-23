@@ -11,11 +11,11 @@ const phase1Features = [
 export function RoadmapSection() {
   return (
     <section style={{ padding: "6rem 1.5rem" }}>
-      <div style={{ maxWidth: "var(--content-width-mid)", margin: "0 auto" }}>
+      <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "1.5rem",
           }}
         >
@@ -24,7 +24,7 @@ export function RoadmapSection() {
             style={{
               background: "var(--color-surface)",
               border: "1px solid var(--color-border)",
-              borderRadius: "var(--radius-md)",
+              borderRadius: 8,
               padding: "1.75rem",
             }}
           >
@@ -43,13 +43,12 @@ export function RoadmapSection() {
             <h3
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
                 fontSize: "1.6rem",
-                letterSpacing: "-0.01em",
+                letterSpacing: "0.05em",
                 marginBottom: "1rem",
               }}
             >
-              Intelligence Layer
+              INTELLIGENCE LAYER
             </h3>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {phase1Features.map((f) => (
@@ -66,7 +65,7 @@ export function RoadmapSection() {
             style={{
               background: "var(--color-surface)",
               border: "1px dashed var(--color-border)",
-              borderRadius: "var(--radius-md)",
+              borderRadius: 8,
               padding: "1.75rem",
               opacity: 0.65,
             }}
@@ -86,13 +85,12 @@ export function RoadmapSection() {
             <h3
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
                 fontSize: "1.6rem",
-                letterSpacing: "-0.01em",
+                letterSpacing: "0.05em",
                 marginBottom: "1rem",
               }}
             >
-              Execution Layer
+              EXECUTION LAYER
             </h3>
             <p style={{ fontSize: "0.82rem", color: "#8888a0", lineHeight: 1.7 }}>
               Optional bot integration. Sentinel will execute directly from the

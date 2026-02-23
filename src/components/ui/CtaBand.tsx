@@ -11,7 +11,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
     <section
       style={{
         background: "var(--gradient-cta)",
-        padding: "var(--section-gap) var(--gutter)",
+        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         textAlign: "center",
       }}
     >
@@ -20,8 +20,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
           <p
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 400,
-              fontStyle: "italic",
+              fontWeight: 800,
               fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
               letterSpacing: "-0.01em",
               lineHeight: 1.1,
@@ -51,16 +50,16 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
               display: "inline-block",
               background: "#fff",
               color: "#212323",
-              fontFamily: "var(--font-body)",
-              fontWeight: 600,
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
               fontSize: "0.78rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               padding: "0.9rem 2.25rem",
-              borderRadius: "var(--radius-sm)",
+              borderRadius: 4,
               textDecoration: "none",
               marginBottom: "1.5rem",
-              transition: "opacity var(--motion-fast) ease, transform var(--motion-fast) var(--motion-spring)",
+              transition: "opacity 0.15s ease, transform 0.15s ease",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9";
@@ -105,7 +104,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
                 letterSpacing: "0.08em",
                 color: "rgba(255,255,255,0.35)",
                 textDecoration: "none",
-                transition: "color var(--motion-fast) ease",
+                transition: "color 0.15s ease",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
@@ -122,7 +121,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
                 letterSpacing: "0.08em",
                 color: "rgba(255,255,255,0.35)",
                 textDecoration: "none",
-                transition: "color var(--motion-fast) ease",
+                transition: "color 0.15s ease",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}

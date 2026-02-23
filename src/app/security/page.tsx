@@ -42,21 +42,19 @@ export default function SecurityPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 400,
-              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 7vw, 5rem)",
-              letterSpacing: "-0.01em",
+              letterSpacing: "0.03em",
               lineHeight: 0.95,
               marginBottom: "1.25rem",
               color: "var(--color-text)",
             }}
           >
-            Client-side.<br />Non-custodial.<br />No hidden reach.
+            CLIENT-SIDE.<br />NON-CUSTODIAL.<br />NO HIDDEN REACH.
           </h1>
           <p
             style={{
@@ -76,18 +74,17 @@ export default function SecurityPage() {
       <FadeIn>
         <section
           style={{
-            padding: "var(--section-gap-inner) var(--gutter)",
+            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: "var(--content-width-mid)", margin: "0 auto", overflowX: "auto" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <div
               style={{
                 border: "1px solid var(--color-border)",
-                borderRadius: "var(--radius-md)",
+                borderRadius: 8,
                 overflow: "hidden",
-                minWidth: 520,
               }}
             >
               {/* Header row */}
@@ -178,14 +175,13 @@ export default function SecurityPage() {
 
       {/* Architecture */}
       <FadeIn delay={0.07}>
-        <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
-          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
+        <section style={{ padding: "4rem clamp(1.5rem, 5vw, 4rem)" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
                 fontSize: "1.8rem",
-                letterSpacing: "-0.01em",
+                letterSpacing: "0.05em",
                 marginBottom: "1rem",
                 color: "var(--color-text)",
               }}
@@ -225,31 +221,28 @@ export default function SecurityPage() {
       <FadeIn delay={0.07}>
         <section
           style={{
-            padding: "var(--section-gap-inner) var(--gutter)",
+            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 400,
                 fontSize: "1.5rem",
-                letterSpacing: "-0.01em",
+                letterSpacing: "0.05em",
                 marginBottom: "1.5rem",
                 color: "var(--color-text)",
               }}
             >
               CHROME PERMISSIONS
             </h2>
-            <div style={{ overflowX: "auto" }}>
             <div
               style={{
                 border: "1px solid var(--color-border)",
-                borderRadius: "var(--radius-sm)",
+                borderRadius: 6,
                 overflow: "hidden",
-                minWidth: 440,
               }}
             >
               {permissions.map(([perm, reason], i) => (
@@ -284,21 +277,20 @@ export default function SecurityPage() {
                 </div>
               ))}
             </div>
-            </div>
           </div>
         </section>
       </FadeIn>
 
       {/* Wallet isolation callout */}
       <FadeIn delay={0.07}>
-        <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
-          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
+        <section style={{ padding: "3rem clamp(1.5rem, 5vw, 4rem)" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
             <div
               style={{
                 padding: "1.5rem",
                 background: "rgba(190,27,42,0.07)",
                 border: "1px solid rgba(190,27,42,0.25)",
-                borderRadius: "var(--radius-md)",
+                borderRadius: 8,
               }}
             >
               <p style={{ fontWeight: 600, fontSize: "0.95rem", color: "var(--color-text)" }}>
@@ -324,18 +316,17 @@ export default function SecurityPage() {
       <FadeIn delay={0.07}>
         <section
           style={{
-            padding: "var(--section-gap-inner) var(--gutter)",
+            padding: "3rem clamp(1.5rem, 5vw, 4rem)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "1.4rem",
-                fontWeight: 400,
-                letterSpacing: "-0.01em",
+                letterSpacing: "0.05em",
                 marginBottom: "1rem",
                 color: "var(--color-text)",
               }}
