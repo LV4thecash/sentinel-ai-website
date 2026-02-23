@@ -73,7 +73,7 @@ export default function HowItWorksPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
@@ -131,10 +131,10 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Steps */}
-      <section style={{ padding: "4rem var(--gutter)" }}>
+      <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
         <div
           style={{
-            maxWidth: 720,
+            maxWidth: "var(--content-width-narrow)",
             margin: "0 auto",
             display: "flex",
             flexDirection: "column",
@@ -251,12 +251,12 @@ export default function HowItWorksPage() {
       <FadeIn>
         <section
           style={{
-            padding: "4rem var(--gutter)",
+            padding: "var(--section-gap-inner) var(--gutter)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div style={{ maxWidth: "var(--content-width-mid)", margin: "0 auto" }}>
             <SectionLabel>Documentation</SectionLabel>
             <div
               style={{
@@ -310,8 +310,8 @@ export default function HowItWorksPage() {
 
       {/* Mini FAQ */}
       <FadeIn>
-        <section style={{ padding: "4rem var(--gutter)" }}>
-          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+        <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
+          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
             <SectionLabel>Common Questions</SectionLabel>
             <div style={{ marginTop: "0.5rem" }}>
               {miniQA.map(([q, a]) => (

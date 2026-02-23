@@ -11,11 +11,11 @@ const phase1Features = [
 export function RoadmapSection() {
   return (
     <section style={{ padding: "6rem 1.5rem" }}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
+      <div style={{ maxWidth: "var(--content-width-mid)", margin: "0 auto" }}>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
             gap: "1.5rem",
           }}
         >

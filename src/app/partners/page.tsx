@@ -21,7 +21,7 @@ export default function PartnersPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
@@ -52,12 +52,12 @@ export default function PartnersPage() {
       </section>
 
       {/* Value props */}
-      <section style={{ padding: "3rem var(--gutter)" }}>
+      <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(220px, 100%), 1fr))",
               gap: "1rem",
               marginBottom: "4rem",
             }}

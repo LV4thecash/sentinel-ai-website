@@ -13,7 +13,7 @@ const phase1Features = [
 export default function RoadmapPage() {
   return (
     <main>
-      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
@@ -31,13 +31,13 @@ export default function RoadmapPage() {
         </FadeIn>
       </section>
 
-      <section style={{ padding: "2rem var(--gutter) 6rem" }}>
+      <section style={{ padding: "2rem var(--gutter) var(--section-gap-sm)" }}>
         <div
           style={{
-            maxWidth: 860,
+            maxWidth: "var(--content-width-mid)",
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
             gap: "1.5rem",
           }}
         >

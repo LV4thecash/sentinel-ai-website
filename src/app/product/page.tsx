@@ -49,7 +49,7 @@ export default function ProductPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
         <FadeIn>
           <nav
             aria-label="Breadcrumb"
@@ -126,17 +126,17 @@ export default function ProductPage() {
       <FadeIn>
         <section
           style={{
-            padding: "4rem var(--gutter)",
+            padding: "var(--section-gap-inner) var(--gutter)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: 1060, margin: "0 auto" }}>
+          <div style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}>
             <SectionLabel>System Architecture</SectionLabel>
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
                 gap: "1rem",
                 marginTop: "1.5rem",
               }}
@@ -207,7 +207,7 @@ export default function ProductPage() {
       <FadeIn>
         <section
           style={{
-            padding: "4rem var(--gutter)",
+            padding: "var(--section-gap-inner) var(--gutter)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
@@ -217,7 +217,7 @@ export default function ProductPage() {
               maxWidth: 960,
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(180px, 100%), 1fr))",
               gap: "1rem",
               textAlign: "center",
             }}
@@ -248,8 +248,8 @@ export default function ProductPage() {
 
       {/* Config options */}
       <FadeIn>
-        <section style={{ padding: "4rem var(--gutter)" }}>
-          <div style={{ maxWidth: 720, margin: "0 auto" }}>
+        <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
+          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
             <SectionLabel>Configuration</SectionLabel>
             <div
               style={{

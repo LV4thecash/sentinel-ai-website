@@ -44,7 +44,7 @@ export default function PricingPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
         <h1
           style={{
             fontFamily: "var(--font-display)",
@@ -76,13 +76,13 @@ export default function PricingPage() {
       </section>
 
       {/* Tiers */}
-      <section style={{ padding: "2rem var(--gutter) 5rem" }}>
+      <section style={{ padding: "2rem var(--gutter) var(--section-gap-sm)" }}>
         <div
           style={{
             maxWidth: 960,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))",
             gap: "1.25rem",
           }}
         >
@@ -222,7 +222,7 @@ export default function PricingPage() {
       >
         <div
           style={{
-            maxWidth: 700,
+            maxWidth: "var(--content-width-narrow)",
             margin: "0 auto",
             display: "flex",
             alignItems: "center",
@@ -244,13 +244,13 @@ export default function PricingPage() {
       </section>
 
       {/* Objections */}
-      <section style={{ padding: "3rem var(--gutter)" }}>
+      <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
         <div
           style={{
-            maxWidth: 700,
+            maxWidth: "var(--content-width-narrow)",
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
             gap: "1rem",
           }}
         >
@@ -276,7 +276,7 @@ export default function PricingPage() {
       {/* Referral */}
       <section
         style={{
-          padding: "3rem var(--gutter)",
+          padding: "var(--section-gap-inner) var(--gutter)",
           textAlign: "center",
           borderTop: "1px solid var(--color-border)",
         }}

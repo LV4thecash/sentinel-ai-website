@@ -42,7 +42,7 @@ export default function SecurityPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
+      <section style={{ padding: "var(--section-gap-sm) var(--gutter)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
@@ -76,12 +76,12 @@ export default function SecurityPage() {
       <FadeIn>
         <section
           style={{
-            padding: "4rem var(--gutter)",
+            padding: "var(--section-gap-inner) var(--gutter)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div style={{ maxWidth: "var(--content-width-mid)", margin: "0 auto" }}>
             <div
               style={{
                 border: "1px solid var(--color-border)",
@@ -177,8 +177,8 @@ export default function SecurityPage() {
 
       {/* Architecture */}
       <FadeIn delay={0.07}>
-        <section style={{ padding: "4rem var(--gutter)" }}>
-          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+        <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
+          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
@@ -224,12 +224,12 @@ export default function SecurityPage() {
       <FadeIn delay={0.07}>
         <section
           style={{
-            padding: "4rem var(--gutter)",
+            padding: "var(--section-gap-inner) var(--gutter)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
@@ -287,8 +287,8 @@ export default function SecurityPage() {
 
       {/* Wallet isolation callout */}
       <FadeIn delay={0.07}>
-        <section style={{ padding: "3rem var(--gutter)" }}>
-          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+        <section style={{ padding: "var(--section-gap-inner) var(--gutter)" }}>
+          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
             <div
               style={{
                 padding: "1.5rem",
@@ -320,12 +320,12 @@ export default function SecurityPage() {
       <FadeIn delay={0.07}>
         <section
           style={{
-            padding: "3rem var(--gutter)",
+            padding: "var(--section-gap-inner) var(--gutter)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <div style={{ maxWidth: "var(--content-width-narrow)", margin: "0 auto" }}>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
