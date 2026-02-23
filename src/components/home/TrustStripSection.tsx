@@ -42,7 +42,7 @@ function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
           padding: "1.35rem 1.5rem",
           background: "var(--color-surface)",
           border: `1px solid ${hovered ? "var(--color-accent)" : "var(--color-border)"}`,
-          borderRadius: 8,
+          borderRadius: "var(--radius-md)",
           boxShadow: hovered
             ? "var(--shadow-hover)"
             : "var(--shadow-sm), var(--shadow-inset)",

@@ -72,7 +72,7 @@ export function HowItWorksSection() {
                   position: "relative",
                   paddingTop: "0.5rem",
                   padding: "1rem 0.75rem",
-                  borderRadius: 8,
+                  borderRadius: "var(--radius-md)",
                   background: hoveredStep === step.n ? "rgba(0,0,0,0.015)" : "transparent",
                   transform: hoveredStep === step.n ? "translateY(-2px)" : "translateY(0)",
                   transition: `transform var(--motion-fast) var(--motion-ease-out), background var(--motion-fast) ease`,

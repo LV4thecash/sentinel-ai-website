@@ -85,7 +85,7 @@ export default function SecurityPage() {
             <div
               style={{
                 border: "1px solid var(--color-border)",
-                borderRadius: 8,
+                borderRadius: "var(--radius-md)",
                 overflow: "hidden",
               }}
             >
@@ -294,7 +294,7 @@ export default function SecurityPage() {
                 padding: "1.5rem",
                 background: "rgba(190,27,42,0.07)",
                 border: "1px solid rgba(190,27,42,0.25)",
-                borderRadius: 8,
+                borderRadius: "var(--radius-md)",
               }}
             >
               <p style={{ fontWeight: 600, fontSize: "0.95rem", color: "var(--color-text)" }}>

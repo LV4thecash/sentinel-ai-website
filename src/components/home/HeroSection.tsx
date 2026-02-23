@@ -70,7 +70,7 @@ export function HeroSection() {
             gap: 8,
             marginBottom: "2.25rem",
             border: "1px solid var(--color-border)",
-            borderRadius: 100,
+            borderRadius: "var(--radius-pill)",
             padding: "5px 14px 5px 10px",
             background: "var(--color-surface)",
             boxShadow: "var(--shadow-xs)",
@@ -213,7 +213,7 @@ export function HeroSection() {
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               padding: "0.9rem 2.25rem",
-              borderRadius: 4,
+              borderRadius: "var(--radius-sm)",
               textDecoration: "none",
               transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,
             }}

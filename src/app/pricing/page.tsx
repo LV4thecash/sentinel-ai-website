@@ -96,7 +96,7 @@ export default function PricingPage() {
                 style={{
                   background: "var(--color-surface)",
                   border: `1px solid ${t.popular ? "var(--color-accent)" : isHovered ? "var(--color-border-hi)" : "var(--color-border)"}`,
-                  borderRadius: 8,
+                  borderRadius: "var(--radius-md)",
                   padding: "2rem 1.5rem",
                   position: "relative",
                   display: "flex",
@@ -127,7 +127,7 @@ export default function PricingPage() {
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
                       padding: "0.25rem 0.85rem",
-                      borderRadius: 20,
+                      borderRadius: "var(--radius-pill)",
                       whiteSpace: "nowrap",
                     }}
                   >
@@ -184,11 +184,11 @@ export default function PricingPage() {
                     border: `1px solid ${t.popular ? "var(--color-accent)" : "var(--color-border-hi)"}`,
                     fontFamily: "var(--font-body)",
                     fontWeight: 600,
-                    fontSize: "0.75rem",
-                    letterSpacing: "0.08em",
+                    fontSize: "0.78rem",
+                    letterSpacing: "0.1em",
                     textTransform: "uppercase",
-                    padding: "0.8rem",
-                    borderRadius: 4,
+                    padding: "0.85rem",
+                    borderRadius: "var(--radius-sm)",
                     textDecoration: "none",
                     marginTop: "auto",
                     transition: `background var(--motion-fast) ease, box-shadow var(--motion-fast) ease`,

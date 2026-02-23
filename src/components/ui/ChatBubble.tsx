@@ -10,7 +10,7 @@ export function ChatBubble({ lines, highlight, blocked = false }: ChatBubbleProp
       style={{
         background: "var(--color-bg-alt)",
         border: `1px solid ${blocked ? "rgba(190,27,42,0.35)" : "var(--color-border)"}`,
-        borderRadius: 8,
+        borderRadius: "var(--radius-md)",
         padding: "0.75rem 1rem",
         fontFamily: "var(--font-mono)",
         fontSize: "0.72rem",
@@ -30,7 +30,7 @@ export function ChatBubble({ lines, highlight, blocked = false }: ChatBubbleProp
                 style={{
                   color: "var(--color-accent)",
                   background: "var(--color-accent-lo)",
-                  borderRadius: 2,
+                  borderRadius: "var(--radius-xs)",
                   padding: "0 2px",
                 }}
               >

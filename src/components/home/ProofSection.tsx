@@ -73,7 +73,7 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
               ? "var(--color-accent)"
               : "var(--color-border)"
           }`,
-          borderRadius: 8,
+          borderRadius: "var(--radius-md)",
           padding: "1.35rem",
           display: "flex",
           flexDirection: "column",
@@ -131,7 +131,7 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
             border: `1px solid ${
               card.blocked ? "rgba(190,27,42,0.18)" : "rgba(22,163,74,0.2)"
             }`,
-            borderRadius: 4,
+            borderRadius: "var(--radius-sm)",
             color: card.blocked ? "var(--color-accent)" : "var(--color-pass)",
             wordBreak: "break-all",
           }}

@@ -47,8 +47,9 @@ export default function RoadmapPage() {
               style={{
                 background: "var(--color-surface)",
                 border: "1px solid rgba(34,197,94,0.3)",
-                borderRadius: 8,
+                borderRadius: "var(--radius-md)",
                 padding: "2rem",
+                boxShadow: "var(--shadow-sm), var(--shadow-inset)",
               }}
             >
               <p
@@ -102,9 +103,10 @@ export default function RoadmapPage() {
               style={{
                 background: "var(--color-surface)",
                 border: "1px dashed var(--color-border)",
-                borderRadius: 8,
+                borderRadius: "var(--radius-md)",
                 padding: "2rem",
                 opacity: 0.6,
+                boxShadow: "var(--shadow-sm), var(--shadow-inset)",
               }}
             >
               <p

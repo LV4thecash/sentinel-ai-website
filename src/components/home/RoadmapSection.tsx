@@ -24,7 +24,7 @@ export function RoadmapSection() {
             style={{
               background: "var(--color-surface)",
               border: "1px solid var(--color-border)",
-              borderRadius: 8,
+              borderRadius: "var(--radius-md)",
               padding: "1.75rem",
             }}
           >
@@ -66,7 +66,7 @@ export function RoadmapSection() {
             style={{
               background: "var(--color-surface)",
               border: "1px dashed var(--color-border)",
-              borderRadius: 8,
+              borderRadius: "var(--radius-md)",
               padding: "1.75rem",
               opacity: 0.65,
             }}

@@ -7,7 +7,7 @@ export function ProblemSection() {
     <section
       style={{
         padding: "var(--section-gap) var(--gutter)",
-        background: "var(--color-bg-alt)",
+        background: "var(--color-bg-deep)",
       }}
     >
       <div style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}>

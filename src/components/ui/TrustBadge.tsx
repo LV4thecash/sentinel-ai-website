@@ -14,7 +14,7 @@ export function TrustBadge({ icon, label, description }: TrustBadgeProps) {
         padding: "1.25rem 1.5rem",
         background: "var(--color-surface)",
         border: "1px solid var(--color-border)",
-        borderRadius: 8,
+        borderRadius: "var(--radius-md)",
         boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
       }}
     >

@@ -35,9 +35,9 @@ export default function WaitlistPage() {
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "#fff",
+    background: "var(--color-surface)",
     border: "1px solid var(--color-border-hi)",
-    borderRadius: 4,
+    borderRadius: "var(--radius-sm)",
     padding: "0.85rem 1rem",
     fontSize: "0.9rem",
     fontFamily: "var(--font-body)",
@@ -305,7 +305,7 @@ export default function WaitlistPage() {
                   textTransform: "uppercase",
                   padding: "0.9rem",
                   border: "none",
-                  borderRadius: 4,
+                  borderRadius: "var(--radius-sm)",
                   cursor: state === "loading" ? "not-allowed" : "pointer",
                   width: "100%",
                   transition: "background 0.15s ease, transform 0.15s ease",

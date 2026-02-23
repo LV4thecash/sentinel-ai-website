@@ -98,7 +98,7 @@ export default function ProductPage() {
               color: "#fff",
               fontWeight: 700,
               padding: "0.85rem 2rem",
-              borderRadius: 4,
+              borderRadius: "var(--radius-sm)",
               textDecoration: "none",
               fontSize: "0.85rem",
               letterSpacing: "0.08em",

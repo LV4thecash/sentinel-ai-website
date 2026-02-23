@@ -68,7 +68,7 @@ export default function PartnersPage() {
                   style={{
                     background: "var(--color-surface)",
                     border: "1px solid var(--color-border)",
-                    borderRadius: 8,
+                    borderRadius: "var(--radius-md)",
                     padding: "1.5rem",
                     height: "100%",
                   }}
@@ -120,7 +120,7 @@ export default function PartnersPage() {
                       border: "1px solid var(--color-border-hi)",
                       color: "var(--color-text)",
                       padding: "0.85rem 1rem",
-                      borderRadius: 4,
+                      borderRadius: "var(--radius-sm)",
                       fontSize: "0.9rem",
                       outline: "none",
                       width: "100%",
@@ -138,7 +138,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text-muted)",
                     padding: "0.85rem 1rem",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     fontSize: "0.9rem",
                     width: "100%",
                   }}
@@ -161,7 +161,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text-muted)",
                     padding: "0.85rem 1rem",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     fontSize: "0.9rem",
                     width: "100%",
                   }}
@@ -184,7 +184,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text)",
                     padding: "0.85rem 1rem",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     fontSize: "0.9rem",
                     resize: "vertical",
                     outline: "none",
@@ -204,7 +204,7 @@ export default function PartnersPage() {
                     textTransform: "uppercase",
                     padding: "0.9rem",
                     border: "none",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     cursor: "pointer",
                     width: "100%",
                     transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,

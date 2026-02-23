@@ -17,7 +17,7 @@ export function SocialProofSection() {
   const cardStyle = (id: string, dimmed = false): React.CSSProperties => ({
     background: "var(--color-surface)",
     border: `1px solid ${hoveredCard === id ? "var(--color-border-hi)" : "var(--color-border)"}`,
-    borderRadius: 8,
+    borderRadius: "var(--radius-md)",
     padding: "1.75rem",
     boxShadow: hoveredCard === id
       ? "var(--shadow-hover)"
@@ -32,7 +32,7 @@ export function SocialProofSection() {
     <section
       style={{
         padding: "var(--section-gap) var(--gutter)",
-        background: "var(--color-bg-alt)",
+        background: "var(--color-bg-deep)",
       }}
     >
       <div style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}>

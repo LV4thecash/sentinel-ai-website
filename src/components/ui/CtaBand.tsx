@@ -57,7 +57,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               padding: "0.9rem 2.25rem",
-              borderRadius: 4,
+              borderRadius: "var(--radius-sm)",
               textDecoration: "none",
               marginBottom: "1.5rem",
               transition: "opacity 0.15s ease, transform 0.15s ease",
