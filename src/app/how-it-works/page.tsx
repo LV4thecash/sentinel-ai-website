@@ -12,35 +12,30 @@ const steps = [
     label: "Install",
     desc: "Install Sentinel AI from the Chrome Web Store. Takes under 30 seconds.",
     note: null,
-    media: [] as string[],
   },
   {
     n: "02",
     label: "Connect Telegram",
     desc: "Enter your Telegram API ID, API Hash, and phone number in the extension UI.",
     note: "To get your API credentials: visit my.telegram.org → Log in → App configuration → copy your API ID and App hash.",
-    media: ["/how-it-works/step-02b.png"],
   },
   {
     n: "03",
     label: "Select Sources + Forwarding Target",
     desc: "Browse your Telegram chats and channels. Select which ones Sentinel should monitor. Define where clean CAs should be forwarded: a Telegram group, bot, or DM.",
     note: null,
-    media: [] as string[],
   },
   {
     n: "04",
     label: "Enter Auth Code",
     desc: "Telegram sends a one-time auth code to your account. Enter it in the extension. This authenticates your local session. No server ever receives your credentials.",
     note: null,
-    media: ["/how-it-works/step-04.png"],
   },
   {
     n: "05",
     label: "Activate",
     desc: "Sentinel is live. The extension popup shows your active source count and forwarding target. CAs arrive automatically.",
     note: null,
-    media: ["/how-it-works/step-05.png"],
   },
 ];
 
@@ -218,24 +213,6 @@ export default function HowItWorksPage() {
                       }}
                     >
                       ↳ {step.note}
-                    </div>
-                  )}
-                  {step.media.length > 0 && (
-                    <div style={{ marginTop: "0.75rem", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                      {step.media.map((src) => (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          key={src}
-                          src={src}
-                          alt={`${step.label} — step ${step.n}`}
-                          style={{
-                            width: "100%",
-                            borderRadius: 6,
-                            border: "1px solid var(--color-border)",
-                            display: "block",
-                          }}
-                        />
-                      ))}
                     </div>
                   )}
                 </div>

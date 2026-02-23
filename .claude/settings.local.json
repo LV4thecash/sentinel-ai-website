@@ -8,7 +8,8 @@
       "Bash(cd \"/Users/leoneandreis/website 2.0\" && git check-ignore -v .env.local.example 2>&1)",
       "Bash(cd \"/Users/leoneandreis/website 2.0\" && git add .gitignore package.json package-lock.json .env.local.example public/brand/ src/ next.config.ts postcss.config.mjs tsconfig.json README.md 2>&1)",
       "Bash(head:*)",
-      "Bash(tail:*)"
+      "Bash(tail:*)",
+      "Bash(cd \"/Users/leoneandreis/website 2.0\" && git push origin main 2>&1)"
     ]
   }
 }
