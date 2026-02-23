@@ -18,7 +18,7 @@ export function ProblemSection() {
               fontFamily: "var(--font-display)",
               fontWeight: 800,
               fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              letterSpacing: "-0.01em",
+              letterSpacing: "-0.02em",
               lineHeight: 1.02,
               marginBottom: "1.5rem",
               color: "var(--color-text)",

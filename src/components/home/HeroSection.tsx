@@ -19,7 +19,7 @@ export function HeroSection() {
         overflow: "hidden",
       }}
     >
-      {/* Subtle grid — light version */}
+      {/* Subtle grid */}
       <div
         aria-hidden
         style={{
@@ -27,23 +27,32 @@ export function HeroSection() {
           inset: 0,
           zIndex: 0,
           backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
           `,
           backgroundSize: "48px 48px",
           pointerEvents: "none",
         }}
       />
 
-      {/* Atmospheric radial gradient */}
+      {/* Atmospheric gradients */}
       <div
         aria-hidden
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          background:
-            "radial-gradient(ellipse 70% 55% at 50% 65%, rgba(190,27,42,0.04) 0%, transparent 70%)",
+          background: "var(--gradient-hero-bg)",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          background: "var(--gradient-hero-top)",
           pointerEvents: "none",
         }}
       />
@@ -64,7 +73,7 @@ export function HeroSection() {
             borderRadius: 100,
             padding: "5px 14px 5px 10px",
             background: "var(--color-surface)",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+            boxShadow: "var(--shadow-xs)",
           }}
         >
           {/* Pulsing green dot */}
@@ -108,8 +117,8 @@ export function HeroSection() {
             fontFamily: "var(--font-display)",
             fontWeight: 900,
             fontSize: "clamp(3.2rem, 10vw, 7.5rem)",
-            lineHeight: 0.94,
-            letterSpacing: "-0.01em",
+            lineHeight: 0.92,
+            letterSpacing: "-0.02em",
             marginBottom: "2rem",
             color: "var(--color-text)",
           }}
@@ -146,8 +155,7 @@ export function HeroSection() {
                 style={{
                   position: "absolute",
                   inset: "-10px -20px",
-                  background:
-                    "radial-gradient(ellipse at center, rgba(190,27,42,0.1) 0%, transparent 70%)",
+                  background: "var(--gradient-word-glow)",
                   borderRadius: 6,
                   pointerEvents: "none",
                   zIndex: -1,

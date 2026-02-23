@@ -20,11 +20,11 @@ export function SocialProofSection() {
     borderRadius: 8,
     padding: "1.75rem",
     boxShadow: hoveredCard === id
-      ? "0 8px 24px rgba(0,0,0,0.07)"
-      : "0 1px 3px rgba(0,0,0,0.04)",
+      ? "var(--shadow-hover)"
+      : "var(--shadow-sm), var(--shadow-inset)",
     opacity: dimmed && hoveredCard !== id ? 0.7 : 1,
     transform: hoveredCard === id ? "translateY(-2px)" : "translateY(0)",
-    transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease, opacity var(--motion-fast) ease`,
+    transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease, opacity var(--motion-fast) ease`,
     cursor: "default",
   });
 
@@ -44,7 +44,7 @@ export function SocialProofSection() {
                 fontFamily: "var(--font-display)",
                 fontWeight: 800,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
-                letterSpacing: "-0.01em",
+                letterSpacing: "-0.02em",
                 lineHeight: 1.05,
                 color: "var(--color-text)",
                 marginBottom: "1rem",

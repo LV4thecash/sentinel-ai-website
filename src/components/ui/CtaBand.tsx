@@ -10,7 +10,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
   return (
     <section
       style={{
-        background: "#212323",
+        background: "var(--gradient-cta)",
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         textAlign: "center",
       }}

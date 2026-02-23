@@ -103,12 +103,12 @@ export default function PricingPage() {
                   transform: isHovered ? "translateY(-4px)" : "translateY(0)",
                   boxShadow: isHovered
                     ? t.popular
-                      ? "0 12px 32px rgba(190,27,42,0.18)"
-                      : "0 12px 32px rgba(0,0,0,0.08)"
+                      ? "0 12px 40px rgba(190,27,42,0.18), 0 2px 8px rgba(190,27,42,0.08)"
+                      : "var(--shadow-hover)"
                     : t.popular
-                    ? "0 2px 8px rgba(190,27,42,0.1)"
-                    : "0 1px 3px rgba(0,0,0,0.05)",
-                  transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
+                    ? "0 2px 12px rgba(190,27,42,0.1), var(--shadow-inset)"
+                    : "var(--shadow-sm), var(--shadow-inset)",
+                  transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
                 }}
               >
                 {t.popular && (

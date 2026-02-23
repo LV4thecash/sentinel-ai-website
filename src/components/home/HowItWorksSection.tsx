@@ -46,7 +46,7 @@ export function HowItWorksSection() {
                 fontFamily: "var(--font-display)",
                 fontWeight: 800,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
-                letterSpacing: "-0.01em",
+                letterSpacing: "-0.02em",
                 lineHeight: 1.05,
                 color: "var(--color-text)",
               }}

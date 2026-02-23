@@ -81,9 +81,9 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
           height: "100%",
           transform: hovered ? "translateY(-3px)" : "translateY(0)",
           boxShadow: hovered
-            ? "0 8px 24px rgba(0,0,0,0.08)"
-            : "0 1px 3px rgba(0,0,0,0.05)",
-          transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
+            ? "var(--shadow-hover)"
+            : "var(--shadow-sm), var(--shadow-inset)",
+          transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
         }}
       >
         {/* Card label */}
@@ -173,7 +173,7 @@ export function ProofSection() {
                 fontFamily: "var(--font-display)",
                 fontWeight: 800,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
-                letterSpacing: "-0.01em",
+                letterSpacing: "-0.02em",
                 lineHeight: 1.05,
                 color: "var(--color-text)",
               }}

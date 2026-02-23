@@ -6,22 +6,22 @@ import Link from "next/link";
 
 const items = [
   {
-    icon: "🔒",
+    icon: "[ local ]",
     label: "Client-side only",
     description: "All processing happens in your browser extension. Nothing is sent to a Sentinel server.",
   },
   {
-    icon: "◎",
+    icon: "[ ø wallet ]",
     label: "No wallet access",
     description: "Sentinel never requests wallet permissions. It cannot sign, read, or interact with your assets.",
   },
   {
-    icon: "◻",
+    icon: "[ ø server ]",
     label: "No server storage",
     description: "Credentials are never transmitted or stored remotely. Your Telegram session stays local.",
   },
   {
-    icon: "⬡",
+    icon: "[ non-custodial ]",
     label: "Non-custodial",
     description: "No asset custody, no trade execution, no positions. Sentinel only forwards contract addresses.",
   },
@@ -44,15 +44,27 @@ function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
           border: `1px solid ${hovered ? "var(--color-accent)" : "var(--color-border)"}`,
           borderRadius: 8,
           boxShadow: hovered
-            ? "0 8px 24px rgba(0,0,0,0.08)"
-            : "0 1px 3px rgba(0,0,0,0.04)",
+            ? "var(--shadow-hover)"
+            : "var(--shadow-sm), var(--shadow-inset)",
           transform: hovered ? "translateY(-3px)" : "translateY(0)",
-          transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
+          transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
           cursor: "default",
           height: "100%",
         }}
       >
-        <span style={{ fontSize: "1rem", lineHeight: 1 }}>{item.icon}</span>
+        <span
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.6rem",
+            letterSpacing: "0.06em",
+            color: "var(--color-accent)",
+            opacity: 0.7,
+            lineHeight: 1,
+            marginBottom: "0.25rem",
+          }}
+        >
+          {item.icon}
+        </span>
         <p
           style={{
             fontFamily: "var(--font-display)",
@@ -96,7 +108,7 @@ export function TrustStripSection() {
                 fontFamily: "var(--font-display)",
                 fontWeight: 800,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
-                letterSpacing: "-0.01em",
+                letterSpacing: "-0.02em",
                 lineHeight: 1.05,
                 color: "var(--color-text)",
                 marginBottom: "1rem",
