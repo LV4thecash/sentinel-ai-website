@@ -22,6 +22,7 @@ export function Footer() {
       }}
     >
       <div
+        className="footer-grid"
         style={{
           maxWidth: "var(--content-width)",
           margin: "0 auto",
@@ -85,6 +86,7 @@ export function Footer() {
 
         {/* Right: social */}
         <div
+          className="footer-social"
           style={{
             display: "flex",
             gap: "1.25rem",

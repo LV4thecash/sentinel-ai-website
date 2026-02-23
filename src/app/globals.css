@@ -117,6 +117,18 @@ body {
   .mobile-menu-btn { display: block !important; }
 }
 
+/* ─── Footer responsive collapse ───────────────────────────── */
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 1.5rem !important;
+  }
+  .footer-social {
+    justify-content: center !important;
+  }
+}
+
 /* ─── Thin scrollbar ────────────────────────────────────────── */
 ::-webkit-scrollbar              { width: 4px; }
 ::-webkit-scrollbar-track        { background: var(--color-bg); }

@@ -135,7 +135,7 @@ export function Nav() {
             cursor: "pointer",
             fontSize: "1.3rem",
             display: "none",
-            padding: "0.25rem",
+            padding: "0.75rem 0.5rem",
           }}
           aria-label={open ? "Close menu" : "Open menu"}
         >

@@ -81,12 +81,13 @@ export default function SecurityPage() {
             borderTop: "1px solid var(--color-border)",
           }}
         >
-          <div style={{ maxWidth: "var(--content-width-mid)", margin: "0 auto" }}>
+          <div style={{ maxWidth: "var(--content-width-mid)", margin: "0 auto", overflowX: "auto" }}>
             <div
               style={{
                 border: "1px solid var(--color-border)",
                 borderRadius: "var(--radius-md)",
                 overflow: "hidden",
+                minWidth: 520,
               }}
             >
               {/* Header row */}
@@ -242,11 +243,13 @@ export default function SecurityPage() {
             >
               CHROME PERMISSIONS
             </h2>
+            <div style={{ overflowX: "auto" }}>
             <div
               style={{
                 border: "1px solid var(--color-border)",
-                borderRadius: 6,
+                borderRadius: "var(--radius-sm)",
                 overflow: "hidden",
+                minWidth: 440,
               }}
             >
               {permissions.map(([perm, reason], i) => (
@@ -280,6 +283,7 @@ export default function SecurityPage() {
                   </div>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </section>

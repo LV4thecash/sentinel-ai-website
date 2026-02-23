@@ -264,7 +264,7 @@ export default function ProductPage() {
                   key={label}
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "200px 1fr",
+                    gridTemplateColumns: "minmax(min(160px, 100%), 200px) 1fr",
                     gap: "1rem",
                     padding: "0.85rem 1rem",
                     background: "var(--color-surface)",
