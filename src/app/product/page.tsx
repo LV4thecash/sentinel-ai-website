@@ -49,7 +49,7 @@ export default function ProductPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
+      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
         <FadeIn>
           <nav
             aria-label="Breadcrumb"
@@ -124,7 +124,7 @@ export default function ProductPage() {
       <FadeIn>
         <section
           style={{
-            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
+            padding: "4rem var(--gutter)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
@@ -205,7 +205,7 @@ export default function ProductPage() {
       <FadeIn>
         <section
           style={{
-            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
+            padding: "4rem var(--gutter)",
             background: "var(--color-surface)",
             borderTop: "1px solid var(--color-border)",
           }}
@@ -245,7 +245,7 @@ export default function ProductPage() {
 
       {/* Config options */}
       <FadeIn>
-        <section style={{ padding: "4rem clamp(1.5rem, 5vw, 4rem)" }}>
+        <section style={{ padding: "4rem var(--gutter)" }}>
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
             <SectionLabel>Configuration</SectionLabel>
             <div

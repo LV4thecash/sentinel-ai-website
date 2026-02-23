@@ -16,14 +16,14 @@ export function Footer() {
     <footer
       style={{
         borderTop: "1px solid var(--color-border)",
-        padding: "2.5rem clamp(1.5rem, 5vw, 4rem)",
+        padding: "2.5rem var(--gutter)",
         marginTop: "auto",
         background: "var(--color-bg)",
       }}
     >
       <div
         style={{
-          maxWidth: 1200,
+          maxWidth: "var(--content-width)",
           margin: "0 auto",
           display: "grid",
           gridTemplateColumns: "1fr auto 1fr",

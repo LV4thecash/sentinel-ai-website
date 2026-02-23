@@ -64,7 +64,7 @@ export default function WaitlistPage() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
-        padding: "clamp(4rem, 10vh, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vh, 5rem)",
+        padding: "clamp(4rem, 10vh, 6rem) var(--gutter) clamp(3rem, 8vh, 5rem)",
         background: "var(--color-bg)",
         position: "relative",
       }}

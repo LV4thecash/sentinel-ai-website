@@ -101,7 +101,7 @@ const faqs: FaqCluster[] = [
 export default function FaqPage() {
   return (
     <main>
-      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
+      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
         <FadeIn>
           <h1
             style={{
@@ -129,7 +129,7 @@ export default function FaqPage() {
         </FadeIn>
       </section>
 
-      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 6rem" }}>
+      <section style={{ padding: "2rem var(--gutter) 6rem" }}>
         <div
           style={{
             maxWidth: 720,

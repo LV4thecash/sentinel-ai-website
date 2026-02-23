@@ -44,9 +44,9 @@ export function Nav() {
     >
       <div
         style={{
-          maxWidth: 1200,
+          maxWidth: "var(--content-width)",
           margin: "0 auto",
-          padding: "0 clamp(1.5rem, 5vw, 2.5rem)",
+          padding: "0 var(--gutter)",
           height: "var(--nav-height)",
           display: "flex",
           alignItems: "center",
@@ -148,7 +148,7 @@ export function Nav() {
         <div
           style={{
             borderTop: "1px solid var(--color-border)",
-            padding: "1.25rem clamp(1.5rem, 5vw, 2.5rem)",
+            padding: "1.25rem var(--gutter)",
             display: "flex",
             flexDirection: "column",
             gap: "1rem",

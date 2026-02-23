@@ -14,7 +14,7 @@ export function HeroSection() {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        padding: "clamp(4rem, 10vh, 6rem) clamp(1.5rem, 5vw, 4rem)",
+        padding: "clamp(4rem, 10vh, 6rem) var(--gutter)",
         position: "relative",
         overflow: "hidden",
       }}

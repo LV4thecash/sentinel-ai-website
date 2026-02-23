@@ -6,7 +6,7 @@ export function ProblemSection() {
   return (
     <section
       style={{
-        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
+        padding: "var(--section-gap) var(--gutter)",
         background: "var(--color-bg-alt)",
       }}
     >

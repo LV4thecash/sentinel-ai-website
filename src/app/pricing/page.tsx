@@ -44,7 +44,7 @@ export default function PricingPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
+      <section style={{ padding: "5rem var(--gutter)", textAlign: "center" }}>
         <h1
           style={{
             fontFamily: "var(--font-display)",
@@ -74,7 +74,7 @@ export default function PricingPage() {
       </section>
 
       {/* Tiers */}
-      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 5rem" }}>
+      <section style={{ padding: "2rem var(--gutter) 5rem" }}>
         <div
           style={{
             maxWidth: 960,
@@ -213,7 +213,7 @@ export default function PricingPage() {
       {/* Setup preview */}
       <section
         style={{
-          padding: "2rem clamp(1.5rem, 5vw, 4rem)",
+          padding: "2rem var(--gutter)",
           background: "var(--color-surface)",
           borderTop: "1px solid var(--color-border)",
         }}
@@ -242,7 +242,7 @@ export default function PricingPage() {
       </section>
 
       {/* Objections */}
-      <section style={{ padding: "3rem clamp(1.5rem, 5vw, 4rem)" }}>
+      <section style={{ padding: "3rem var(--gutter)" }}>
         <div
           style={{
             maxWidth: 700,
@@ -274,7 +274,7 @@ export default function PricingPage() {
       {/* Referral */}
       <section
         style={{
-          padding: "3rem clamp(1.5rem, 5vw, 4rem)",
+          padding: "3rem var(--gutter)",
           textAlign: "center",
           borderTop: "1px solid var(--color-border)",
         }}
