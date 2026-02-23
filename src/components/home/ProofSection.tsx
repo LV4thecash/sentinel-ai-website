@@ -41,7 +41,7 @@ const cards: DemoCard[] = [
   },
   {
     title: "Website Extraction",
-    input: ["check the contract:", "https://tokensiteXYZ.io"],
+    input: ["check the contract:", "https://token.xyz"],
     output: "CA extracted from page",
     stat: "auto-scraped",
     blocked: false,
