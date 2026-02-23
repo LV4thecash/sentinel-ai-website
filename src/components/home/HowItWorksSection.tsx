@@ -44,7 +44,7 @@ export function HowItWorksSection() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 800,
+                fontWeight: 400,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
@@ -82,7 +82,7 @@ export function HowItWorksSection() {
                 <p
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontWeight: 900,
+                    fontWeight: 400,
                     fontSize: "5rem",
                     color: hoveredStep === step.n ? "var(--color-border-hi)" : "var(--color-border)",
                     lineHeight: 1,
@@ -95,8 +95,8 @@ export function HowItWorksSection() {
                 </p>
                 <p
                   style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 700,
+                    fontFamily: "var(--font-body)",
+                    fontWeight: 600,
                     fontSize: "1rem",
                     color: "var(--color-text)",
                     marginBottom: "0.4rem",

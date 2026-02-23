@@ -67,8 +67,8 @@ function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
         </span>
         <p
           style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 700,
+            fontFamily: "var(--font-body)",
+            fontWeight: 600,
             fontSize: "0.88rem",
             color: "var(--color-text)",
             margin: 0,
@@ -106,7 +106,7 @@ export function TrustStripSection() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 800,
+                fontWeight: 400,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,

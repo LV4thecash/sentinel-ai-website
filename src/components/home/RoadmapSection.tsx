@@ -43,12 +43,13 @@ export function RoadmapSection() {
             <h3
               style={{
                 fontFamily: "var(--font-display)",
+                fontWeight: 400,
                 fontSize: "1.6rem",
-                letterSpacing: "0.05em",
+                letterSpacing: "-0.01em",
                 marginBottom: "1rem",
               }}
             >
-              INTELLIGENCE LAYER
+              Intelligence Layer
             </h3>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {phase1Features.map((f) => (
@@ -85,12 +86,13 @@ export function RoadmapSection() {
             <h3
               style={{
                 fontFamily: "var(--font-display)",
+                fontWeight: 400,
                 fontSize: "1.6rem",
-                letterSpacing: "0.05em",
+                letterSpacing: "-0.01em",
                 marginBottom: "1rem",
               }}
             >
-              EXECUTION LAYER
+              Execution Layer
             </h3>
             <p style={{ fontSize: "0.82rem", color: "#8888a0", lineHeight: 1.7 }}>
               Optional bot integration. Sentinel will execute directly from the

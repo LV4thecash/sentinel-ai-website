@@ -106,14 +106,16 @@ export default function FaqPage() {
           <h1
             style={{
               fontFamily: "var(--font-display)",
+              fontWeight: 400,
+              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-              letterSpacing: "0.03em",
+              letterSpacing: "-0.01em",
               lineHeight: 0.95,
               marginBottom: "1rem",
               color: "var(--color-text)",
             }}
           >
-            COMMON QUESTIONS
+            Common Questions
           </h1>
           <p style={{ color: "var(--color-text-secondary)", marginTop: "0.75rem" }}>
             Not answered here?{" "}

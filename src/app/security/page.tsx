@@ -47,14 +47,16 @@ export default function SecurityPage() {
           <h1
             style={{
               fontFamily: "var(--font-display)",
+              fontWeight: 400,
+              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 7vw, 5rem)",
-              letterSpacing: "0.03em",
+              letterSpacing: "-0.01em",
               lineHeight: 0.95,
               marginBottom: "1.25rem",
               color: "var(--color-text)",
             }}
           >
-            CLIENT-SIDE.<br />NON-CUSTODIAL.<br />NO HIDDEN REACH.
+            Client-side.<br />Non-custodial.<br />No hidden reach.
           </h1>
           <p
             style={{
@@ -180,8 +182,9 @@ export default function SecurityPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
+                fontWeight: 400,
                 fontSize: "1.8rem",
-                letterSpacing: "0.05em",
+                letterSpacing: "-0.01em",
                 marginBottom: "1rem",
                 color: "var(--color-text)",
               }}
@@ -230,8 +233,9 @@ export default function SecurityPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
+                fontWeight: 400,
                 fontSize: "1.5rem",
-                letterSpacing: "0.05em",
+                letterSpacing: "-0.01em",
                 marginBottom: "1.5rem",
                 color: "var(--color-text)",
               }}
@@ -326,7 +330,8 @@ export default function SecurityPage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "1.4rem",
-                letterSpacing: "0.05em",
+                fontWeight: 400,
+                letterSpacing: "-0.01em",
                 marginBottom: "1rem",
                 color: "var(--color-text)",
               }}

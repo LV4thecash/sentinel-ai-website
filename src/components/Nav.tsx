@@ -58,8 +58,8 @@ export function Nav() {
           <Image src="/brand/logo.png" alt="Sentinel AI" width={34} height={34} />
           <span
             style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 800,
+              fontFamily: "var(--font-body)",
+              fontWeight: 700,
               fontSize: "1rem",
               letterSpacing: "0.08em",
               color: "var(--color-text)",
@@ -99,8 +99,8 @@ export function Nav() {
             style={{
               background: "var(--color-accent)",
               color: "#fff",
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
+              fontFamily: "var(--font-body)",
+              fontWeight: 600,
               fontSize: "0.72rem",
               padding: "0.48rem 1.1rem",
               borderRadius: 4,
@@ -178,8 +178,8 @@ export function Nav() {
             style={{
               background: "var(--color-accent)",
               color: "#fff",
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
+              fontFamily: "var(--font-body)",
+              fontWeight: 600,
               padding: "0.75rem 1rem",
               borderRadius: 4,
               textAlign: "center",

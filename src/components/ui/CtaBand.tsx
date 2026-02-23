@@ -20,7 +20,8 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
           <p
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 800,
+              fontWeight: 400,
+              fontStyle: "italic",
               fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
               letterSpacing: "-0.01em",
               lineHeight: 1.1,
@@ -50,8 +51,8 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
               display: "inline-block",
               background: "#fff",
               color: "#212323",
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
+              fontFamily: "var(--font-body)",
+              fontWeight: 600,
               fontSize: "0.78rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",

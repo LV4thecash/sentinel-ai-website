@@ -18,13 +18,15 @@ export default function RoadmapPage() {
           <h1
             style={{
               fontFamily: "var(--font-display)",
+              fontWeight: 400,
+              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              letterSpacing: "0.03em",
+              letterSpacing: "-0.01em",
               lineHeight: 0.95,
               color: "var(--color-text)",
             }}
           >
-            ROADMAP
+            Roadmap
           </h1>
         </FadeIn>
       </section>
@@ -64,13 +66,14 @@ export default function RoadmapPage() {
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
+                  fontWeight: 400,
                   fontSize: "1.8rem",
-                  letterSpacing: "0.05em",
+                  letterSpacing: "-0.01em",
                   marginBottom: "1.25rem",
                   color: "var(--color-text)",
                 }}
               >
-                INTELLIGENCE LAYER
+                Intelligence Layer
               </h2>
               <ul
                 style={{
@@ -119,13 +122,14 @@ export default function RoadmapPage() {
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
+                  fontWeight: 400,
                   fontSize: "1.8rem",
-                  letterSpacing: "0.05em",
+                  letterSpacing: "-0.01em",
                   marginBottom: "1.25rem",
                   color: "var(--color-text)",
                 }}
               >
-                EXECUTION LAYER
+                Execution Layer
               </h2>
               <p style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)", lineHeight: 1.7 }}>
                 Optional direct bot integration. When Phase 2 ships, Sentinel will

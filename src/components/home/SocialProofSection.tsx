@@ -42,7 +42,7 @@ export function SocialProofSection() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 800,
+                fontWeight: 400,
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
@@ -113,7 +113,7 @@ export function SocialProofSection() {
               </div>
               <p
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontFamily: "var(--font-body)",
                   fontWeight: 700,
                   fontSize: "1rem",
                   color: "var(--color-text)",
@@ -181,8 +181,8 @@ export function SocialProofSection() {
               </div>
               <p
                 style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 700,
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 600,
                   fontSize: "1rem",
                   color: "var(--color-text)",
                   marginBottom: "1rem",
@@ -273,8 +273,8 @@ export function SocialProofSection() {
               </div>
               <p
                 style={{
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 700,
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 600,
                   fontSize: "1rem",
                   color: "var(--color-text)",
                   marginBottom: "1rem",

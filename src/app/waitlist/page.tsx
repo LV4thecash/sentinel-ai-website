@@ -118,8 +118,8 @@ export default function WaitlistPage() {
           <div style={{ textAlign: "center", paddingTop: "2rem" }}>
             <p
               style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 700,
+                fontFamily: "var(--font-body)",
+                fontWeight: 600,
                 fontSize: "1.4rem",
                 color: "var(--color-text)",
                 marginBottom: "0.75rem",
@@ -155,7 +155,8 @@ export default function WaitlistPage() {
             <h1
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 900,
+                fontWeight: 400,
+                fontStyle: "italic",
                 fontSize: "clamp(2.8rem, 8vw, 4.5rem)",
                 lineHeight: 0.95,
                 letterSpacing: "-0.01em",
@@ -167,8 +168,8 @@ export default function WaitlistPage() {
             </h1>
             <p
               style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 700,
+                fontFamily: "var(--font-body)",
+                fontWeight: 500,
                 fontSize: "clamp(1.2rem, 3vw, 1.6rem)",
                 color: "var(--color-text-secondary)",
                 marginBottom: "1.5rem",
@@ -297,8 +298,8 @@ export default function WaitlistPage() {
                 style={{
                   background: state === "loading" ? "rgba(190,27,42,0.6)" : "var(--color-accent)",
                   color: "#fff",
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 700,
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 600,
                   fontSize: "0.78rem",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",

@@ -35,8 +35,8 @@ export function Footer() {
         <div>
           <span
             style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 800,
+              fontFamily: "var(--font-body)",
+              fontWeight: 700,
               fontSize: "0.9rem",
               letterSpacing: "0.08em",
               color: "var(--color-text)",

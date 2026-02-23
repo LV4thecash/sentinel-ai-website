@@ -78,14 +78,16 @@ export default function HowItWorksPage() {
           <h1
             style={{
               fontFamily: "var(--font-display)",
+              fontWeight: 400,
+              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 7vw, 5rem)",
-              letterSpacing: "0.03em",
+              letterSpacing: "-0.01em",
               lineHeight: 0.95,
               marginBottom: "1.25rem",
               color: "var(--color-text)",
             }}
           >
-            SETUP IN<br />~10 MINUTES
+            Setup in<br />~10 minutes
           </h1>
           <p
             style={{
@@ -281,8 +283,8 @@ export default function HowItWorksPage() {
               <div>
                 <p
                   style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 700,
+                    fontFamily: "var(--font-body)",
+                    fontWeight: 600,
                     fontSize: "0.95rem",
                     color: "var(--color-text)",
                     marginBottom: "0.3rem",

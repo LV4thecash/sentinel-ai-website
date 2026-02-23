@@ -48,14 +48,16 @@ export default function PricingPage() {
         <h1
           style={{
             fontFamily: "var(--font-display)",
+            fontWeight: 400,
+            fontStyle: "italic",
             fontSize: "clamp(2.5rem, 6vw, 5rem)",
-            letterSpacing: "0.03em",
+            letterSpacing: "-0.01em",
             lineHeight: 0.95,
             marginBottom: "1rem",
             color: "var(--color-text)",
           }}
         >
-          ONE SUBSCRIPTION.<br />THREE TIERS.
+          One subscription.<br />Three tiers.
         </h1>
         <p style={{ color: "var(--color-text-secondary)", marginTop: "1rem", lineHeight: 1.65 }}>
           SOL-denominated. Simple pricing. No hidden fees.
@@ -180,8 +182,8 @@ export default function PricingPage() {
                     background: t.popular ? "var(--color-accent)" : "transparent",
                     color: t.popular ? "#fff" : "var(--color-text)",
                     border: `1px solid ${t.popular ? "var(--color-accent)" : "var(--color-border-hi)"}`,
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 700,
+                    fontFamily: "var(--font-body)",
+                    fontWeight: 600,
                     fontSize: "0.75rem",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",

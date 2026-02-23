@@ -68,14 +68,16 @@ export default function ProductPage() {
           <h1
             style={{
               fontFamily: "var(--font-display)",
+              fontWeight: 400,
+              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 7vw, 5.5rem)",
-              letterSpacing: "0.03em",
+              letterSpacing: "-0.01em",
               lineHeight: 0.95,
               marginBottom: "1.25rem",
               color: "var(--color-text)",
             }}
           >
-            INTELLIGENCE,<br />NOT EXECUTION.
+            Intelligence,<br />not execution.
           </h1>
           <p
             style={{
@@ -226,6 +228,7 @@ export default function ProductPage() {
                   <p
                     style={{
                       fontFamily: "var(--font-display)",
+                      fontWeight: 400,
                       fontSize: "2.8rem",
                       color: "var(--color-accent)",
                       lineHeight: 1,

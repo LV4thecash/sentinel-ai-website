@@ -26,14 +26,16 @@ export default function PartnersPage() {
           <h1
             style={{
               fontFamily: "var(--font-display)",
+              fontWeight: 400,
+              fontStyle: "italic",
               fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              letterSpacing: "0.03em",
+              letterSpacing: "-0.01em",
               lineHeight: 0.95,
               marginBottom: "1.25rem",
               color: "var(--color-text)",
             }}
           >
-            PARTNER WITH<br />SENTINEL AI
+            Partner with<br />Sentinel AI
           </h1>
           <p
             style={{
