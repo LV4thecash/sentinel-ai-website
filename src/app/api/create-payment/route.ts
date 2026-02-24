@@ -8,8 +8,14 @@ const TIER_PRICES: Record<string, { amount: number; label: string }> = {
 };
 
 export async function POST(req: NextRequest) {
-  const body = await req.json() as { tier?: string };
-  const { tier } = body;
+  let body: { tier?: unknown };
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
+
+  const tier = typeof body.tier === "string" ? body.tier : undefined;
 
   if (!tier || !TIER_PRICES[tier]) {
     return NextResponse.json({ error: "Invalid tier" }, { status: 400 });
