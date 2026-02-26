@@ -8,9 +8,9 @@ export function ChatBubble({ lines, highlight, blocked = false }: ChatBubbleProp
   return (
     <div
       style={{
-        background: "var(--color-bg-alt)",
-        border: `1px solid ${blocked ? "rgba(190,27,42,0.35)" : "var(--color-border)"}`,
-        borderRadius: 8,
+        background: "rgba(244, 243, 245, 0.55)",
+        border: `1px solid ${blocked ? "rgba(190,27,42,0.35)" : "var(--glass-border)"}`,
+        borderRadius: "var(--radius-sm)",
         padding: "0.75rem 1rem",
         fontFamily: "var(--font-mono)",
         fontSize: "0.72rem",
