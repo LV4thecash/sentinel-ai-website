@@ -2,23 +2,25 @@
 import Link from "next/link";
 
 const pages = [
-  { href: "/product",      label: "Product" },
+  { href: "/product", label: "Product" },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/pricing",      label: "Pricing" },
-  { href: "/security",     label: "Security" },
-  { href: "/faq",          label: "FAQ" },
-  { href: "/roadmap",      label: "Roadmap" },
-  { href: "/partners",     label: "Partners" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/security", label: "Security" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/roadmap", label: "Roadmap" },
+  { href: "/partners", label: "Partners" },
 ];
 
 export function Footer() {
   return (
     <footer
       style={{
-        borderTop: "1px solid var(--color-border)",
+        borderTop: "1px solid var(--glass-border)",
         padding: "2.5rem clamp(1.5rem, 5vw, 4rem)",
         marginTop: "auto",
-        background: "var(--color-bg)",
+        background: "var(--glass-bg-subtle)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
       }}
     >
       <div
@@ -42,7 +44,8 @@ export function Footer() {
               color: "var(--color-text)",
             }}
           >
-            SENTINEL<span style={{ color: "var(--color-accent)" }}>AI</span>
+            SENTINEL
+            <span style={{ color: "var(--color-accent)" }}>AI</span>
           </span>
           <p
             style={{
@@ -75,8 +78,12 @@ export function Footer() {
                 textDecoration: "none",
                 transition: "color 0.15s ease",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "var(--color-text)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = "var(--color-text-muted)")
+              }
             >
               {p.label}
             </Link>
@@ -102,8 +109,12 @@ export function Footer() {
               textDecoration: "none",
               transition: "color 0.15s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.color = "var(--color-text)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.color = "var(--color-text-muted)")
+            }
           >
             Discord
           </a>
@@ -117,8 +128,12 @@ export function Footer() {
               textDecoration: "none",
               transition: "color 0.15s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.color = "var(--color-text)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.color = "var(--color-text-muted)")
+            }
           >
             Telegram
           </a>

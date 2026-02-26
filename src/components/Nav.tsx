@@ -4,15 +4,15 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const links = [
-  { href: "/product",      label: "Product" },
+  { href: "/product", label: "Product" },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/pricing",      label: "Pricing" },
-  { href: "/security",     label: "Security" },
-  { href: "/faq",          label: "FAQ" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/security", label: "Security" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export function Nav() {
-  const [open, setOpen]       = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,9 +22,15 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navBg      = scrolled ? "rgba(250,250,250,0.92)" : "transparent";
-  const navBorder  = scrolled ? "1px solid #E4E4E7"      : "1px solid transparent";
-  const navShadow  = scrolled ? "0 1px 0 rgba(0,0,0,0.04)" : "none";
+  const navBg = scrolled
+    ? "var(--glass-bg-strong)"
+    : "transparent";
+  const navBorder = scrolled
+    ? "1px solid var(--glass-border)"
+    : "1px solid transparent";
+  const navShadow = scrolled
+    ? "0 1px 8px rgba(0,0,0,0.04)"
+    : "none";
 
   return (
     <nav
@@ -35,11 +41,16 @@ export function Nav() {
         right: 0,
         zIndex: 50,
         background: navBg,
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
+        backdropFilter: scrolled
+          ? "blur(var(--glass-blur-strong))"
+          : "none",
+        WebkitBackdropFilter: scrolled
+          ? "blur(var(--glass-blur-strong))"
+          : "none",
         borderBottom: navBorder,
         boxShadow: navShadow,
-        transition: "background 0.22s var(--motion-ease), border-color 0.22s var(--motion-ease), box-shadow 0.22s var(--motion-ease)",
+        transition:
+          "background 0.22s var(--motion-ease), border-color 0.22s var(--motion-ease), box-shadow 0.22s var(--motion-ease), backdrop-filter 0.22s var(--motion-ease)",
       }}
     >
       <div
@@ -54,8 +65,21 @@ export function Nav() {
         }}
       >
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <Image src="/brand/logo.png" alt="Sentinel AI" width={34} height={34} />
+        <Link
+          href="/"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            textDecoration: "none",
+          }}
+        >
+          <Image
+            src="/brand/logo.png"
+            alt="Sentinel AI"
+            width={34}
+            height={34}
+          />
           <span
             style={{
               fontFamily: "var(--font-display)",
@@ -65,14 +89,19 @@ export function Nav() {
               color: "var(--color-text)",
             }}
           >
-            SENTINEL<span style={{ color: "var(--color-accent)" }}>AI</span>
+            SENTINEL
+            <span style={{ color: "var(--color-accent)" }}>AI</span>
           </span>
         </Link>
 
         {/* Desktop links */}
         <div
           className="desktop-nav"
-          style={{ display: "flex", gap: "2rem", alignItems: "center" }}
+          style={{
+            display: "flex",
+            gap: "2rem",
+            alignItems: "center",
+          }}
         >
           {links.map((l) => (
             <Link
@@ -88,8 +117,13 @@ export function Nav() {
                 letterSpacing: "0.02em",
                 transition: "color var(--motion-fast) ease",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-text)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-secondary)")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "var(--color-text)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color =
+                  "var(--color-text-secondary)")
+              }
             >
               {l.label}
             </Link>
@@ -102,22 +136,27 @@ export function Nav() {
               fontFamily: "var(--font-display)",
               fontWeight: 700,
               fontSize: "0.72rem",
-              padding: "0.48rem 1.1rem",
-              borderRadius: 4,
+              padding: "0.5rem 1.2rem",
+              borderRadius: "var(--radius-sm)",
               textDecoration: "none",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              transition: "background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease",
+              boxShadow:
+                "0 2px 8px rgba(190,27,42,0.18), inset 0 1px 0 rgba(255,255,255,0.1)",
+              transition:
+                "background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "var(--color-accent-hi)";
               e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow = "0 4px 14px rgba(190,27,42,0.28)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 16px rgba(190,27,42,0.28), inset 0 1px 0 rgba(255,255,255,0.1)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = "var(--color-accent)";
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.boxShadow =
+                "0 2px 8px rgba(190,27,42,0.18), inset 0 1px 0 rgba(255,255,255,0.1)";
             }}
           >
             Request Access
@@ -147,14 +186,14 @@ export function Nav() {
       {open && (
         <div
           style={{
-            borderTop: "1px solid var(--color-border)",
+            borderTop: "1px solid var(--glass-border)",
             padding: "1.25rem clamp(1.5rem, 5vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
-            background: "rgba(250,250,250,0.97)",
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)",
+            background: "var(--glass-bg-strong)",
+            backdropFilter: "blur(var(--glass-blur-strong))",
+            WebkitBackdropFilter: "blur(var(--glass-blur-strong))",
           }}
         >
           {links.map((l) => (
@@ -181,7 +220,7 @@ export function Nav() {
               fontFamily: "var(--font-display)",
               fontWeight: 700,
               padding: "0.75rem 1rem",
-              borderRadius: 4,
+              borderRadius: "var(--radius-sm)",
               textAlign: "center",
               textDecoration: "none",
               fontSize: "0.8rem",

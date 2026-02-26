@@ -2,32 +2,43 @@
 import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 import Link from "next/link";
 
 const items = [
   {
     icon: "[ local ]",
     label: "Client-side only",
-    description: "All processing happens in your browser extension. Nothing is sent to a Sentinel server.",
+    description:
+      "All processing happens in your browser extension. Nothing is sent to a Sentinel server.",
   },
   {
     icon: "[ ø wallet ]",
     label: "No wallet access",
-    description: "Sentinel never requests wallet permissions. It cannot sign, read, or interact with your assets.",
+    description:
+      "Sentinel never requests wallet permissions. It cannot sign, read, or interact with your assets.",
   },
   {
     icon: "[ ø server ]",
     label: "No server storage",
-    description: "Credentials are never transmitted or stored remotely. Your Telegram session stays local.",
+    description:
+      "Credentials are never transmitted or stored remotely. Your Telegram session stays local.",
   },
   {
     icon: "[ non-custodial ]",
     label: "Non-custodial",
-    description: "No asset custody, no trade execution, no positions. Sentinel only forwards contract addresses.",
+    description:
+      "No asset custody, no trade execution, no positions. Sentinel only forwards contract addresses.",
   },
 ];
 
-function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
+function TrustCard({
+  item,
+  index,
+}: {
+  item: (typeof items)[0];
+  index: number;
+}) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -39,14 +50,16 @@ function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
           display: "flex",
           flexDirection: "column",
           gap: "0.5rem",
-          padding: "1.35rem 1.5rem",
-          background: "var(--color-surface)",
-          border: `1px solid ${hovered ? "var(--color-accent)" : "var(--color-border)"}`,
-          borderRadius: 8,
+          padding: "1.5rem",
+          background: "var(--glass-bg-strong)",
+          backdropFilter: "blur(var(--glass-blur))",
+          WebkitBackdropFilter: "blur(var(--glass-blur))",
+          border: `1px solid ${hovered ? "var(--color-accent)" : "var(--glass-border)"}`,
+          borderRadius: "var(--radius-md)",
           boxShadow: hovered
-            ? "var(--shadow-hover)"
-            : "var(--shadow-sm), var(--shadow-inset)",
-          transform: hovered ? "translateY(-3px)" : "translateY(0)",
+            ? "var(--shadow-glass-hover)"
+            : "var(--shadow-glass)",
+          transform: hovered ? "translateY(-4px)" : "translateY(0)",
           transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
           cursor: "default",
           height: "100%",
@@ -93,75 +106,85 @@ function TrustCard({ item, index }: { item: typeof items[0]; index: number }) {
 
 export function TrustStripSection() {
   return (
-    <section
-      style={{
-        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
-        background: "var(--color-bg-alt)",
-      }}
-    >
-      <div style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <SectionLabel>Security Architecture</SectionLabel>
-            <h2
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 800,
-                fontSize: "clamp(2rem, 5vw, 3.2rem)",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.05,
-                color: "var(--color-text)",
-                marginBottom: "1rem",
-              }}
-            >
-              Built on zero-trust principles.
-            </h2>
-            <p
-              style={{
-                fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
-                color: "var(--color-text-secondary)",
-                lineHeight: 1.7,
-                maxWidth: 520,
-                margin: "0 auto",
-              }}
-            >
-              Sentinel runs entirely in your browser. No credentials leave your machine.
-              No server touches your session.
-            </p>
-          </div>
-        </FadeIn>
-
+    <>
+      <SectionDivider tint="warm" />
+      <section
+        style={{
+          padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
+          background: "rgba(244, 243, 245, 0.45)",
+          position: "relative",
+        }}
+      >
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "1rem",
-          }}
+          style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}
         >
-          {items.map((item, i) => (
-            <TrustCard key={item.label} item={item} index={i} />
-          ))}
-        </div>
-
-        <FadeIn delay={0.28}>
-          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-            <Link
-              href="/security"
-              style={{
-                color: "var(--color-accent)",
-                fontSize: "0.82rem",
-                textDecoration: "none",
-                fontFamily: "var(--font-body)",
-                fontWeight: 500,
-                borderBottom: "1px solid rgba(190,27,42,0.3)",
-                paddingBottom: "1px",
-              }}
+          <FadeIn>
+            <div
+              style={{ textAlign: "center", marginBottom: "3rem" }}
             >
-              Review the full security model →
-            </Link>
+              <SectionLabel>Security Architecture</SectionLabel>
+              <h2
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 800,
+                  fontSize: "clamp(2rem, 5vw, 3.2rem)",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.05,
+                  color: "var(--color-text)",
+                  marginBottom: "1rem",
+                }}
+              >
+                Built on zero-trust principles.
+              </h2>
+              <p
+                style={{
+                  fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
+                  color: "var(--color-text-secondary)",
+                  lineHeight: 1.7,
+                  maxWidth: 520,
+                  margin: "0 auto",
+                }}
+              >
+                Sentinel runs entirely in your browser. No credentials leave
+                your machine. No server touches your session.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "1rem",
+            }}
+          >
+            {items.map((item, i) => (
+              <TrustCard key={item.label} item={item} index={i} />
+            ))}
           </div>
-        </FadeIn>
-      </div>
-    </section>
+
+          <FadeIn delay={0.28}>
+            <div
+              style={{ textAlign: "center", marginTop: "2.5rem" }}
+            >
+              <Link
+                href="/security"
+                style={{
+                  color: "var(--color-accent)",
+                  fontSize: "0.82rem",
+                  textDecoration: "none",
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 500,
+                  borderBottom: "1px solid rgba(190,27,42,0.3)",
+                  paddingBottom: "1px",
+                }}
+              >
+                Review the full security model →
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+    </>
   );
 }

@@ -6,16 +6,38 @@ interface CtaBandProps {
   headline?: string;
 }
 
-export function CtaBand({ headline = "Want access before public launch?" }: CtaBandProps) {
+export function CtaBand({
+  headline = "Want access before public launch?",
+}: CtaBandProps) {
   return (
     <section
       style={{
         background: "var(--gradient-cta)",
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div style={{ maxWidth: 560, margin: "0 auto" }}>
+      {/* Subtle glass overlay for depth */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(190, 27, 42, 0.06) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+
+      <div
+        style={{
+          maxWidth: 560,
+          margin: "0 auto",
+          position: "relative",
+        }}
+      >
         <FadeIn>
           <p
             style={{
@@ -28,7 +50,7 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
               marginBottom: "1rem",
             }}
           >
-            Want access before public launch?
+            {headline}
           </p>
           <p
             style={{
@@ -55,19 +77,26 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
               fontSize: "0.78rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              padding: "0.9rem 2.25rem",
-              borderRadius: 4,
+              padding: "0.95rem 2.5rem",
+              borderRadius: "var(--radius-md)",
               textDecoration: "none",
               marginBottom: "1.5rem",
-              transition: "opacity 0.15s ease, transform 0.15s ease",
+              boxShadow:
+                "0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9)",
+              transition:
+                "opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9";
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+              e.currentTarget.style.opacity = "0.95";
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow =
+                "0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.9)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+              e.currentTarget.style.opacity = "1";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9)";
             }}
           >
             Apply for Access →
@@ -93,7 +122,14 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
             >
               Private beta · Invite-only expansion
             </p>
-            <span style={{ color: "rgba(255,255,255,0.15)", fontSize: "0.6rem" }}>·</span>
+            <span
+              style={{
+                color: "rgba(255,255,255,0.15)",
+                fontSize: "0.6rem",
+              }}
+            >
+              ·
+            </span>
             <a
               href="https://discord.gg/saES7e6W"
               target="_blank"
@@ -106,8 +142,12 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
                 textDecoration: "none",
                 transition: "color 0.15s ease",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "rgba(255,255,255,0.75)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = "rgba(255,255,255,0.35)")
+              }
             >
               Discord
             </a>
@@ -123,8 +163,12 @@ export function CtaBand({ headline = "Want access before public launch?" }: CtaB
                 textDecoration: "none",
                 transition: "color 0.15s ease",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.75)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "rgba(255,255,255,0.75)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = "rgba(255,255,255,0.35)")
+              }
             >
               Telegram
             </a>
