@@ -39,20 +39,6 @@ export function HowItWorksSection() {
           overflow: "hidden",
         }}
       >
-        {/* Subtle top warmth from dark zone transition above */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: "20%",
-            background:
-              "linear-gradient(to bottom, rgba(37, 32, 34, 0.03) 0%, transparent 100%)",
-            pointerEvents: "none",
-          }}
-        />
         <div
           style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}
         >
