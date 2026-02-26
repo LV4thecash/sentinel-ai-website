@@ -66,6 +66,21 @@ export function HeroSection() {
           pointerEvents: "none",
         }}
       />
+      {/* Bottom gradient — eases into the zone transition below */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "30%",
+          zIndex: 0,
+          background:
+            "linear-gradient(to bottom, transparent 0%, rgba(37, 32, 34, 0.04) 60%, rgba(37, 32, 34, 0.08) 100%)",
+          pointerEvents: "none",
+        }}
+      />
 
       {/* Main content: split layout on desktop, stacked on mobile */}
       <div

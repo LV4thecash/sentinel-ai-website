@@ -1,23 +1,34 @@
-import { type CSSProperties } from "react";
-
 interface SectionDividerProps {
-  /** Gradient tint direction: warm (red), cool (blue-gray), neutral */
-  tint?: "warm" | "cool" | "neutral";
-  /** Flip the curve direction */
-  flip?: boolean;
-  style?: CSSProperties;
+  /** Which zone color the gradient starts from */
+  from?: "light" | "dark";
+  /** Which zone color the gradient ends at */
+  to?: "light" | "dark";
 }
 
+const zones: Record<string, string> = {
+  light: "#F5F0F1",
+  dark: "#252022",
+};
+
 export function SectionDivider({
-  tint = "neutral",
-  flip = false,
-  style,
+  from = "light",
+  to = "dark",
 }: SectionDividerProps) {
-  const tintMap = {
-    warm: "rgba(190, 27, 42, 0.04)",
-    cool: "rgba(100, 116, 139, 0.04)",
-    neutral: "rgba(0, 0, 0, 0.015)",
-  };
+  const isZoneChange = from !== to;
+
+  if (!isZoneChange) return null;
+
+  const fromColor = zones[from];
+  const toColor = zones[to];
+
+  /* Build a multi-stop gradient for an organic ease-in-out feel
+     rather than a simple linear 2-stop interpolation */
+  const gradient =
+    from === "light"
+      ? /* Light → Dark: slow departure from light, accelerate into dark */
+        `linear-gradient(180deg, ${fromColor} 0%, #E2DBDD 18%, #A89A9E 42%, #5C5054 66%, #332D2F 82%, ${toColor} 100%)`
+      : /* Dark → Light: quick departure from dark, ease into light */
+        `linear-gradient(180deg, ${fromColor} 0%, #332D2F 18%, #5C5054 34%, #A89A9E 58%, #E2DBDD 82%, ${toColor} 100%)`;
 
   return (
     <div
@@ -25,38 +36,37 @@ export function SectionDivider({
       style={{
         position: "relative",
         width: "100%",
-        height: "clamp(60px, 8vw, 120px)",
+        height: "clamp(80px, 12vw, 150px)",
+        background: gradient,
         overflow: "hidden",
-        transform: flip ? "scaleY(-1)" : undefined,
-        ...style,
       }}
     >
-      {/* Soft radial gradient bridge */}
+      {/* Warm accent radial glow at the transition midpoint */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background: `radial-gradient(ellipse 80% 100% at 50% 100%, ${tintMap[tint]} 0%, transparent 70%)`,
+          background:
+            "radial-gradient(ellipse 55% 80% at 50% 50%, rgba(190, 27, 42, 0.08) 0%, transparent 70%)",
+          pointerEvents: "none",
         }}
       />
-      {/* Curved SVG edge */}
-      <svg
-        viewBox="0 0 1440 120"
-        preserveAspectRatio="none"
+
+      {/* Subtle horizon line — glass edge catching light */}
+      <div
         style={{
           position: "absolute",
-          bottom: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
+          top: "50%",
+          left: "8%",
+          right: "8%",
+          height: "1px",
+          background:
+            from === "light"
+              ? "linear-gradient(90deg, transparent 0%, rgba(190, 27, 42, 0.10) 25%, rgba(190, 27, 42, 0.14) 50%, rgba(190, 27, 42, 0.10) 75%, transparent 100%)"
+              : "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 25%, rgba(255, 255, 255, 0.10) 50%, rgba(255, 255, 255, 0.06) 75%, transparent 100%)",
+          pointerEvents: "none",
         }}
-      >
-        <path
-          d="M0,120 C360,20 1080,20 1440,120 L1440,120 L0,120 Z"
-          fill="var(--color-bg)"
-          fillOpacity="0.3"
-        />
-      </svg>
+      />
     </div>
   );
 }

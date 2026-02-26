@@ -110,8 +110,31 @@ export function TrustStripSection() {
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         background: "var(--zone-dark)",
         position: "relative",
+        overflow: "hidden",
       }}
     >
+      {/* Atmospheric depth — accent glow from top-left */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse 60% 45% at 20% 0%, rgba(190, 27, 42, 0.05) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+      {/* Cool ambient from bottom-right */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse 50% 35% at 85% 100%, rgba(100, 116, 139, 0.04) 0%, transparent 65%)",
+          pointerEvents: "none",
+        }}
+      />
       <div
         style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}
       >

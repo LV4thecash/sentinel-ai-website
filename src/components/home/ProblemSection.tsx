@@ -9,8 +9,32 @@ export function ProblemSection() {
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         background: "var(--zone-dark)",
         position: "relative",
+        overflow: "hidden",
       }}
     >
+      {/* Atmospheric depth — warm glow bleeding from top */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(190, 27, 42, 0.06) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+      {/* Secondary cool glow from bottom-right */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse 50% 40% at 80% 100%, rgba(100, 116, 139, 0.04) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+
       <div
         style={{ maxWidth: 680, margin: "0 auto", textAlign: "center" }}
       >

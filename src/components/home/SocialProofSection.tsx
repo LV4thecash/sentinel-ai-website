@@ -38,8 +38,31 @@ export function SocialProofSection() {
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         background: "var(--zone-dark)",
         position: "relative",
+        overflow: "hidden",
       }}
     >
+      {/* Atmospheric depth — warm glow from center-top */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(190, 27, 42, 0.06) 0%, transparent 65%)",
+          pointerEvents: "none",
+        }}
+      />
+      {/* Ambient warm glow from bottom */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse 60% 35% at 40% 100%, rgba(217, 119, 57, 0.03) 0%, transparent 65%)",
+          pointerEvents: "none",
+        }}
+      />
       <div
         style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}
       >

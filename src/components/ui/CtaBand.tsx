@@ -19,6 +19,21 @@ export function CtaBand({
         overflow: "hidden",
       }}
     >
+      {/* Top gradient — blends from SocialProof's dark zone into CTA gradient */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "clamp(40px, 8vw, 80px)",
+          background:
+            "linear-gradient(to bottom, #252022 0%, transparent 100%)",
+          pointerEvents: "none",
+          zIndex: 1,
+        }}
+      />
       {/* Subtle glass overlay for depth */}
       <div
         aria-hidden
