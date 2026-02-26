@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ChatBubble } from "@/components/ui/ChatBubble";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 import Link from "next/link";
 
 interface DemoCard {
@@ -25,7 +26,11 @@ const cards: DemoCard[] = [
   },
   {
     title: "Multi-CA + Ordinal",
-    input: ["CA1: AbCdEfGh...", "CA2: XyZwVuTs...", "only buy the second"],
+    input: [
+      "CA1: AbCdEfGh...",
+      "CA2: XyZwVuTs...",
+      "only buy the second",
+    ],
     output: "XyZwVuTs... forwarded",
     stat: "correct pick",
     blocked: false,
@@ -65,24 +70,26 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
-          background: "var(--color-surface)",
+          background: "var(--glass-bg-strong)",
+          backdropFilter: "blur(var(--glass-blur))",
+          WebkitBackdropFilter: "blur(var(--glass-blur))",
           border: `1px solid ${
             card.blocked
               ? "rgba(190,27,42,0.2)"
               : hovered
-              ? "var(--color-accent)"
-              : "var(--color-border)"
+                ? "var(--color-accent)"
+                : "var(--glass-border)"
           }`,
-          borderRadius: 8,
+          borderRadius: "var(--radius-md)",
           padding: "1.35rem",
           display: "flex",
           flexDirection: "column",
           gap: "0.85rem",
           height: "100%",
-          transform: hovered ? "translateY(-3px)" : "translateY(0)",
+          transform: hovered ? "translateY(-4px)" : "translateY(0)",
           boxShadow: hovered
-            ? "var(--shadow-hover)"
-            : "var(--shadow-sm), var(--shadow-inset)",
+            ? `var(--shadow-glass-hover)${card.blocked ? "" : ", var(--shadow-glow-accent)"}`
+            : "var(--shadow-glass)",
           transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
         }}
       >
@@ -129,10 +136,14 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
               ? "rgba(190,27,42,0.06)"
               : "rgba(22,163,74,0.07)",
             border: `1px solid ${
-              card.blocked ? "rgba(190,27,42,0.18)" : "rgba(22,163,74,0.2)"
+              card.blocked
+                ? "rgba(190,27,42,0.18)"
+                : "rgba(22,163,74,0.2)"
             }`,
-            borderRadius: 4,
-            color: card.blocked ? "var(--color-accent)" : "var(--color-pass)",
+            borderRadius: "var(--radius-sm)",
+            color: card.blocked
+              ? "var(--color-accent)"
+              : "var(--color-pass)",
             wordBreak: "break-all",
           }}
         >
@@ -158,64 +169,70 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
 
 export function ProofSection() {
   return (
-    <section
-      style={{
-        padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
-        background: "var(--color-bg)",
-      }}
-    >
-      <div style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <SectionLabel>What Sentinel Resolves</SectionLabel>
-            <h2
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 800,
-                fontSize: "clamp(2rem, 5vw, 3.2rem)",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.05,
-                color: "var(--color-text)",
-              }}
-            >
-              Five patterns. Zero misses.
-            </h2>
-          </div>
-        </FadeIn>
-
+    <>
+      <SectionDivider tint="cool" flip />
+      <section
+        style={{
+          padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
+          position: "relative",
+        }}
+      >
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "1rem",
-          }}
+          style={{ maxWidth: "var(--content-width)", margin: "0 auto" }}
         >
-          {cards.map((card, index) => (
-            <ProofCard key={card.title} card={card} index={index} />
-          ))}
-        </div>
+          <FadeIn>
+            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+              <SectionLabel>What Sentinel Resolves</SectionLabel>
+              <h2
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 800,
+                  fontSize: "clamp(2rem, 5vw, 3.2rem)",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.05,
+                  color: "var(--color-text)",
+                }}
+              >
+                Five patterns. Zero misses.
+              </h2>
+            </div>
+          </FadeIn>
 
-        <FadeIn delay={0.3}>
-          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-            <Link
-              href="/product"
-              style={{
-                color: "var(--color-accent)",
-                fontSize: "0.82rem",
-                textDecoration: "none",
-                fontFamily: "var(--font-body)",
-                fontWeight: 500,
-                letterSpacing: "0.02em",
-                borderBottom: "1px solid rgba(190,27,42,0.3)",
-                paddingBottom: "1px",
-                transition: "border-color var(--motion-fast) ease",
-              }}
-            >
-              Full technical breakdown →
-            </Link>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gap: "1rem",
+            }}
+          >
+            {cards.map((card, index) => (
+              <ProofCard key={card.title} card={card} index={index} />
+            ))}
           </div>
-        </FadeIn>
-      </div>
-    </section>
+
+          <FadeIn delay={0.3}>
+            <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+              <Link
+                href="/product"
+                style={{
+                  color: "var(--color-accent)",
+                  fontSize: "0.82rem",
+                  textDecoration: "none",
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 500,
+                  letterSpacing: "0.02em",
+                  borderBottom: "1px solid rgba(190,27,42,0.3)",
+                  paddingBottom: "1px",
+                  transition:
+                    "border-color var(--motion-fast) ease",
+                }}
+              >
+                Full technical breakdown →
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+    </>
   );
 }
