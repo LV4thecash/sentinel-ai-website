@@ -3,7 +3,7 @@
 :root {
   /* ─── Brand palette ─────────────────────────────────────── */
   --color-bg:          #FAFAFA;
-  --color-bg-alt:      #F1F1F2;
+  --color-bg-alt:      #F4F3F5;
   --color-surface:     #FFFFFF;
   --color-border:      #E4E4E7;
   --color-border-hi:   #D4D4D8;
@@ -24,28 +24,56 @@
   --color-neutral: #71717A;
 
   /* ─── Layout ────────────────────────────────────────────── */
-  --nav-height:      60px;
+  --nav-height:      64px;
   --content-width:   1120px;
   --section-gap:     7.5rem;
   --section-gap-sm:  4.5rem;
 
-  /* ─── Shadow system ─────────────────────────────────────── */
-  --shadow-xs:      0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm:      0 1px 4px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-md:      0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
-  --shadow-hover:   0 12px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
-  --shadow-inset:   inset 0 1px 0 rgba(255,255,255,0.9);
+  /* ─── Border radius system ─────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-pill: 999px;
 
-  /* ─── Gradient system (removable — no structural coupling) ─ */
-  --gradient-hero-bg:   radial-gradient(ellipse 80% 55% at 50% 70%, rgba(190,27,42,0.07) 0%, transparent 65%);
-  --gradient-hero-top:  radial-gradient(ellipse 100% 40% at 50% 0%, rgba(0,0,0,0.018) 0%, transparent 60%);
-  --gradient-word-glow: radial-gradient(ellipse at center, rgba(190,27,42,0.13) 0%, transparent 68%);
-  --gradient-cta:       linear-gradient(160deg, #191b1b 0%, #212323 55%, #1e1b1b 100%);
+  /* ─── Glass system ─────────────────────────────────────── */
+  --glass-bg:          rgba(255, 255, 255, 0.5);
+  --glass-bg-strong:   rgba(255, 255, 255, 0.7);
+  --glass-bg-subtle:   rgba(255, 255, 255, 0.3);
+  --glass-border:      rgba(255, 255, 255, 0.45);
+  --glass-border-hi:   rgba(255, 255, 255, 0.65);
+  --glass-blur:        20px;
+  --glass-blur-strong: 32px;
+
+  /* ─── Shadow system (glass-aware) ──────────────────────── */
+  --shadow-xs:      0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm:      0 2px 8px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md:      0 4px 20px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.03);
+  --shadow-lg:      0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-hover:   0 16px 48px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-inset:   inset 0 1px 0 rgba(255,255,255,0.7);
+  --shadow-glass:   0 8px 32px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+  --shadow-glass-hover: 0 16px 48px rgba(0,0,0,0.09), inset 0 1px 0 rgba(255,255,255,0.7);
+  --shadow-glow-accent: 0 0 40px rgba(190, 27, 42, 0.12);
+
+  /* ─── Gradient system ──────────────────────────────────── */
+  --gradient-hero-bg:   radial-gradient(ellipse 80% 55% at 50% 70%, rgba(190,27,42,0.09) 0%, transparent 65%);
+  --gradient-hero-top:  radial-gradient(ellipse 100% 40% at 50% 0%, rgba(0,0,0,0.015) 0%, transparent 60%);
+  --gradient-word-glow: radial-gradient(ellipse at center, rgba(190,27,42,0.15) 0%, transparent 68%);
+  --gradient-cta:       linear-gradient(160deg, #151717 0%, #1e2020 40%, #1a1819 100%);
+  --gradient-glass-border: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.15) 100%);
+
+  /* ─── Atmosphere orb colors ────────────────────────────── */
+  --orb-warm:    rgba(190, 27, 42, 0.10);
+  --orb-amber:   rgba(217, 119, 57, 0.07);
+  --orb-cool:    rgba(100, 116, 139, 0.06);
+  --orb-rose:    rgba(225, 70, 90, 0.06);
 
   /* ─── Motion tokens ─────────────────────────────────────── */
   --motion-fast:     0.2s;
   --motion-base:     0.45s;
   --motion-slow:     0.7s;
+  --motion-slower:   1s;
   --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --motion-ease:     cubic-bezier(0.4, 0, 0.2, 1);
   --motion-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -75,9 +103,9 @@ body {
 }
 
 /* ─── Section utilities ─────────────────────────────────────── */
-.section    { padding: var(--section-gap) 0; }
-.section-sm { padding: var(--section-gap-sm) 0; }
-.section-alt { background: var(--color-bg-alt); }
+.section    { padding: var(--section-gap) 0; position: relative; }
+.section-sm { padding: var(--section-gap-sm) 0; position: relative; }
+.section-alt { background: rgba(244, 243, 245, 0.55); }
 
 .content-wrap {
   max-width: var(--content-width);
@@ -93,7 +121,7 @@ body {
   color: var(--color-accent);
   background: var(--color-accent-lo);
   padding: 0.15em 0.4em;
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
 }
 
 /* ─── Nav visibility helpers ────────────────────────────────── */
@@ -105,7 +133,7 @@ body {
 /* ─── Thin scrollbar ────────────────────────────────────────── */
 ::-webkit-scrollbar              { width: 4px; }
 ::-webkit-scrollbar-track        { background: var(--color-bg); }
-::-webkit-scrollbar-thumb        { background: var(--color-border-hi); border-radius: 2px; }
+::-webkit-scrollbar-thumb        { background: var(--color-border-hi); border-radius: var(--radius-sm); }
 
 /* ─── Focus ring ────────────────────────────────────────────── */
 :focus-visible {
@@ -118,6 +146,26 @@ body {
   0%   { transform: scale(1);   opacity: 1; }
   60%  { transform: scale(2.2); opacity: 0; }
   100% { transform: scale(1);   opacity: 0; }
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(60px, -40px) scale(1.05); }
+  50%      { transform: translate(-30px, -80px) scale(0.95); }
+  75%      { transform: translate(-60px, 20px) scale(1.02); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(-50px, 30px) scale(0.97); }
+  50%      { transform: translate(40px, 60px) scale(1.04); }
+  75%      { transform: translate(70px, -20px) scale(0.98); }
+}
+
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(30px, -50px) scale(1.03); }
+  66%      { transform: translate(-40px, 30px) scale(0.96); }
 }
 
 /* ─── Nav link underline animation ─────────────────────────── */

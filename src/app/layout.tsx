@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { displayFont, bodyFont, monoFont } from "@/lib/fonts";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { AtmosphereBackground } from "@/components/ui/AtmosphereBackground";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,9 +28,12 @@ export default function RootLayout({
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
     >
       <body>
-        <Nav />
-        {children}
-        <Footer />
+        <AtmosphereBackground />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Nav />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
