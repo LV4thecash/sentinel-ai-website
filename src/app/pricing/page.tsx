@@ -44,7 +44,12 @@ export default function PricingPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
+      <section
+        style={{
+          padding: "5rem clamp(1.5rem, 5vw, 4rem)",
+          textAlign: "center",
+        }}
+      >
         <h1
           style={{
             fontFamily: "var(--font-display)",
@@ -55,9 +60,17 @@ export default function PricingPage() {
             color: "var(--color-text)",
           }}
         >
-          ONE SUBSCRIPTION.<br />THREE TIERS.
+          ONE SUBSCRIPTION.
+          <br />
+          THREE TIERS.
         </h1>
-        <p style={{ color: "var(--color-text-secondary)", marginTop: "1rem", lineHeight: 1.65 }}>
+        <p
+          style={{
+            color: "var(--color-text-secondary)",
+            marginTop: "1rem",
+            lineHeight: 1.65,
+          }}
+        >
           SOL-denominated. Simple pricing. No hidden fees.
         </p>
         <p
@@ -74,13 +87,16 @@ export default function PricingPage() {
       </section>
 
       {/* Tiers */}
-      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 5rem" }}>
+      <section
+        style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 5rem" }}
+      >
         <div
           style={{
             maxWidth: 960,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(240px, 1fr))",
             gap: "1.25rem",
           }}
         >
@@ -92,22 +108,32 @@ export default function PricingPage() {
                 onMouseEnter={() => setHoveredTier(t.id)}
                 onMouseLeave={() => setHoveredTier(null)}
                 style={{
-                  background: "var(--color-surface)",
-                  border: `1px solid ${t.popular ? "var(--color-accent)" : isHovered ? "var(--color-border-hi)" : "var(--color-border)"}`,
-                  borderRadius: 8,
+                  background: "var(--glass-bg-strong)",
+                  backdropFilter: "blur(var(--glass-blur))",
+                  WebkitBackdropFilter: "blur(var(--glass-blur))",
+                  border: `1px solid ${
+                    t.popular
+                      ? "var(--color-accent)"
+                      : isHovered
+                        ? "var(--glass-border-hi)"
+                        : "var(--glass-border)"
+                  }`,
+                  borderRadius: "var(--radius-lg)",
                   padding: "2rem 1.5rem",
                   position: "relative",
                   display: "flex",
                   flexDirection: "column",
                   gap: "1rem",
-                  transform: isHovered ? "translateY(-4px)" : "translateY(0)",
+                  transform: isHovered
+                    ? "translateY(-4px)"
+                    : "translateY(0)",
                   boxShadow: isHovered
                     ? t.popular
-                      ? "0 12px 40px rgba(190,27,42,0.18), 0 2px 8px rgba(190,27,42,0.08)"
-                      : "var(--shadow-hover)"
+                      ? "0 16px 48px rgba(190,27,42,0.16), 0 4px 12px rgba(190,27,42,0.06), var(--shadow-glow-accent)"
+                      : "var(--shadow-glass-hover)"
                     : t.popular
-                    ? "0 2px 12px rgba(190,27,42,0.1), var(--shadow-inset)"
-                    : "var(--shadow-sm), var(--shadow-inset)",
+                      ? "0 4px 20px rgba(190,27,42,0.1), var(--shadow-inset)"
+                      : "var(--shadow-glass)",
                   transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
                 }}
               >
@@ -125,8 +151,10 @@ export default function PricingPage() {
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
                       padding: "0.25rem 0.85rem",
-                      borderRadius: 20,
+                      borderRadius: "var(--radius-pill)",
                       whiteSpace: "nowrap",
+                      boxShadow:
+                        "0 2px 8px rgba(190,27,42,0.2)",
                     }}
                   >
                     Most Popular
@@ -149,13 +177,21 @@ export default function PricingPage() {
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "3rem",
-                      color: t.popular ? "var(--color-accent)" : "var(--color-text)",
+                      color: t.popular
+                        ? "var(--color-accent)"
+                        : "var(--color-text)",
                       lineHeight: 1,
                     }}
                   >
                     {t.price}
                   </span>
-                  <span style={{ color: "var(--color-neutral)", fontSize: "0.85rem", marginLeft: "0.25rem" }}>
+                  <span
+                    style={{
+                      color: "var(--color-neutral)",
+                      fontSize: "0.85rem",
+                      marginLeft: "0.25rem",
+                    }}
+                  >
                     {t.period}
                   </span>
                 </div>
@@ -177,7 +213,9 @@ export default function PricingPage() {
                   style={{
                     display: "block",
                     textAlign: "center",
-                    background: t.popular ? "var(--color-accent)" : "transparent",
+                    background: t.popular
+                      ? "var(--color-accent)"
+                      : "transparent",
                     color: t.popular ? "#fff" : "var(--color-text)",
                     border: `1px solid ${t.popular ? "var(--color-accent)" : "var(--color-border-hi)"}`,
                     fontFamily: "var(--font-display)",
@@ -186,20 +224,27 @@ export default function PricingPage() {
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
                     padding: "0.8rem",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     textDecoration: "none",
                     marginTop: "auto",
+                    boxShadow: t.popular
+                      ? "0 2px 8px rgba(190,27,42,0.15), inset 0 1px 0 rgba(255,255,255,0.1)"
+                      : "none",
                     transition: `background var(--motion-fast) ease, box-shadow var(--motion-fast) ease`,
                   }}
                   onMouseEnter={(e) => {
                     if (t.popular) {
-                      e.currentTarget.style.background = "var(--color-accent-hi)";
+                      e.currentTarget.style.background =
+                        "var(--color-accent-hi)";
                     } else {
-                      e.currentTarget.style.background = "var(--color-bg-alt)";
+                      e.currentTarget.style.background =
+                        "var(--glass-bg)";
                     }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = t.popular ? "var(--color-accent)" : "transparent";
+                    e.currentTarget.style.background = t.popular
+                      ? "var(--color-accent)"
+                      : "transparent";
                   }}
                 >
                   Apply for Access
@@ -214,8 +259,10 @@ export default function PricingPage() {
       <section
         style={{
           padding: "2rem clamp(1.5rem, 5vw, 4rem)",
-          background: "var(--color-surface)",
-          borderTop: "1px solid var(--color-border)",
+          background: "var(--glass-bg-subtle)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          borderTop: "1px solid var(--glass-border)",
         }}
       >
         <div
@@ -242,13 +289,16 @@ export default function PricingPage() {
       </section>
 
       {/* Objections */}
-      <section style={{ padding: "3rem clamp(1.5rem, 5vw, 4rem)" }}>
+      <section
+        style={{ padding: "3rem clamp(1.5rem, 5vw, 4rem)" }}
+      >
         <div
           style={{
             maxWidth: 700,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "1rem",
           }}
         >
@@ -257,14 +307,23 @@ export default function PricingPage() {
               key={o}
               style={{
                 padding: "0.85rem 1rem",
-                background: "var(--color-surface)",
-                border: "1px solid var(--color-border)",
-                borderRadius: 6,
+                background: "var(--glass-bg)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                border: "1px solid var(--glass-border)",
+                borderRadius: "var(--radius-md)",
                 fontSize: "0.8rem",
                 color: "var(--color-text-secondary)",
               }}
             >
-              <span style={{ color: "var(--color-pass)", marginRight: "0.5rem" }}>✓</span>
+              <span
+                style={{
+                  color: "var(--color-pass)",
+                  marginRight: "0.5rem",
+                }}
+              >
+                ✓
+              </span>
               {o}
             </div>
           ))}
@@ -276,13 +335,25 @@ export default function PricingPage() {
         style={{
           padding: "3rem clamp(1.5rem, 5vw, 4rem)",
           textAlign: "center",
-          borderTop: "1px solid var(--color-border)",
+          borderTop: "1px solid var(--glass-border)",
         }}
       >
-        <p style={{ fontWeight: 600, fontSize: "0.95rem", color: "var(--color-text)" }}>
+        <p
+          style={{
+            fontWeight: 600,
+            fontSize: "0.95rem",
+            color: "var(--color-text)",
+          }}
+        >
           Refer a trader, earn subscription credits.
         </p>
-        <p style={{ color: "var(--color-text-secondary)", fontSize: "0.82rem", marginTop: "0.5rem" }}>
+        <p
+          style={{
+            color: "var(--color-text-secondary)",
+            fontSize: "0.82rem",
+            marginTop: "0.5rem",
+          }}
+        >
           Join the waitlist to unlock your referral link at launch.
         </p>
       </section>

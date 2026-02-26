@@ -158,7 +158,7 @@ export default function FaqPage() {
                   <details
                     key={q}
                     style={{
-                      borderBottom: "1px solid var(--color-border)",
+                      borderBottom: "1px solid var(--glass-border)",
                       padding: "1rem 0",
                     }}
                   >

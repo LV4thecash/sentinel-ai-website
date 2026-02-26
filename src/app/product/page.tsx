@@ -10,22 +10,34 @@ const pipeline = [
   {
     label: "Detection",
     n: "01",
-    bullets: ["Regex + Base58 alphabet sweep", "Fragment / split-token scan"],
+    bullets: [
+      "Regex + Base58 alphabet sweep",
+      "Fragment / split-token scan",
+    ],
   },
   {
     label: "Reconstruction",
     n: "02",
-    bullets: ["Reverse-map CA database lookup", "AI-assisted completion candidates"],
+    bullets: [
+      "Reverse-map CA database lookup",
+      "AI-assisted completion candidates",
+    ],
   },
   {
     label: "Filtering",
     n: "03",
-    bullets: ["Warning keyword scan", "Ordinal instruction parser"],
+    bullets: [
+      "Warning keyword scan",
+      "Ordinal instruction parser",
+    ],
   },
   {
     label: "Forwarding",
     n: "04",
-    bullets: ["Clean CA to user-defined destination", "Source metadata attached"],
+    bullets: [
+      "Clean CA to user-defined destination",
+      "Source metadata attached",
+    ],
   },
 ];
 
@@ -37,19 +49,35 @@ const metrics = [
 ];
 
 const configOptions: [string, string][] = [
-  ["Source selection", "Monitor any Telegram chat, channel, or user"],
-  ["Ordinal handling", "Forward all CAs, or only when an ordinal instruction is explicit"],
-  ["Warning filter", "Toggle on/off; customize the keyword list in advanced mode"],
+  [
+    "Source selection",
+    "Monitor any Telegram chat, channel, or user",
+  ],
+  [
+    "Ordinal handling",
+    "Forward all CAs, or only when an ordinal instruction is explicit",
+  ],
+  [
+    "Warning filter",
+    "Toggle on/off; customize the keyword list in advanced mode",
+  ],
   ["Forwarding destination", "Any Telegram group, bot, or DM"],
 ];
 
 export default function ProductPage() {
-  const [hoveredPipeline, setHoveredPipeline] = useState<string | null>(null);
+  const [hoveredPipeline, setHoveredPipeline] = useState<
+    string | null
+  >(null);
 
   return (
     <main>
       {/* Hero */}
-      <section style={{ padding: "5rem clamp(1.5rem, 5vw, 4rem)", textAlign: "center" }}>
+      <section
+        style={{
+          padding: "5rem clamp(1.5rem, 5vw, 4rem)",
+          textAlign: "center",
+        }}
+      >
         <FadeIn>
           <nav
             aria-label="Breadcrumb"
@@ -60,7 +88,10 @@ export default function ProductPage() {
               fontFamily: "var(--font-mono)",
             }}
           >
-            <Link href="/" style={{ color: "inherit", textDecoration: "none" }}>
+            <Link
+              href="/"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
               Home
             </Link>
             {" / "}Product
@@ -75,7 +106,9 @@ export default function ProductPage() {
               color: "var(--color-text)",
             }}
           >
-            INTELLIGENCE,<br />NOT EXECUTION.
+            INTELLIGENCE,
+            <br />
+            NOT EXECUTION.
           </h1>
           <p
             style={{
@@ -86,8 +119,9 @@ export default function ProductPage() {
               fontSize: "1rem",
             }}
           >
-            Sentinel is the layer that turns hostile Telegram noise into clean
-            contract addresses, ready for your bot to act on.
+            Sentinel is the layer that turns hostile Telegram noise
+            into clean contract addresses, ready for your bot to act
+            on.
           </p>
           <Link
             href="/waitlist"
@@ -95,24 +129,30 @@ export default function ProductPage() {
               background: "var(--color-accent)",
               color: "#fff",
               fontWeight: 700,
-              padding: "0.85rem 2rem",
-              borderRadius: 4,
+              padding: "0.9rem 2.25rem",
+              borderRadius: "var(--radius-md)",
               textDecoration: "none",
               fontSize: "0.85rem",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
+              boxShadow:
+                "0 4px 16px rgba(190,27,42,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
               transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,
               display: "inline-block",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "var(--color-accent-hi)";
+              e.currentTarget.style.background =
+                "var(--color-accent-hi)";
               e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 6px 20px rgba(190,27,42,0.28)";
+              e.currentTarget.style.boxShadow =
+                "0 8px 28px rgba(190,27,42,0.32), inset 0 1px 0 rgba(255,255,255,0.15)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = "var(--color-accent)";
+              e.currentTarget.style.background =
+                "var(--color-accent)";
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.boxShadow =
+                "0 4px 16px rgba(190,27,42,0.2), inset 0 1px 0 rgba(255,255,255,0.15)";
             }}
           >
             Apply for Access
@@ -125,8 +165,8 @@ export default function ProductPage() {
         <section
           style={{
             padding: "4rem clamp(1.5rem, 5vw, 4rem)",
-            background: "var(--color-surface)",
-            borderTop: "1px solid var(--color-border)",
+            background: "rgba(244, 243, 245, 0.45)",
+            borderTop: "1px solid var(--glass-border)",
           }}
         >
           <div style={{ maxWidth: 1060, margin: "0 auto" }}>
@@ -134,23 +174,45 @@ export default function ProductPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(200px, 1fr))",
                 gap: "1rem",
                 marginTop: "1.5rem",
               }}
             >
               {pipeline.map((p, i) => (
-                <div key={p.label} style={{ position: "relative" }}>
+                <div
+                  key={p.label}
+                  style={{ position: "relative" }}
+                >
                   <div
-                    onMouseEnter={() => setHoveredPipeline(p.label)}
-                    onMouseLeave={() => setHoveredPipeline(null)}
+                    onMouseEnter={() =>
+                      setHoveredPipeline(p.label)
+                    }
+                    onMouseLeave={() =>
+                      setHoveredPipeline(null)
+                    }
                     style={{
-                      background: "var(--color-bg)",
-                      border: `1px solid ${hoveredPipeline === p.label ? "var(--color-accent)" : "var(--color-border)"}`,
-                      borderRadius: 6,
-                      padding: "1rem 1.1rem",
-                      transform: hoveredPipeline === p.label ? "translateY(-2px)" : "translateY(0)",
-                      boxShadow: hoveredPipeline === p.label ? "0 6px 16px rgba(0,0,0,0.07)" : "none",
+                      background: "var(--glass-bg-strong)",
+                      backdropFilter:
+                        "blur(var(--glass-blur))",
+                      WebkitBackdropFilter:
+                        "blur(var(--glass-blur))",
+                      border: `1px solid ${
+                        hoveredPipeline === p.label
+                          ? "var(--color-accent)"
+                          : "var(--glass-border)"
+                      }`,
+                      borderRadius: "var(--radius-md)",
+                      padding: "1.1rem 1.2rem",
+                      transform:
+                        hoveredPipeline === p.label
+                          ? "translateY(-3px)"
+                          : "translateY(0)",
+                      boxShadow:
+                        hoveredPipeline === p.label
+                          ? "var(--shadow-glass-hover)"
+                          : "var(--shadow-glass)",
                       transition: `transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
                     }}
                   >
@@ -169,7 +231,11 @@ export default function ProductPage() {
                     {p.bullets.map((b) => (
                       <p
                         key={b}
-                        style={{ fontSize: "0.78rem", color: "var(--color-text-secondary)", lineHeight: 1.55 }}
+                        style={{
+                          fontSize: "0.78rem",
+                          color: "var(--color-text-secondary)",
+                          lineHeight: 1.55,
+                        }}
                       >
                         · {b}
                       </p>
@@ -206,8 +272,8 @@ export default function ProductPage() {
         <section
           style={{
             padding: "4rem clamp(1.5rem, 5vw, 4rem)",
-            background: "var(--color-surface)",
-            borderTop: "1px solid var(--color-border)",
+            background: "rgba(244, 243, 245, 0.45)",
+            borderTop: "1px solid var(--glass-border)",
           }}
         >
           <div
@@ -215,7 +281,8 @@ export default function ProductPage() {
               maxWidth: 960,
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(180px, 1fr))",
               gap: "1rem",
               textAlign: "center",
             }}
@@ -233,7 +300,13 @@ export default function ProductPage() {
                   >
                     {m.stat}
                   </p>
-                  <p style={{ fontSize: "0.78rem", color: "var(--color-neutral)", marginTop: "0.35rem" }}>
+                  <p
+                    style={{
+                      fontSize: "0.78rem",
+                      color: "var(--color-neutral)",
+                      marginTop: "0.35rem",
+                    }}
+                  >
                     {m.label}
                   </p>
                 </div>
@@ -245,7 +318,11 @@ export default function ProductPage() {
 
       {/* Config options */}
       <FadeIn>
-        <section style={{ padding: "4rem clamp(1.5rem, 5vw, 4rem)" }}>
+        <section
+          style={{
+            padding: "4rem clamp(1.5rem, 5vw, 4rem)",
+          }}
+        >
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
             <SectionLabel>Configuration</SectionLabel>
             <div
@@ -264,9 +341,11 @@ export default function ProductPage() {
                     gridTemplateColumns: "200px 1fr",
                     gap: "1rem",
                     padding: "0.85rem 1rem",
-                    background: "var(--color-surface)",
-                    border: "1px solid var(--color-border)",
-                    borderRadius: 6,
+                    background: "var(--glass-bg)",
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    border: "1px solid var(--glass-border)",
+                    borderRadius: "var(--radius-md)",
                   }}
                 >
                   <p
@@ -278,7 +357,14 @@ export default function ProductPage() {
                   >
                     {label}
                   </p>
-                  <p style={{ fontSize: "0.82rem", color: "var(--color-text-secondary)" }}>{desc}</p>
+                  <p
+                    style={{
+                      fontSize: "0.82rem",
+                      color: "var(--color-text-secondary)",
+                    }}
+                  >
+                    {desc}
+                  </p>
                 </div>
               ))}
             </div>

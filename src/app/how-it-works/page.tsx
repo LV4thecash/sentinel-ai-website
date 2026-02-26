@@ -104,12 +104,13 @@ export default function HowItWorksPage() {
               color: "#fff",
               fontWeight: 700,
               padding: "0.85rem 2rem",
-              borderRadius: 4,
+              borderRadius: "var(--radius-sm)",
               textDecoration: "none",
               fontSize: "0.85rem",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               display: "inline-block",
+              boxShadow: "0 2px 8px rgba(190,27,42,0.15), inset 0 1px 0 rgba(255,255,255,0.1)",
               transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,
             }}
             onMouseEnter={(e) => {
@@ -120,7 +121,7 @@ export default function HowItWorksPage() {
             onMouseLeave={(e) => {
               e.currentTarget.style.background = "var(--color-accent)";
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.boxShadow = "0 2px 8px rgba(190,27,42,0.15), inset 0 1px 0 rgba(255,255,255,0.1)";
             }}
           >
             Apply for Access
@@ -149,7 +150,7 @@ export default function HowItWorksPage() {
                   gridTemplateColumns: "auto 1fr",
                   gap: "1.5rem",
                   paddingBottom: "2.5rem",
-                  borderRadius: 8,
+                  borderRadius: "var(--radius-md)",
                   padding: "1rem",
                   background: hoveredStep === step.n ? "rgba(0,0,0,0.015)" : "transparent",
                   transition: `background var(--motion-fast) ease`,
@@ -204,7 +205,7 @@ export default function HowItWorksPage() {
                         padding: "0.6rem 0.85rem",
                         background: "var(--color-accent-lo)",
                         border: "1px solid rgba(190,27,42,0.25)",
-                        borderRadius: 4,
+                        borderRadius: "var(--radius-sm)",
                         fontSize: "0.75rem",
                         color: "var(--color-text-secondary)",
                         fontFamily: "var(--font-mono)",
@@ -227,8 +228,8 @@ export default function HowItWorksPage() {
         <section
           style={{
             padding: "4rem clamp(1.5rem, 5vw, 4rem)",
-            background: "var(--color-surface)",
-            borderTop: "1px solid var(--color-border)",
+            background: "rgba(244, 243, 245, 0.45)",
+            borderTop: "1px solid var(--glass-border)",
           }}
         >
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -237,8 +238,8 @@ export default function HowItWorksPage() {
               style={{
                 marginTop: "1.5rem",
                 padding: "1.5rem 2rem",
-                border: "1px solid var(--color-border)",
-                borderRadius: 8,
+                border: "1px solid var(--glass-border)",
+                borderRadius: "var(--radius-md)",
                 display: "flex",
                 alignItems: "center",
                 gap: "1.25rem",
@@ -293,7 +294,7 @@ export default function HowItWorksPage() {
                 <details
                   key={q}
                   style={{
-                    borderBottom: "1px solid var(--color-border)",
+                    borderBottom: "1px solid var(--glass-border)",
                     padding: "1rem 0",
                   }}
                 >

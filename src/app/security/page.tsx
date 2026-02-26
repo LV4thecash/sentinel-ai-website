@@ -75,15 +75,15 @@ export default function SecurityPage() {
         <section
           style={{
             padding: "4rem clamp(1.5rem, 5vw, 4rem)",
-            background: "var(--color-surface)",
-            borderTop: "1px solid var(--color-border)",
+            background: "rgba(244, 243, 245, 0.45)",
+            borderTop: "1px solid var(--glass-border)",
           }}
         >
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <div
               style={{
-                border: "1px solid var(--color-border)",
-                borderRadius: 8,
+                border: "1px solid var(--glass-border)",
+                borderRadius: "var(--radius-md)",
                 overflow: "hidden",
               }}
             >
@@ -93,8 +93,8 @@ export default function SecurityPage() {
                   style={{
                     padding: "1rem 1.5rem",
                     background: "rgba(34,197,94,0.06)",
-                    borderBottom: "1px solid var(--color-border)",
-                    borderRight: "1px solid var(--color-border)",
+                    borderBottom: "1px solid var(--glass-border)",
+                    borderRight: "1px solid var(--glass-border)",
                   }}
                 >
                   <p
@@ -113,7 +113,7 @@ export default function SecurityPage() {
                   style={{
                     padding: "1rem 1.5rem",
                     background: "rgba(239,68,68,0.06)",
-                    borderBottom: "1px solid var(--color-border)",
+                    borderBottom: "1px solid var(--glass-border)",
                   }}
                 >
                   <p
@@ -138,13 +138,13 @@ export default function SecurityPage() {
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
                     borderBottom:
-                      i < doTable.length - 1 ? "1px solid var(--color-border)" : "none",
+                      i < doTable.length - 1 ? "1px solid var(--glass-border)" : "none",
                   }}
                 >
                   <div
                     style={{
                       padding: "0.85rem 1.5rem",
-                      borderRight: "1px solid var(--color-border)",
+                      borderRight: "1px solid var(--glass-border)",
                       fontSize: "0.82rem",
                       color: "var(--color-text-secondary)",
                     }}
@@ -198,9 +198,11 @@ export default function SecurityPage() {
               style={{
                 marginTop: "1.5rem",
                 padding: "1.25rem",
-                background: "var(--color-surface)",
-                border: "1px solid var(--color-border)",
-                borderRadius: 6,
+                background: "var(--glass-bg-strong)",
+                border: "1px solid var(--glass-border)",
+                borderRadius: "var(--radius-md)",
+                backdropFilter: "blur(var(--glass-blur))",
+                WebkitBackdropFilter: "blur(var(--glass-blur))",
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.72rem",
                 color: "var(--color-text-muted)",
@@ -222,8 +224,8 @@ export default function SecurityPage() {
         <section
           style={{
             padding: "4rem clamp(1.5rem, 5vw, 4rem)",
-            background: "var(--color-surface)",
-            borderTop: "1px solid var(--color-border)",
+            background: "rgba(244, 243, 245, 0.45)",
+            borderTop: "1px solid var(--glass-border)",
           }}
         >
           <div style={{ maxWidth: 700, margin: "0 auto" }}>
@@ -240,8 +242,8 @@ export default function SecurityPage() {
             </h2>
             <div
               style={{
-                border: "1px solid var(--color-border)",
-                borderRadius: 6,
+                border: "1px solid var(--glass-border)",
+                borderRadius: "var(--radius-md)",
                 overflow: "hidden",
               }}
             >
@@ -253,7 +255,7 @@ export default function SecurityPage() {
                     gridTemplateColumns: "220px 1fr",
                     borderBottom:
                       i < permissions.length - 1
-                        ? "1px solid var(--color-border)"
+                        ? "1px solid var(--glass-border)"
                         : "none",
                   }}
                 >
@@ -261,7 +263,7 @@ export default function SecurityPage() {
                     style={{
                       padding: "0.85rem 1rem",
                       background: "var(--color-bg)",
-                      borderRight: "1px solid var(--color-border)",
+                      borderRight: "1px solid var(--glass-border)",
                       fontFamily: "var(--font-mono)",
                       fontSize: "0.68rem",
                       color: "var(--color-accent)",
@@ -290,7 +292,7 @@ export default function SecurityPage() {
                 padding: "1.5rem",
                 background: "rgba(190,27,42,0.07)",
                 border: "1px solid rgba(190,27,42,0.25)",
-                borderRadius: 8,
+                borderRadius: "var(--radius-md)",
               }}
             >
               <p style={{ fontWeight: 600, fontSize: "0.95rem", color: "var(--color-text)" }}>
@@ -317,8 +319,8 @@ export default function SecurityPage() {
         <section
           style={{
             padding: "3rem clamp(1.5rem, 5vw, 4rem)",
-            background: "var(--color-surface)",
-            borderTop: "1px solid var(--color-border)",
+            background: "rgba(244, 243, 245, 0.45)",
+            borderTop: "1px solid var(--glass-border)",
           }}
         >
           <div style={{ maxWidth: 700, margin: "0 auto" }}>

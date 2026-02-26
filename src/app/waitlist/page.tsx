@@ -37,7 +37,7 @@ export default function WaitlistPage() {
     width: "100%",
     background: "#fff",
     border: "1px solid var(--color-border-hi)",
-    borderRadius: 4,
+    borderRadius: "var(--radius-sm)",
     padding: "0.85rem 1rem",
     fontSize: "0.9rem",
     fontFamily: "var(--font-body)",
@@ -229,7 +229,7 @@ export default function WaitlistPage() {
               {/* Divider */}
               <div
                 style={{
-                  borderTop: "1px solid var(--color-border)",
+                  borderTop: "1px solid var(--glass-border)",
                   margin: "0.25rem 0",
                 }}
               />
@@ -304,7 +304,8 @@ export default function WaitlistPage() {
                   textTransform: "uppercase",
                   padding: "0.9rem",
                   border: "none",
-                  borderRadius: 4,
+                  borderRadius: "var(--radius-sm)",
+                  boxShadow: "0 2px 8px rgba(190,27,42,0.15), inset 0 1px 0 rgba(255,255,255,0.1)",
                   cursor: state === "loading" ? "not-allowed" : "pointer",
                   width: "100%",
                   transition: "background 0.15s ease, transform 0.15s ease",

@@ -64,11 +64,13 @@ export default function PartnersPage() {
               <FadeIn key={vp.label} delay={i * 0.07}>
                 <div
                   style={{
-                    background: "var(--color-surface)",
-                    border: "1px solid var(--color-border)",
-                    borderRadius: 8,
+                    background: "var(--glass-bg-strong)",
+                    border: "1px solid var(--glass-border)",
+                    borderRadius: "var(--radius-md)",
                     padding: "1.5rem",
                     height: "100%",
+                    backdropFilter: "blur(var(--glass-blur))",
+                    WebkitBackdropFilter: "blur(var(--glass-blur))",
                   }}
                 >
                   <p
@@ -118,7 +120,7 @@ export default function PartnersPage() {
                       border: "1px solid var(--color-border-hi)",
                       color: "var(--color-text)",
                       padding: "0.85rem 1rem",
-                      borderRadius: 4,
+                      borderRadius: "var(--radius-sm)",
                       fontSize: "0.9rem",
                       outline: "none",
                       width: "100%",
@@ -136,7 +138,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text-muted)",
                     padding: "0.85rem 1rem",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     fontSize: "0.9rem",
                     width: "100%",
                   }}
@@ -159,7 +161,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text-muted)",
                     padding: "0.85rem 1rem",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     fontSize: "0.9rem",
                     width: "100%",
                   }}
@@ -182,7 +184,7 @@ export default function PartnersPage() {
                     border: "1px solid var(--color-border-hi)",
                     color: "var(--color-text)",
                     padding: "0.85rem 1rem",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     fontSize: "0.9rem",
                     resize: "vertical",
                     outline: "none",
@@ -202,9 +204,10 @@ export default function PartnersPage() {
                     textTransform: "uppercase",
                     padding: "0.9rem",
                     border: "none",
-                    borderRadius: 4,
+                    borderRadius: "var(--radius-sm)",
                     cursor: "pointer",
                     width: "100%",
+                    boxShadow: "0 2px 8px rgba(190,27,42,0.15), inset 0 1px 0 rgba(255,255,255,0.1)",
                     transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,
                   }}
                 >
@@ -216,9 +219,11 @@ export default function PartnersPage() {
                 style={{
                   marginTop: "2rem",
                   padding: "1rem",
-                  background: "var(--color-surface)",
-                  border: "1px solid var(--color-border)",
-                  borderRadius: 6,
+                  background: "var(--glass-bg-strong)",
+                  border: "1px solid var(--glass-border)",
+                  borderRadius: "var(--radius-md)",
+                  backdropFilter: "blur(var(--glass-blur))",
+                  WebkitBackdropFilter: "blur(var(--glass-blur))",
                   fontSize: "0.75rem",
                   color: "var(--color-text-muted)",
                   lineHeight: 1.6,

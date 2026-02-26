@@ -43,10 +43,12 @@ export default function RoadmapPage() {
           <FadeIn delay={0.07}>
             <div
               style={{
-                background: "var(--color-surface)",
+                background: "var(--glass-bg-strong)",
                 border: "1px solid rgba(34,197,94,0.3)",
-                borderRadius: 8,
+                borderRadius: "var(--radius-md)",
                 padding: "2rem",
+                backdropFilter: "blur(var(--glass-blur))",
+                WebkitBackdropFilter: "blur(var(--glass-blur))",
               }}
             >
               <p
@@ -97,10 +99,12 @@ export default function RoadmapPage() {
           <FadeIn delay={0.14}>
             <div
               style={{
-                background: "var(--color-surface)",
-                border: "1px dashed var(--color-border)",
-                borderRadius: 8,
+                background: "var(--glass-bg-strong)",
+                border: "1px dashed var(--glass-border)",
+                borderRadius: "var(--radius-md)",
                 padding: "2rem",
+                backdropFilter: "blur(var(--glass-blur))",
+                WebkitBackdropFilter: "blur(var(--glass-blur))",
                 opacity: 0.6,
               }}
             >
