@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { SectionDivider } from "@/components/ui/SectionDivider";
 import Link from "next/link";
 
 const steps = [
@@ -33,7 +32,6 @@ export function HowItWorksSection() {
 
   return (
     <>
-      <SectionDivider tint="cool" flip />
       <section
         style={{
           padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",

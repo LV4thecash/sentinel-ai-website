@@ -3,7 +3,6 @@ import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ChatBubble } from "@/components/ui/ChatBubble";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { SectionDivider } from "@/components/ui/SectionDivider";
 import Link from "next/link";
 
 interface DemoCard {
@@ -170,7 +169,6 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
 export function ProofSection() {
   return (
     <>
-      <SectionDivider tint="cool" flip />
       <section
         style={{
           padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
