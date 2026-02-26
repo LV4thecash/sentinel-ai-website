@@ -46,3 +46,6 @@ next-env.d.ts
 files*
 "gifs for how it works"
 gifs*
+
+# worktrees
+.worktrees
