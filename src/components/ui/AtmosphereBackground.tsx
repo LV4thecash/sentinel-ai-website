@@ -48,9 +48,9 @@ export function AtmosphereBackground() {
           height: "clamp(350px, 45vw, 600px)",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, var(--orb-warm) 0%, var(--orb-rose) 40%, transparent 70%)",
-          filter: "blur(100px)",
-          animation: "orb-drift-1 24s ease-in-out infinite",
+            "radial-gradient(circle, rgba(190, 27, 42, 0.18) 0%, rgba(225, 70, 90, 0.12) 40%, transparent 70%)",
+          filter: "blur(120px)",
+          animation: "orb-drift-1 40s ease-in-out infinite",
           willChange: "transform",
         }}
       />
@@ -65,9 +65,9 @@ export function AtmosphereBackground() {
           height: "clamp(300px, 40vw, 520px)",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, var(--orb-amber) 0%, rgba(217, 119, 57, 0.03) 50%, transparent 70%)",
-          filter: "blur(110px)",
-          animation: "orb-drift-2 28s ease-in-out infinite",
+            "radial-gradient(circle, rgba(217, 119, 57, 0.12) 0%, rgba(217, 119, 57, 0.025) 50%, transparent 70%)",
+          filter: "blur(130px)",
+          animation: "orb-drift-2 52s ease-in-out infinite",
           willChange: "transform",
         }}
       />
@@ -82,9 +82,9 @@ export function AtmosphereBackground() {
           height: "clamp(280px, 35vw, 480px)",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, var(--orb-cool) 0%, rgba(100, 116, 139, 0.02) 50%, transparent 70%)",
-          filter: "blur(90px)",
-          animation: "orb-drift-3 22s ease-in-out infinite",
+            "radial-gradient(circle, rgba(100, 116, 139, 0.10) 0%, rgba(100, 116, 139, 0.015) 50%, transparent 70%)",
+          filter: "blur(110px)",
+          animation: "orb-drift-3 36s ease-in-out infinite",
           willChange: "transform",
         }}
       />
@@ -99,9 +99,43 @@ export function AtmosphereBackground() {
           height: "clamp(200px, 25vw, 380px)",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, var(--orb-rose) 0%, transparent 65%)",
-          filter: "blur(80px)",
-          animation: "orb-drift-1 30s ease-in-out infinite reverse",
+            "radial-gradient(circle, rgba(225, 70, 90, 0.13) 0%, transparent 65%)",
+          filter: "blur(100px)",
+          animation: "orb-drift-4 58s ease-in-out infinite",
+          willChange: "transform",
+        }}
+      />
+
+      {/* Ambient wash 1 — Warm undertone, upper-left area */}
+      <div
+        style={{
+          position: "absolute",
+          top: "15%",
+          left: "10%",
+          width: "clamp(500px, 60vw, 900px)",
+          height: "clamp(400px, 50vw, 700px)",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(ellipse, rgba(225, 70, 90, 0.04) 0%, transparent 60%)",
+          filter: "blur(140px)",
+          animation: "wash-drift-1 45s ease-in-out infinite",
+          willChange: "transform",
+        }}
+      />
+
+      {/* Ambient wash 2 — Cool undertone, lower-right area */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "5%",
+          right: "5%",
+          width: "clamp(450px, 55vw, 850px)",
+          height: "clamp(350px, 45vw, 650px)",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(ellipse, rgba(100, 116, 139, 0.035) 0%, transparent 60%)",
+          filter: "blur(140px)",
+          animation: "wash-drift-2 55s ease-in-out infinite",
           willChange: "transform",
         }}
       />
