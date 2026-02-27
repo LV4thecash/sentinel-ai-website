@@ -107,7 +107,7 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="nav-link"
+              className="nav-link link-subtle"
               style={{
                 fontSize: "0.82rem",
                 fontFamily: "var(--font-body)",
@@ -117,19 +117,13 @@ export function Nav() {
                 letterSpacing: "0.02em",
                 transition: "color var(--motion-fast) ease",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--color-text)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color =
-                  "var(--color-text-secondary)")
-              }
             >
               {l.label}
             </Link>
           ))}
           <Link
             href="/waitlist"
+            className="btn-primary"
             style={{
               background: "var(--color-accent)",
               color: "#fff",
@@ -143,20 +137,6 @@ export function Nav() {
               textTransform: "uppercase",
               boxShadow:
                 "0 2px 8px rgba(190,27,42,0.18), inset 0 1px 0 rgba(255,255,255,0.1)",
-              transition:
-                "background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "var(--color-accent-hi)";
-              e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow =
-                "0 4px 16px rgba(190,27,42,0.28), inset 0 1px 0 rgba(255,255,255,0.1)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "var(--color-accent)";
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 2px 8px rgba(190,27,42,0.18), inset 0 1px 0 rgba(255,255,255,0.1)";
             }}
           >
             Request Access
