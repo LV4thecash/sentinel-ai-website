@@ -15,7 +15,7 @@ export function HeroSection() {
   return (
     <section
       style={{
-        minHeight: "calc(100vh - var(--nav-height))",
+        minHeight: "calc(100svh - var(--nav-height))",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -147,7 +147,7 @@ export function HeroSection() {
             style={{
               fontFamily: "var(--font-display)",
               fontWeight: 900,
-              fontSize: "clamp(2.8rem, 9vw, 6.5rem)",
+              fontSize: "clamp(2.2rem, 9vw, 6.5rem)",
               lineHeight: 0.92,
               letterSpacing: "-0.025em",
               marginBottom: "1.75rem",
@@ -236,6 +236,7 @@ export function HeroSection() {
           >
             <Link
               href="/waitlist"
+              className="btn-primary"
               style={{
                 display: "inline-block",
                 background: "var(--color-accent)",
@@ -250,19 +251,6 @@ export function HeroSection() {
                 textDecoration: "none",
                 boxShadow:
                   "0 4px 16px rgba(190,27,42,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
-                transition: `background var(--motion-fast) ease, transform var(--motion-fast) var(--motion-ease-out), box-shadow var(--motion-fast) ease`,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "var(--color-accent-hi)";
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 28px rgba(190,27,42,0.32), inset 0 1px 0 rgba(255,255,255,0.15)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "var(--color-accent)";
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 16px rgba(190,27,42,0.2), inset 0 1px 0 rgba(255,255,255,0.15)";
               }}
             >
               Request Access →
