@@ -88,7 +88,7 @@ export default function SecurityPage() {
               }}
             >
               {/* Header row */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))" }}>
                 <div
                   style={{
                     padding: "1rem 1.5rem",
@@ -136,7 +136,7 @@ export default function SecurityPage() {
                   key={does}
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))",
                     borderBottom:
                       i < doTable.length - 1 ? "1px solid var(--glass-border)" : "none",
                   }}
@@ -252,7 +252,7 @@ export default function SecurityPage() {
                   key={perm}
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "220px 1fr",
+                    gridTemplateColumns: "minmax(min(220px, 100%), auto) 1fr",
                     borderBottom:
                       i < permissions.length - 1
                         ? "1px solid var(--glass-border)"

@@ -29,13 +29,13 @@ export default function RoadmapPage() {
         </FadeIn>
       </section>
 
-      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 6rem" }}>
+      <section style={{ padding: "clamp(2rem, 5vw, 6rem) clamp(1.5rem, 5vw, 4rem)" }}>
         <div
           style={{
             maxWidth: 860,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
             gap: "1.5rem",
           }}
         >

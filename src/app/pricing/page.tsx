@@ -88,7 +88,7 @@ export default function PricingPage() {
 
       {/* Tiers */}
       <section
-        style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 5rem" }}
+        style={{ padding: "clamp(2rem, 5vw, 5rem) clamp(1.5rem, 5vw, 4rem)" }}
       >
         <div
           style={{
@@ -96,7 +96,7 @@ export default function PricingPage() {
             margin: "0 auto",
             display: "grid",
             gridTemplateColumns:
-              "repeat(auto-fit, minmax(240px, 1fr))",
+              "repeat(auto-fit, minmax(min(240px, 100%), 1fr))",
             gap: "1.25rem",
           }}
         >
@@ -298,7 +298,7 @@ export default function PricingPage() {
             margin: "0 auto",
             display: "grid",
             gridTemplateColumns:
-              "repeat(auto-fit, minmax(200px, 1fr))",
+              "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
             gap: "1rem",
           }}
         >

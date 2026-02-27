@@ -129,7 +129,7 @@ export default function FaqPage() {
         </FadeIn>
       </section>
 
-      <section style={{ padding: "2rem clamp(1.5rem, 5vw, 4rem) 6rem" }}>
+      <section style={{ padding: "clamp(2rem, 5vw, 6rem) clamp(1.5rem, 5vw, 4rem)" }}>
         <div
           style={{
             maxWidth: 720,

@@ -175,7 +175,7 @@ export default function ProductPage() {
               style={{
                 display: "grid",
                 gridTemplateColumns:
-                  "repeat(auto-fit, minmax(200px, 1fr))",
+                  "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
                 gap: "1rem",
                 marginTop: "1.5rem",
               }}
@@ -282,7 +282,7 @@ export default function ProductPage() {
               margin: "0 auto",
               display: "grid",
               gridTemplateColumns:
-                "repeat(auto-fit, minmax(180px, 1fr))",
+                "repeat(auto-fit, minmax(min(180px, 100%), 1fr))",
               gap: "1rem",
               textAlign: "center",
             }}
@@ -293,7 +293,7 @@ export default function ProductPage() {
                   <p
                     style={{
                       fontFamily: "var(--font-display)",
-                      fontSize: "2.8rem",
+                      fontSize: "clamp(2rem, 6vw, 2.8rem)",
                       color: "var(--color-accent)",
                       lineHeight: 1,
                     }}
@@ -338,7 +338,7 @@ export default function ProductPage() {
                   key={label}
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "200px 1fr",
+                    gridTemplateColumns: "minmax(min(200px, 100%), auto) 1fr",
                     gap: "1rem",
                     padding: "0.85rem 1rem",
                     background: "var(--glass-bg)",
