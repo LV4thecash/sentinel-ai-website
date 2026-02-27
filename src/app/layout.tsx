@@ -3,6 +3,7 @@ import { displayFont, bodyFont, monoFont } from "@/lib/fonts";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { AtmosphereBackground } from "@/components/ui/AtmosphereBackground";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,11 +30,13 @@ export default function RootLayout({
     >
       <body>
         <AtmosphereBackground />
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <Nav />
-          {children}
-          <Footer />
-        </div>
+        <SmoothScroll>
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <Nav />
+            {children}
+            <Footer />
+          </div>
+        </SmoothScroll>
       </body>
     </html>
   );
