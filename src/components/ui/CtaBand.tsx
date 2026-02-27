@@ -12,14 +12,14 @@ export function CtaBand({
   return (
     <section
       style={{
-        background: "var(--gradient-cta)",
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
+        borderTop: "1px solid var(--glass-border)",
       }}
     >
-      {/* Subtle glass overlay for depth */}
+      {/* Centered accent glow */}
       <div
         aria-hidden
         style={{
@@ -46,7 +46,7 @@ export function CtaBand({
               fontSize: "clamp(1.5rem, 5vw, 2.8rem)",
               letterSpacing: "-0.01em",
               lineHeight: 1.1,
-              color: "#fff",
+              color: "var(--color-text)",
               marginBottom: "1rem",
             }}
           >
@@ -55,7 +55,7 @@ export function CtaBand({
           <p
             style={{
               fontSize: "0.9rem",
-              color: "rgba(255,255,255,0.55)",
+              color: "var(--color-text-secondary)",
               lineHeight: 1.65,
               marginBottom: "2.5rem",
             }}
@@ -68,11 +68,11 @@ export function CtaBand({
         <FadeIn delay={0.1}>
           <Link
             href="/waitlist"
-            className="btn-secondary"
+            className="btn-primary"
             style={{
               display: "inline-block",
-              background: "#fff",
-              color: "#212323",
+              background: "var(--color-accent)",
+              color: "#fff",
               fontFamily: "var(--font-display)",
               fontWeight: 700,
               fontSize: "0.78rem",
@@ -83,7 +83,7 @@ export function CtaBand({
               textDecoration: "none",
               marginBottom: "1.5rem",
               boxShadow:
-                "0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9)",
+                "0 4px 20px rgba(190, 27, 42, 0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
             }}
           >
             Apply for Access →
@@ -97,6 +97,7 @@ export function CtaBand({
               alignItems: "center",
               justifyContent: "center",
               gap: "1.5rem",
+              flexWrap: "wrap",
             }}
           >
             <p
@@ -104,14 +105,14 @@ export function CtaBand({
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.65rem",
                 letterSpacing: "0.08em",
-                color: "rgba(255,255,255,0.3)",
+                color: "var(--color-text-muted)",
               }}
             >
               Private beta · Invite-only expansion
             </p>
             <span
               style={{
-                color: "rgba(255,255,255,0.15)",
+                color: "var(--color-border)",
                 fontSize: "0.6rem",
               }}
             >
@@ -121,14 +122,13 @@ export function CtaBand({
               href="https://discord.gg/saES7e6W"
               target="_blank"
               rel="noopener noreferrer"
-              className="link-subtle-light"
+              className="link-subtle"
               style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.65rem",
                 letterSpacing: "0.08em",
-                color: "rgba(255,255,255,0.35)",
+                color: "var(--color-text-muted)",
                 textDecoration: "none",
-                transition: "color 0.15s ease",
               }}
             >
               Discord
@@ -137,14 +137,13 @@ export function CtaBand({
               href="https://t.me/sentinelextension"
               target="_blank"
               rel="noopener noreferrer"
-              className="link-subtle-light"
+              className="link-subtle"
               style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.65rem",
                 letterSpacing: "0.08em",
-                color: "rgba(255,255,255,0.35)",
+                color: "var(--color-text-muted)",
                 textDecoration: "none",
-                transition: "color 0.15s ease",
               }}
             >
               Telegram

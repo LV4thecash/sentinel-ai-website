@@ -7,30 +7,21 @@ export function ProblemSection() {
     <section
       style={{
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
-        background: "var(--zone-dark)",
+        background: "var(--color-bg-alt)",
+        borderTop: "1px solid var(--glass-border)",
+        borderBottom: "1px solid var(--glass-border)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Atmospheric depth — warm glow bleeding from top */}
+      {/* Warm rose gradient wash */}
       <div
         aria-hidden
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 80% 40% at 50% 0%, rgba(190, 27, 42, 0.06) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-      {/* Secondary cool glow from bottom-right */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse 50% 40% at 80% 100%, rgba(100, 116, 139, 0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 50% at 50% 30%, rgba(190, 27, 42, 0.07) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
@@ -48,7 +39,7 @@ export function ProblemSection() {
               letterSpacing: "-0.02em",
               lineHeight: 1.02,
               marginBottom: "1.5rem",
-              color: "var(--zone-dark-text)",
+              color: "var(--color-text)",
             }}
           >
             The launch chat
@@ -78,7 +69,7 @@ export function ProblemSection() {
               <li
                 key={pain}
                 style={{
-                  color: "var(--zone-dark-text-secondary)",
+                  color: "var(--color-text-secondary)",
                   fontSize: "0.95rem",
                   lineHeight: 1.65,
                   paddingLeft: "1.5rem",
@@ -108,19 +99,19 @@ export function ProblemSection() {
               maxWidth: 420,
               margin: "0 auto",
               textAlign: "left",
-              background: "var(--glass-dark-bg-strong)",
+              background: "var(--glass-bg-strong)",
               backdropFilter: "blur(var(--glass-blur))",
               WebkitBackdropFilter: "blur(var(--glass-blur))",
-              border: "1px solid var(--glass-dark-border)",
+              border: "1px solid var(--glass-border)",
               borderRadius: "var(--radius-lg)",
               padding: "1.5rem",
-              boxShadow: "var(--shadow-dark-glass)",
+              boxShadow: "var(--shadow-glass)",
             }}
           >
             <p
               style={{
                 fontSize: "0.65rem",
-                color: "var(--zone-dark-text-muted)",
+                color: "var(--color-text-muted)",
                 fontFamily: "var(--font-mono)",
                 marginBottom: "0.75rem",
                 letterSpacing: "0.06em",
@@ -137,7 +128,6 @@ export function ProblemSection() {
                 "only buy the SECOND one",
               ]}
               highlight="SECOND"
-              dark
             />
           </div>
         </FadeIn>

@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
 
@@ -12,54 +10,25 @@ const phase1Features = [
 ];
 
 export function SocialProofSection() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-
-  const cardStyle = (id: string, dimmed = false): React.CSSProperties => ({
-    background: "var(--glass-dark-bg-strong)",
-    backdropFilter: "blur(var(--glass-blur))",
-    WebkitBackdropFilter: "blur(var(--glass-blur))",
-    border: `1px solid ${hoveredCard === id ? "var(--glass-dark-border-hi)" : "var(--glass-dark-border)"}`,
-    borderRadius: "var(--radius-md)",
-    padding: "1.75rem",
-    boxShadow:
-      hoveredCard === id
-        ? "var(--shadow-dark-glass-hover)"
-        : "var(--shadow-dark-glass)",
-    opacity: dimmed && hoveredCard !== id ? 0.55 : 1,
-    transform:
-      hoveredCard === id ? "translateY(-4px)" : "translateY(0)",
-    transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease, opacity var(--motion-fast) ease`,
-    cursor: "default",
-  });
-
   return (
     <section
       style={{
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
-        background: "var(--zone-dark)",
+        background: "var(--color-bg-alt)",
+        borderTop: "1px solid var(--glass-border)",
+        borderBottom: "1px solid var(--glass-border)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Atmospheric depth — warm glow from center-top */}
+      {/* Warm amber gradient wash */}
       <div
         aria-hidden
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(190, 27, 42, 0.06) 0%, transparent 65%)",
-          pointerEvents: "none",
-        }}
-      />
-      {/* Ambient warm glow from bottom */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse 60% 35% at 40% 100%, rgba(217, 119, 57, 0.03) 0%, transparent 65%)",
+            "radial-gradient(ellipse 60% 50% at 60% 40%, rgba(217, 119, 57, 0.06) 0%, transparent 60%)",
           pointerEvents: "none",
         }}
       />
@@ -78,7 +47,7 @@ export function SocialProofSection() {
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
-                color: "var(--zone-dark-text)",
+                color: "var(--color-text)",
                 marginBottom: "1rem",
               }}
             >
@@ -87,7 +56,7 @@ export function SocialProofSection() {
             <p
               style={{
                 fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
-                color: "var(--zone-dark-text-secondary)",
+                color: "var(--color-text-secondary)",
                 lineHeight: 1.7,
                 maxWidth: 520,
                 margin: "0 auto",
@@ -110,9 +79,17 @@ export function SocialProofSection() {
           {/* Phase 1 — Live */}
           <FadeIn delay={0.07}>
             <div
-              onMouseEnter={() => setHoveredCard("phase1")}
-              onMouseLeave={() => setHoveredCard(null)}
-              style={cardStyle("phase1")}
+              className="card-hover"
+              style={{
+                background: "var(--glass-bg-strong)",
+                backdropFilter: "blur(var(--glass-blur))",
+                WebkitBackdropFilter: "blur(var(--glass-blur))",
+                border: "1px solid var(--glass-border)",
+                borderRadius: "var(--radius-md)",
+                padding: "1.75rem",
+                boxShadow: "var(--shadow-glass)",
+                cursor: "default",
+              }}
             >
               <div
                 style={{
@@ -140,7 +117,6 @@ export function SocialProofSection() {
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "var(--color-accent)",
-                    textShadow: "0 0 16px rgba(190, 27, 42, 0.25)",
                   }}
                 >
                   Phase 1 · Live
@@ -151,7 +127,7 @@ export function SocialProofSection() {
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
                   fontSize: "1rem",
-                  color: "var(--zone-dark-text)",
+                  color: "var(--color-text)",
                   marginBottom: "1rem",
                 }}
               >
@@ -172,7 +148,7 @@ export function SocialProofSection() {
                     key={f}
                     style={{
                       fontSize: "0.82rem",
-                      color: "var(--zone-dark-text-secondary)",
+                      color: "var(--color-text-secondary)",
                       display: "flex",
                       alignItems: "center",
                       gap: "0.5rem",
@@ -196,9 +172,17 @@ export function SocialProofSection() {
           {/* Evaluation — Active */}
           <FadeIn delay={0.14}>
             <div
-              onMouseEnter={() => setHoveredCard("evaluation")}
-              onMouseLeave={() => setHoveredCard(null)}
-              style={cardStyle("evaluation")}
+              className="card-hover"
+              style={{
+                background: "var(--glass-bg-strong)",
+                backdropFilter: "blur(var(--glass-blur))",
+                WebkitBackdropFilter: "blur(var(--glass-blur))",
+                border: "1px solid var(--glass-border)",
+                borderRadius: "var(--radius-md)",
+                padding: "1.75rem",
+                boxShadow: "var(--shadow-glass)",
+                cursor: "default",
+              }}
             >
               <div
                 style={{
@@ -226,7 +210,6 @@ export function SocialProofSection() {
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "var(--color-accent)",
-                    textShadow: "0 0 16px rgba(190, 27, 42, 0.25)",
                   }}
                 >
                   Evaluation · Active
@@ -237,7 +220,7 @@ export function SocialProofSection() {
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
                   fontSize: "1rem",
-                  color: "var(--zone-dark-text)",
+                  color: "var(--color-text)",
                   marginBottom: "1rem",
                 }}
               >
@@ -253,7 +236,7 @@ export function SocialProofSection() {
                 <p
                   style={{
                     fontSize: "0.85rem",
-                    color: "var(--zone-dark-text-secondary)",
+                    color: "var(--color-text-secondary)",
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -263,7 +246,7 @@ export function SocialProofSection() {
                 <p
                   style={{
                     fontSize: "0.85rem",
-                    color: "var(--zone-dark-text-secondary)",
+                    color: "var(--color-text-secondary)",
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -273,7 +256,7 @@ export function SocialProofSection() {
                 <p
                   style={{
                     fontSize: "0.82rem",
-                    color: "var(--zone-dark-text-muted)",
+                    color: "var(--color-text-muted)",
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -291,13 +274,13 @@ export function SocialProofSection() {
                     href="https://discord.gg/saES7e6W"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="link-accent"
                     style={{
                       fontFamily: "var(--font-mono)",
                       fontSize: "0.7rem",
                       color: "var(--color-accent)",
                       textDecoration: "none",
                       letterSpacing: "0.04em",
-                      textShadow: "0 0 12px rgba(190, 27, 42, 0.2)",
                     }}
                   >
                     Discord →
@@ -306,13 +289,13 @@ export function SocialProofSection() {
                     href="https://t.me/sentinelextension"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="link-accent"
                     style={{
                       fontFamily: "var(--font-mono)",
                       fontSize: "0.7rem",
                       color: "var(--color-accent)",
                       textDecoration: "none",
                       letterSpacing: "0.04em",
-                      textShadow: "0 0 12px rgba(190, 27, 42, 0.2)",
                     }}
                   >
                     Telegram →
@@ -325,9 +308,18 @@ export function SocialProofSection() {
           {/* Phase 2 — Planned */}
           <FadeIn delay={0.21}>
             <div
-              onMouseEnter={() => setHoveredCard("phase2")}
-              onMouseLeave={() => setHoveredCard(null)}
-              style={cardStyle("phase2", true)}
+              className="card-hover"
+              style={{
+                background: "var(--glass-bg-strong)",
+                backdropFilter: "blur(var(--glass-blur))",
+                WebkitBackdropFilter: "blur(var(--glass-blur))",
+                border: "1px solid var(--glass-border)",
+                borderRadius: "var(--radius-md)",
+                padding: "1.75rem",
+                boxShadow: "var(--shadow-glass)",
+                opacity: 0.55,
+                cursor: "default",
+              }}
             >
               <div
                 style={{
@@ -342,7 +334,7 @@ export function SocialProofSection() {
                     width: 7,
                     height: 7,
                     borderRadius: "50%",
-                    background: "rgba(255,255,255,0.2)",
+                    background: "var(--color-text-muted)",
                     display: "inline-block",
                     flexShrink: 0,
                   }}
@@ -353,7 +345,7 @@ export function SocialProofSection() {
                     fontSize: "10px",
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
-                    color: "var(--zone-dark-text-muted)",
+                    color: "var(--color-text-muted)",
                   }}
                 >
                   Phase 2 · Planned
@@ -364,7 +356,7 @@ export function SocialProofSection() {
                   fontFamily: "var(--font-display)",
                   fontWeight: 700,
                   fontSize: "1rem",
-                  color: "var(--zone-dark-text)",
+                  color: "var(--color-text)",
                   marginBottom: "1rem",
                 }}
               >
@@ -380,7 +372,7 @@ export function SocialProofSection() {
                 <p
                   style={{
                     fontSize: "0.85rem",
-                    color: "var(--zone-dark-text-muted)",
+                    color: "var(--color-text-muted)",
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -390,7 +382,7 @@ export function SocialProofSection() {
                 <p
                   style={{
                     fontSize: "0.82rem",
-                    color: "var(--zone-dark-text-muted)",
+                    color: "var(--color-text-muted)",
                     lineHeight: 1.6,
                     margin: 0,
                   }}

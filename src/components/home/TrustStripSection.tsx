@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
@@ -38,28 +36,21 @@ function TrustCard({
   item: (typeof items)[0];
   index: number;
 }) {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <FadeIn delay={index * 0.07}>
       <div
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        className="card-hover"
         style={{
           display: "flex",
           flexDirection: "column",
           gap: "0.5rem",
           padding: "1.5rem",
-          background: "var(--glass-dark-bg-strong)",
+          background: "var(--glass-bg-strong)",
           backdropFilter: "blur(var(--glass-blur))",
           WebkitBackdropFilter: "blur(var(--glass-blur))",
-          border: `1px solid ${hovered ? "var(--color-accent)" : "var(--glass-dark-border)"}`,
+          border: "1px solid var(--glass-border)",
           borderRadius: "var(--radius-md)",
-          boxShadow: hovered
-            ? "var(--shadow-dark-glass-hover), var(--shadow-glow-accent)"
-            : "var(--shadow-dark-glass)",
-          transform: hovered ? "translateY(-4px)" : "translateY(0)",
-          transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
+          boxShadow: "var(--shadow-glass)",
           cursor: "default",
           height: "100%",
         }}
@@ -72,7 +63,6 @@ function TrustCard({
             color: "var(--color-accent)",
             lineHeight: 1,
             marginBottom: "0.25rem",
-            textShadow: "0 0 20px rgba(190, 27, 42, 0.3)",
           }}
         >
           {item.icon}
@@ -82,7 +72,7 @@ function TrustCard({
             fontFamily: "var(--font-display)",
             fontWeight: 700,
             fontSize: "0.88rem",
-            color: "var(--zone-dark-text)",
+            color: "var(--color-text)",
             margin: 0,
           }}
         >
@@ -91,7 +81,7 @@ function TrustCard({
         <p
           style={{
             fontSize: "0.78rem",
-            color: "var(--zone-dark-text-muted)",
+            color: "var(--color-text-muted)",
             lineHeight: 1.6,
             margin: 0,
           }}
@@ -108,30 +98,21 @@ export function TrustStripSection() {
     <section
       style={{
         padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
-        background: "var(--zone-dark)",
+        background: "var(--color-bg-alt)",
+        borderTop: "1px solid var(--glass-border)",
+        borderBottom: "1px solid var(--glass-border)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Atmospheric depth — accent glow from top-left */}
+      {/* Cool slate gradient wash */}
       <div
         aria-hidden
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 60% 45% at 20% 0%, rgba(190, 27, 42, 0.05) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-      {/* Cool ambient from bottom-right */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse 50% 35% at 85% 100%, rgba(100, 116, 139, 0.04) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 50% at 30% 50%, rgba(100, 116, 139, 0.07) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />
@@ -150,7 +131,7 @@ export function TrustStripSection() {
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 letterSpacing: "-0.02em",
                 lineHeight: 1.05,
-                color: "var(--zone-dark-text)",
+                color: "var(--color-text)",
                 marginBottom: "1rem",
               }}
             >
@@ -159,7 +140,7 @@ export function TrustStripSection() {
             <p
               style={{
                 fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
-                color: "var(--zone-dark-text-secondary)",
+                color: "var(--color-text-secondary)",
                 lineHeight: 1.7,
                 maxWidth: 520,
                 margin: "0 auto",
@@ -189,6 +170,7 @@ export function TrustStripSection() {
           >
             <Link
               href="/security"
+              className="link-accent"
               style={{
                 color: "var(--color-accent)",
                 fontSize: "0.82rem",
@@ -197,7 +179,6 @@ export function TrustStripSection() {
                 fontWeight: 500,
                 borderBottom: "1px solid rgba(190,27,42,0.4)",
                 paddingBottom: "1px",
-                textShadow: "0 0 16px rgba(190, 27, 42, 0.2)",
               }}
             >
               Review the full security model →
