@@ -78,6 +78,8 @@ export function HeroSection() {
           gridTemplateColumns: "1fr",
           gap: "3rem",
           alignItems: "center",
+          minWidth: 0,
+          overflow: "hidden",
         }}
       >
         {/* Text content — centered */}

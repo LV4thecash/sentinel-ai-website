@@ -131,6 +131,12 @@ body {
   overflow-wrap: break-word;
 }
 
+/* ─── Page-level containment ───────────────────────────────── */
+main {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 /* ─── Section utilities ─────────────────────────────────────── */
 .section    { padding: var(--section-gap) 0; position: relative; }
 .section-sm { padding: var(--section-gap-sm) 0; position: relative; }
