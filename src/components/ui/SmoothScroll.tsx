@@ -14,7 +14,8 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (prefersReduced) return;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (prefersReduced || isMobile) return;
 
     const lenis = new Lenis({
       duration: 1.2,
