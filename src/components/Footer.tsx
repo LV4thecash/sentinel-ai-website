@@ -24,6 +24,7 @@ export function Footer() {
       }}
     >
       <div
+        className="footer-grid"
         style={{
           maxWidth: 1200,
           margin: "0 auto",
@@ -72,18 +73,13 @@ export function Footer() {
             <Link
               key={p.href}
               href={p.href}
+              className="link-subtle"
               style={{
                 color: "var(--color-text-muted)",
                 fontSize: "0.75rem",
                 textDecoration: "none",
                 transition: "color 0.15s ease",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--color-text)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "var(--color-text-muted)")
-              }
             >
               {p.label}
             </Link>
@@ -103,18 +99,13 @@ export function Footer() {
             href="https://discord.gg/saES7e6W"
             target="_blank"
             rel="noopener noreferrer"
+            className="link-subtle"
             style={{
               color: "var(--color-text-muted)",
               fontSize: "0.75rem",
               textDecoration: "none",
               transition: "color 0.15s ease",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "var(--color-text)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--color-text-muted)")
-            }
           >
             Discord
           </a>
@@ -122,18 +113,13 @@ export function Footer() {
             href="https://t.me/sentinelextension"
             target="_blank"
             rel="noopener noreferrer"
+            className="link-subtle"
             style={{
               color: "var(--color-text-muted)",
               fontSize: "0.75rem",
               textDecoration: "none",
               transition: "color 0.15s ease",
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "var(--color-text)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "var(--color-text-muted)")
-            }
           >
             Telegram
           </a>
