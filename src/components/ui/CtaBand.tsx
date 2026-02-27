@@ -43,7 +43,7 @@ export function CtaBand({
             style={{
               fontFamily: "var(--font-display)",
               fontWeight: 800,
-              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+              fontSize: "clamp(1.5rem, 5vw, 2.8rem)",
               letterSpacing: "-0.01em",
               lineHeight: 1.1,
               color: "#fff",
@@ -68,6 +68,7 @@ export function CtaBand({
         <FadeIn delay={0.1}>
           <Link
             href="/waitlist"
+            className="btn-secondary"
             style={{
               display: "inline-block",
               background: "#fff",
@@ -83,20 +84,6 @@ export function CtaBand({
               marginBottom: "1.5rem",
               boxShadow:
                 "0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9)",
-              transition:
-                "opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = "0.95";
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow =
-                "0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.9)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = "1";
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9)";
             }}
           >
             Apply for Access →
@@ -134,6 +121,7 @@ export function CtaBand({
               href="https://discord.gg/saES7e6W"
               target="_blank"
               rel="noopener noreferrer"
+              className="link-subtle-light"
               style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.65rem",
@@ -142,12 +130,6 @@ export function CtaBand({
                 textDecoration: "none",
                 transition: "color 0.15s ease",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.75)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.35)")
-              }
             >
               Discord
             </a>
@@ -155,6 +137,7 @@ export function CtaBand({
               href="https://t.me/sentinelextension"
               target="_blank"
               rel="noopener noreferrer"
+              className="link-subtle-light"
               style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.65rem",
@@ -163,12 +146,6 @@ export function CtaBand({
                 textDecoration: "none",
                 transition: "color 0.15s ease",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.75)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.35)")
-              }
             >
               Telegram
             </a>
