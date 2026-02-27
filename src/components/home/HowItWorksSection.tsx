@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { FadeIn } from "@/components/ui/FadeIn";
 import Link from "next/link";
@@ -28,8 +27,6 @@ const steps = [
 ];
 
 export function HowItWorksSection() {
-  const [hoveredStep, setHoveredStep] = useState<string | null>(null);
-
   return (
     <>
       <section
@@ -65,45 +62,20 @@ export function HowItWorksSection() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
               gap: "0.75rem 1.5rem",
             }}
           >
             {steps.map((step, i) => (
               <FadeIn key={step.n} delay={i * 0.08}>
                 <div
-                  onMouseEnter={() => setHoveredStep(step.n)}
-                  onMouseLeave={() => setHoveredStep(null)}
+                  className="card-hover"
                   style={{
                     position: "relative",
                     padding: "1.25rem 1rem",
                     borderRadius: "var(--radius-md)",
-                    background:
-                      hoveredStep === step.n
-                        ? "var(--glass-bg-subtle)"
-                        : "transparent",
-                    backdropFilter:
-                      hoveredStep === step.n
-                        ? "blur(12px)"
-                        : "none",
-                    WebkitBackdropFilter:
-                      hoveredStep === step.n
-                        ? "blur(12px)"
-                        : "none",
-                    border: `1px solid ${
-                      hoveredStep === step.n
-                        ? "var(--glass-border)"
-                        : "transparent"
-                    }`,
-                    transform:
-                      hoveredStep === step.n
-                        ? "translateY(-3px)"
-                        : "translateY(0)",
-                    boxShadow:
-                      hoveredStep === step.n
-                        ? "var(--shadow-glass)"
-                        : "none",
-                    transition: `transform var(--motion-fast) var(--motion-ease-out), background var(--motion-fast) ease, border-color var(--motion-fast) ease, box-shadow var(--motion-fast) ease, backdrop-filter var(--motion-fast) ease`,
+                    background: "transparent",
+                    border: "1px solid transparent",
                   }}
                 >
                   {/* Watermark step number */}
@@ -112,14 +84,10 @@ export function HowItWorksSection() {
                       fontFamily: "var(--font-display)",
                       fontWeight: 900,
                       fontSize: "5rem",
-                      color:
-                        hoveredStep === step.n
-                          ? "var(--color-border-hi)"
-                          : "var(--color-border)",
+                      color: "var(--color-border)",
                       lineHeight: 1,
                       marginBottom: "0.25rem",
                       userSelect: "none",
-                      transition: "color var(--motion-fast) ease",
                     }}
                   >
                     {step.n}
@@ -148,6 +116,7 @@ export function HowItWorksSection() {
                   {/* Connector arrow — desktop only */}
                   {i < steps.length - 1 && (
                     <span
+                      className="hide-mobile"
                       aria-hidden
                       style={{
                         position: "absolute",
