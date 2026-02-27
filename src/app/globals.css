@@ -281,8 +281,7 @@ select:focus-visible {
   transition: transform var(--motion-fast) var(--motion-reveal),
               box-shadow var(--motion-fast) ease,
               border-color var(--motion-fast) ease,
-              background var(--motion-fast) ease,
-              backdrop-filter var(--motion-fast) ease;
+              background var(--motion-fast) ease;
 }
 .card-hover:hover {
   transform: translateY(-4px);
