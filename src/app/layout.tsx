@@ -31,7 +31,7 @@ export default function RootLayout({
       <body>
         <AtmosphereBackground />
         <SmoothScroll>
-          <div style={{ position: "relative", zIndex: 1 }}>
+          <div style={{ position: "relative", zIndex: 1, maxWidth: "100vw", overflowX: "hidden" }}>
             <Nav />
             {children}
             <Footer />

@@ -372,6 +372,7 @@ export function HeroSection() {
                         background: "rgba(22, 163, 74, 0.06)",
                         border: "1px solid rgba(22, 163, 74, 0.15)",
                         borderRadius: "var(--radius-md)",
+                        overflow: "hidden",
                       }}
                     >
                       <span
@@ -394,6 +395,7 @@ export function HeroSection() {
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           whiteSpace: "nowrap",
+                          minWidth: 0,
                         }}
                       >
                         {msg.text}
@@ -407,6 +409,7 @@ export function HeroSection() {
                         alignItems: "center",
                         gap: "0.65rem",
                         padding: "0.6rem 0.85rem",
+                        overflow: "hidden",
                         background:
                           msg.type === "noise"
                             ? "rgba(190, 27, 42, 0.04)"
@@ -443,6 +446,7 @@ export function HeroSection() {
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           whiteSpace: "nowrap",
+                          minWidth: 0,
                         }}
                       >
                         {msg.text}
