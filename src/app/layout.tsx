@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { displayFont, bodyFont, monoFont } from "@/lib/fonts";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { AtmosphereBackground } from "@/components/ui/AtmosphereBackground";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
@@ -29,7 +28,6 @@ export default function RootLayout({
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
     >
       <body>
-        <AtmosphereBackground />
         <SmoothScroll>
           <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: "100vw", overflowX: "clip" as never }}>
             <Nav />
