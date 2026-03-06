@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  /* ─── Brand palette (Ultra Premium Light Theme) ───────── */
-  --color-bg:          #FAFAFC;
-  --color-bg-alt:      #F4F4F7;
+  /* ─── Brand palette (Strict Guideline Compliance) ─────── */
+  --color-bg:          #FFFFFF;
+  --color-bg-alt:      #FAFAFC;
   --color-surface:     #FFFFFF;
   --color-border:      #E4E4EB;
   --color-border-hi:   #D1D1DB;
@@ -18,14 +18,14 @@
   --zone-dark-text-muted: rgba(255, 255, 255, 0.40);
 
   /* ─── Text hierarchy ────────────────────────────────────── */
-  --color-text:          #0F1115;
-  --color-text-secondary:#4A5568;
-  --color-text-muted:    #718096;
+  --color-text:          #212323;
+  --color-text-secondary:#52525B;
+  --color-text-muted:    #71717A;
 
-  /* ─── Accent — Vibrant Crimson Red ──────────────────────── */
-  --color-accent:    #D91C2D;
-  --color-accent-lo: rgba(217, 28, 45, 0.08);
-  --color-accent-hi: #FF2E43;
+  /* ─── Accent — Brand Red ────────────────────────────────── */
+  --color-accent:    #BE1B2A;
+  --color-accent-lo: rgba(190, 27, 42, 0.08);
+  --color-accent-hi: #D31D2E;
 
   /* ─── Status ────────────────────────────────────────────── */
   --color-pass:    #059669;
@@ -75,17 +75,17 @@
   --shadow-dark-glass-hover: 0 16px 48px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.15);
 
   /* ─── Gradient system (Soft, vibrant, alive) ────────────── */
-  --gradient-hero-bg:   radial-gradient(ellipse 120% 70% at 50% 110%, rgba(217, 28, 45, 0.08) 0%, transparent 80%);
-  --gradient-hero-top:  radial-gradient(ellipse 100% 40% at 50% -20%, rgba(217, 28, 45, 0.03) 0%, transparent 60%);
-  --gradient-word-glow: radial-gradient(ellipse at center, rgba(255, 46, 67, 0.15) 0%, transparent 68%);
-  --gradient-cta:       linear-gradient(135deg, #D91C2D 0%, #FF2E43 100%);
+  --gradient-hero-bg:   radial-gradient(ellipse 120% 70% at 50% 110%, rgba(190, 27, 42, 0.08) 0%, transparent 80%);
+  --gradient-hero-top:  radial-gradient(ellipse 100% 40% at 50% -20%, rgba(190, 27, 42, 0.03) 0%, transparent 60%);
+  --gradient-word-glow: radial-gradient(ellipse at center, rgba(190, 27, 42, 0.15) 0%, transparent 68%);
+  --gradient-cta:       linear-gradient(135deg, #BE1B2A 0%, #D31D2E 100%);
   --gradient-glass-border: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 100%);
 
-  /* ─── Atmosphere orb colors (For magnetic/moving backgrounds) */
-  --orb-warm:    rgba(255, 46, 67, 0.4);
-  --orb-amber:   rgba(245, 158, 11, 0.3);
-  --orb-cool:    rgba(14, 165, 233, 0.2);
-  --orb-rose:    rgba(225, 29, 72, 0.25);
+  /* ─── Atmosphere orb colors (Strictly Brand Red + Clean Greys) */
+  --orb-warm:    rgba(190, 27, 42, 0.25);
+  --orb-amber:   rgba(190, 27, 42, 0.12);
+  --orb-cool:    rgba(33, 35, 35, 0.05); /* Brand Dark 212323 */
+  --orb-rose:    rgba(190, 27, 42, 0.08);
 
   /* ─── Motion tokens (Responsive, squishy, bouncy) ───────── */
   --motion-fast:     0.25s;

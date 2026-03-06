@@ -14,7 +14,7 @@ export function ProblemSection() {
         overflow: "hidden",
       }}
     >
-      {/* Warm rose gradient wash */}
+      {/* Brand Red gradient wash */}
       <div
         aria-hidden
         style={{

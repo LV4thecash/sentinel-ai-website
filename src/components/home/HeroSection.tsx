@@ -70,7 +70,7 @@ export function HeroSection() {
             left: "10%",
             width: "60vw",
             height: "60vw",
-            background: "rgba(217, 28, 45, 0.12)", // Premium Sentinel Red
+            background: "rgba(190, 27, 42, 0.06)", // Brand Red
             filter: "blur(120px)",
             borderRadius: "50%",
           }}
@@ -88,7 +88,7 @@ export function HeroSection() {
             right: "-10%",
             width: "55vw",
             height: "55vw",
-            background: "rgba(245, 158, 11, 0.08)", // Warm Amber / Orange
+            background: "rgba(33, 35, 35, 0.04)", // Brand Black #212323
             filter: "blur(140px)",
             borderRadius: "50%",
           }}
@@ -105,7 +105,7 @@ export function HeroSection() {
             left: "-20%",
             width: "45vw",
             height: "45vw",
-            background: "rgba(225, 29, 72, 0.08)", // Rose Accent
+            background: "rgba(190, 27, 42, 0.04)", // Light Brand Red
             filter: "blur(100px)",
             borderRadius: "50%",
           }}
@@ -234,7 +234,7 @@ export function HeroSection() {
                   style={{
                     position: "absolute",
                     inset: "0px",
-                    background: "rgba(217, 28, 45, 0.1)",
+                    background: "rgba(190, 27, 42, 0.1)",
                     borderRadius: "var(--radius-sm)",
                     pointerEvents: "none",
                     zIndex: -1,
@@ -294,18 +294,18 @@ export function HeroSection() {
                 padding: "1rem 3rem",
                 borderRadius: "var(--radius-pill)",
                 textDecoration: "none",
-                boxShadow: "0 12px 32px rgba(217, 28, 45, 0.3), inset 0 2px 0 rgba(255,255,255,0.2)",
+                boxShadow: "0 12px 32px rgba(190, 27, 42, 0.3), inset 0 2px 0 rgba(255,255,255,0.2)",
                 transition: "all var(--motion-fast) var(--motion-spring)",
                 position: "relative",
                 overflow: "hidden",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.05)";
-                e.currentTarget.style.boxShadow = "0 16px 48px rgba(217, 28, 45, 0.4), inset 0 2px 0 rgba(255,255,255,0.3)";
+                e.currentTarget.style.boxShadow = "0 16px 48px rgba(190, 27, 42, 0.4), inset 0 2px 0 rgba(255,255,255,0.3)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow = "0 12px 32px rgba(217, 28, 45, 0.3), inset 0 2px 0 rgba(255,255,255,0.2)";
+                e.currentTarget.style.boxShadow = "0 12px 32px rgba(190, 27, 42, 0.3), inset 0 2px 0 rgba(255,255,255,0.2)";
               }}
             >
               Request Access →

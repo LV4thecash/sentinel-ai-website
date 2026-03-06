@@ -21,14 +21,14 @@ export function SocialProofSection() {
         overflow: "hidden",
       }}
     >
-      {/* Warm amber gradient wash */}
+      {/* Brand Red gradient wash */}
       <div
         aria-hidden
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 60% 50% at 60% 40%, var(--orb-amber) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 50% at 60% 40%, var(--orb-warm) 0%, transparent 60%)",
           pointerEvents: "none",
         }}
       />
