@@ -45,44 +45,14 @@ export function HeroSection() {
         }}
       />
 
-      {/* Enhanced atmospheric gradients & Glowing Orbs */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          top: "-10%",
-          left: "0%",
-          width: "60vw",
-          height: "60vw",
-          background: "radial-gradient(circle, var(--orb-warm) 0%, transparent 70%)",
-          filter: "blur(100px)",
-          opacity: 0.4,
-          zIndex: 0,
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          bottom: "-10%",
-          right: "0%",
-          width: "50vw",
-          height: "50vw",
-          background: "radial-gradient(circle, var(--color-accent-lo) 0%, transparent 70%)",
-          filter: "blur(120px)",
-          opacity: 0.6,
-          zIndex: 0,
-          pointerEvents: "none",
-        }}
-      />
+      {/* Hyper-Foundation solid strict background color. Removes orbs and gradients.*/}
       <div
         aria-hidden
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          background: "var(--gradient-hero-bg)",
+          background: "var(--color-bg)",
           pointerEvents: "none",
         }}
       />
@@ -117,10 +87,8 @@ export function HeroSection() {
               border: "1px solid var(--glass-border)",
               borderRadius: "var(--radius-pill)",
               padding: "6px 16px 6px 12px",
-              background: "var(--glass-bg-strong)",
-              backdropFilter: "blur(var(--glass-blur))",
-              WebkitBackdropFilter: "blur(var(--glass-blur))",
-              boxShadow: "var(--shadow-glass)",
+              background: "var(--color-surface)",
+              boxShadow: "var(--shadow-xs)",
             }}
           >
             <span
@@ -210,9 +178,9 @@ export function HeroSection() {
                   }}
                   style={{
                     position: "absolute",
-                    inset: "-12px -24px",
-                    background: "var(--gradient-word-glow)",
-                    borderRadius: "var(--radius-md)",
+                    inset: "0px",
+                    background: "rgba(190, 27, 42, 0.1)",
+                    borderRadius: "var(--radius-sm)",
                     pointerEvents: "none",
                     zIndex: -1,
                   }}
@@ -268,11 +236,10 @@ export function HeroSection() {
                 fontSize: "0.78rem",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                padding: "0.95rem 2.5rem",
-                borderRadius: "var(--radius-md)",
+                padding: "0.85rem 2.5rem",
+                borderRadius: "var(--radius-sm)",
                 textDecoration: "none",
-                boxShadow:
-                  "0 4px 16px rgba(190,27,42,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
+                transition: "background var(--motion-fast) ease",
               }}
             >
               Request Access →
@@ -293,14 +260,11 @@ export function HeroSection() {
         >
           <div
             style={{
-              background: "var(--glass-bg-strong)",
-              backdropFilter: "blur(var(--glass-blur-strong))",
-              WebkitBackdropFilter: "blur(var(--glass-blur-strong))",
-              border: "1px solid var(--glass-border)",
-              borderRadius: "var(--radius-lg)",
+              background: "var(--color-surface)",
+              border: "1px solid var(--color-border)",
+              borderRadius: "var(--radius-md)",
               padding: "1.75rem",
-              boxShadow:
-                "var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,0.5)",
+              boxShadow: "var(--shadow-md)",
               position: "relative",
               overflow: "hidden",
             }}

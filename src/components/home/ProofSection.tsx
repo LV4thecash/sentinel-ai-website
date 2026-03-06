@@ -69,15 +69,13 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
-          background: "var(--glass-bg-strong)",
-          backdropFilter: "blur(var(--glass-blur))",
-          WebkitBackdropFilter: "blur(var(--glass-blur))",
+          background: "var(--color-surface)",
           border: `1px solid ${
             card.blocked
-              ? "rgba(190,27,42,0.2)"
+              ? "rgba(190,27,42,0.25)"
               : hovered
-                ? "var(--color-accent)"
-                : "var(--glass-border)"
+                ? "var(--color-border-hi)"
+                : "var(--color-border)"
           }`,
           borderRadius: "var(--radius-md)",
           padding: "1.35rem",
@@ -86,9 +84,7 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
           gap: "0.85rem",
           height: "100%",
           transform: hovered ? "translateY(-4px)" : "translateY(0)",
-          boxShadow: hovered
-            ? `var(--shadow-glass-hover)${card.blocked ? "" : ", var(--shadow-glow-accent)"}`
-            : "var(--shadow-glass)",
+          boxShadow: hovered ? "var(--shadow-lg)" : "var(--shadow-md)",
           transition: `transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) ease, border-color var(--motion-fast) ease`,
         }}
       >

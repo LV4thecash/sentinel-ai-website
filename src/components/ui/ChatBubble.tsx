@@ -9,13 +9,11 @@ export function ChatBubble({ lines, highlight, blocked = false, dark = false }: 
   return (
     <div
       style={{
-        background: dark ? "rgba(255, 255, 255, 0.04)" : "rgba(244, 243, 245, 0.55)",
+        background: dark ? "rgba(255, 255, 255, 0.04)" : "var(--color-bg-alt)",
         border: `1px solid ${
           blocked
-            ? "rgba(190,27,42,0.35)"
-            : dark
-              ? "var(--glass-dark-border)"
-              : "var(--glass-border)"
+            ? "rgba(239, 68, 68, 0.35)" /* use EF4444 red for errors */
+            : "var(--color-border)"
         }`,
         borderRadius: "var(--radius-sm)",
         padding: "0.75rem 1rem",

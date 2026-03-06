@@ -99,13 +99,11 @@ export function ProblemSection() {
               maxWidth: 420,
               margin: "0 auto",
               textAlign: "left",
-              background: "var(--glass-bg-strong)",
-              backdropFilter: "blur(var(--glass-blur))",
-              WebkitBackdropFilter: "blur(var(--glass-blur))",
-              border: "1px solid var(--glass-border)",
-              borderRadius: "var(--radius-lg)",
+              background: "var(--color-surface)",
+              border: "1px solid var(--color-border)",
+              borderRadius: "var(--radius-md)",
               padding: "1.5rem",
-              boxShadow: "var(--shadow-glass)",
+              boxShadow: "var(--shadow-md)",
             }}
           >
             <p

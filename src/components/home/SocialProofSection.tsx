@@ -81,13 +81,11 @@ export function SocialProofSection() {
             <div
               className="card-hover"
               style={{
-                background: "var(--glass-bg-strong)",
-                backdropFilter: "blur(var(--glass-blur))",
-                WebkitBackdropFilter: "blur(var(--glass-blur))",
-                border: "1px solid var(--glass-border)",
+                background: "var(--color-surface)",
+                border: "1px solid var(--color-border)",
                 borderRadius: "var(--radius-md)",
                 padding: "1.75rem",
-                boxShadow: "var(--shadow-glass)",
+                boxShadow: "var(--shadow-md)",
                 cursor: "default",
               }}
             >
@@ -174,13 +172,11 @@ export function SocialProofSection() {
             <div
               className="card-hover"
               style={{
-                background: "var(--glass-bg-strong)",
-                backdropFilter: "blur(var(--glass-blur))",
-                WebkitBackdropFilter: "blur(var(--glass-blur))",
-                border: "1px solid var(--glass-border)",
+                background: "var(--color-surface)",
+                border: "1px solid var(--color-border)",
                 borderRadius: "var(--radius-md)",
                 padding: "1.75rem",
-                boxShadow: "var(--shadow-glass)",
+                boxShadow: "var(--shadow-md)",
                 cursor: "default",
               }}
             >
@@ -310,13 +306,11 @@ export function SocialProofSection() {
             <div
               className="card-hover"
               style={{
-                background: "var(--glass-bg-strong)",
-                backdropFilter: "blur(var(--glass-blur))",
-                WebkitBackdropFilter: "blur(var(--glass-blur))",
-                border: "1px solid var(--glass-border)",
+                background: "var(--color-surface)",
+                border: "1px solid var(--color-border)",
                 borderRadius: "var(--radius-md)",
                 padding: "1.75rem",
-                boxShadow: "var(--shadow-glass)",
+                boxShadow: "var(--shadow-md)",
                 opacity: 0.55,
                 cursor: "default",
               }}

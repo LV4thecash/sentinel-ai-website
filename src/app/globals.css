@@ -1,102 +1,102 @@
 @import "tailwindcss";
 
 :root {
-  /* ─── Brand palette (Dark First) ────────────────────────── */
-  --color-bg:          #0A0A0A;
-  --color-bg-alt:      #121212;
-  --color-surface:     #1A1A1A;
-  --color-border:      #2A2A2A;
-  --color-border-hi:   #3A3A3A;
+  /* ─── Brand palette (Hyper Foundation structural dark) ──── */
+  --color-bg:          #04060C;
+  --color-bg-alt:      #090A10;
+  --color-surface:     #11131A;
+  --color-border:      #1F2232;
+  --color-border-hi:   #2C3042;
 
   /* ─── Tonal zones ─────────────────────────────────────── */
-  --zone-light:        #0A0A0A; /* Overriding zone-light to dark to enforce dark mode globally */
-  --zone-dark:         #050505;
-  --zone-dark-surface: #121212;
+  --zone-light:        #04060C;
+  --zone-dark:         #020306;
+  --zone-dark-surface: #11131A;
   --zone-dark-border:  rgba(255, 255, 255, 0.08);
-  --zone-dark-text:    #F5F0F1;
-  --zone-dark-text-secondary: rgba(245, 240, 241, 0.65);
-  --zone-dark-text-muted: rgba(245, 240, 241, 0.4);
+  --zone-dark-text:    #F5F5F5;
+  --zone-dark-text-secondary: rgba(255, 255, 255, 0.60);
+  --zone-dark-text-muted: rgba(255, 255, 255, 0.40);
 
   /* ─── Text hierarchy ────────────────────────────────────── */
-  --color-text:          #F5F5F5;
-  --color-text-secondary:#A1A1AA;
-  --color-text-muted:    #71717A;
+  --color-text:          #F8FAFC;
+  --color-text-secondary:#94A3B8;
+  --color-text-muted:    #64748B;
 
-  /* ─── Accent — brand red #BE1B2A ────────────────────────── */
+  /* ─── Accent — Precision Brand Red ──────────────────────── */
   --color-accent:    #BE1B2A;
-  --color-accent-lo: rgba(190, 27, 42, 0.15);
-  --color-accent-hi: #FF2E43;
+  --color-accent-lo: rgba(190, 27, 42, 0.10);
+  --color-accent-hi: #E62A3C;
 
   /* ─── Status ────────────────────────────────────────────── */
   --color-pass:    #10B981;
-  --color-block:   #BE1B2A;
-  --color-neutral: #52525B;
+  --color-block:   #EF4444;
+  --color-neutral: #64748B;
 
   /* ─── Layout ────────────────────────────────────────────── */
   --nav-height:      64px;
-  --content-width:   1200px;
-  --section-gap:     clamp(5rem, 12vw, 10rem);
-  --section-gap-sm:  clamp(3rem, 7vw, 5.5rem);
+  --content-width:   1120px;
+  --section-gap:     clamp(4rem, 10vw, 8rem);
+  --section-gap-sm:  clamp(2.5rem, 6vw, 4.5rem);
 
-  /* ─── Border radius system ─────────────────────────────── */
-  --radius-sm:   8px;
-  --radius-md:   14px;
-  --radius-lg:   20px;
-  --radius-xl:   28px;
+  /* ─── Border radius system (Sharper, Tech feel) ────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
   --radius-pill: 999px;
 
-  /* ─── Glass system (adapted for dark) ───────────────────── */
-  --glass-bg:          rgba(20, 20, 20, 0.45);
-  --glass-bg-strong:   rgba(30, 30, 30, 0.65);
-  --glass-bg-subtle:   rgba(10, 10, 10, 0.35);
-  --glass-border:      rgba(255, 255, 255, 0.08);
-  --glass-border-hi:   rgba(255, 255, 255, 0.15);
-  --glass-blur:        24px;
-  --glass-blur-strong: 40px;
+  /* ─── Structural system (Replaces fuzzy glass) ──────────── */
+  --glass-bg:          var(--color-surface);
+  --glass-bg-strong:   #151821;
+  --glass-bg-subtle:   var(--color-bg-alt);
+  --glass-border:      var(--color-border);
+  --glass-border-hi:   var(--color-border-hi);
+  --glass-blur:        0px;
+  --glass-blur-strong: 0px;
 
-  /* ─── Glass system (legacy dark zones) ─────────────────── */
-  --glass-dark-bg:         rgba(15, 15, 15, 0.5);
-  --glass-dark-bg-strong:  rgba(25, 25, 25, 0.7);
-  --glass-dark-border:     rgba(255, 255, 255, 0.10);
-  --glass-dark-border-hi:  rgba(255, 255, 255, 0.20);
+  --glass-dark-bg:         var(--color-surface);
+  --glass-dark-bg-strong:  #181A24;
+  --glass-dark-border:     var(--color-border);
+  --glass-dark-border-hi:  var(--color-border-hi);
 
-  /* ─── Shadow system (glass-aware & glowing) ───────────── */
+  /* ─── Shadow system (Flat geometric layers) ─────────────── */
   --shadow-xs:      0 1px 2px rgba(0,0,0,0.4);
-  --shadow-sm:      0 2px 8px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.3);
-  --shadow-md:      0 4px 20px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);
-  --shadow-lg:      0 8px 32px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.5);
-  --shadow-hover:   0 16px 48px rgba(0,0,0,0.9), 0 4px 12px rgba(0,0,0,0.5);
-  --shadow-inset:   inset 0 1px 0 rgba(255,255,255,0.1);
-  --shadow-glass:   0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
-  --shadow-glass-hover: 0 16px 48px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.1);
-  --shadow-glow-accent: 0 0 40px rgba(190, 27, 42, 0.3);
-  --shadow-glow-accent-strong: 0 0 60px rgba(255, 46, 67, 0.4);
-  --shadow-dark-glass: 0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08);
-  --shadow-dark-glass-hover: 0 16px 48px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.15);
+  --shadow-sm:      0 2px 4px rgba(0,0,0,0.5);
+  --shadow-md:      0 8px 16px rgba(0,0,0,0.6);
+  --shadow-lg:      0 12px 24px rgba(0,0,0,0.7);
+  --shadow-hover:   0 16px 32px rgba(0,0,0,0.8);
+  --shadow-inset:   none;
+  
+  --shadow-glass:   var(--shadow-md);
+  --shadow-glass-hover: var(--shadow-lg);
+  --shadow-glow-accent: 0 0 16px rgba(190, 27, 42, 0.15); /* Subdued precision glow */
+  --shadow-glow-accent-strong: 0 0 24px rgba(190, 27, 42, 0.25);
+  --shadow-dark-glass: var(--shadow-md);
+  --shadow-dark-glass-hover: var(--shadow-lg);
 
-  /* ─── Gradient system ──────────────────────────────────── */
-  --gradient-hero-bg:   radial-gradient(ellipse 80% 55% at 50% 70%, rgba(190,27,42,0.15) 0%, transparent 65%);
-  --gradient-hero-top:  radial-gradient(ellipse 100% 40% at 50% 0%, rgba(190,27,42,0.05) 0%, transparent 60%);
-  --gradient-word-glow: radial-gradient(ellipse at center, rgba(255,46,67,0.4) 0%, transparent 68%);
-  --gradient-cta:       linear-gradient(160deg, #1A0D0E 0%, #2A1014 40%, #150A0B 100%);
-  --gradient-glass-border: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.02) 100%);
+  /* ─── Gradient system (Removed heavy gradients) ─────────── */
+  --gradient-hero-bg:   none;
+  --gradient-hero-top:  none;
+  --gradient-word-glow: none;
+  --gradient-cta:       var(--color-surface);
+  --gradient-glass-border: none;
 
-  /* ─── Atmosphere orb colors ────────────────────────────── */
-  --orb-warm:    rgba(190, 27, 42, 0.4);
-  --orb-amber:   rgba(217, 119, 57, 0.2);
-  --orb-cool:    rgba(100, 116, 139, 0.15);
-  --orb-rose:    rgba(225, 70, 90, 0.3);
+  /* ─── Atmosphere (No ambient orbs for hyper styling) ───── */
+  --orb-warm:    transparent;
+  --orb-amber:   transparent;
+  --orb-cool:    transparent;
+  --orb-rose:    transparent;
 
-  /* ─── Motion tokens ─────────────────────────────────────── */
-  --motion-fast:     0.3s;
-  --motion-base:     0.6s;
-  --motion-slow:     1.0s;
-  --motion-slower:   1.4s;
-  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  /* ─── Motion tokens (Snappy, mechanical) ────────────────── */
+  --motion-fast:     0.15s;
+  --motion-base:     0.25s;
+  --motion-slow:     0.4s;
+  --motion-slower:   0.6s;
+  --motion-ease-out: cubic-bezier(0.0, 0, 0.2, 1);
   --motion-ease:     cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
-  --motion-reveal:   cubic-bezier(0.22, 1, 0.36, 1);
-  --motion-stagger:  0.08s;
+  --motion-spring:   cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Tighter spring */
+  --motion-reveal:   cubic-bezier(0.0, 0, 0.2, 1);
+  --motion-stagger:  0.05s;
 }
 
 *,
