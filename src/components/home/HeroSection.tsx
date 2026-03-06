@@ -45,14 +45,34 @@ export function HeroSection() {
         }}
       />
 
-      {/* Enhanced atmospheric gradients */}
+      {/* Enhanced atmospheric gradients & Glowing Orbs */}
       <div
         aria-hidden
         style={{
           position: "absolute",
-          inset: 0,
+          top: "-10%",
+          left: "0%",
+          width: "60vw",
+          height: "60vw",
+          background: "radial-gradient(circle, var(--orb-warm) 0%, transparent 70%)",
+          filter: "blur(100px)",
+          opacity: 0.4,
           zIndex: 0,
-          background: "var(--gradient-hero-bg)",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          bottom: "-10%",
+          right: "0%",
+          width: "50vw",
+          height: "50vw",
+          background: "radial-gradient(circle, var(--color-accent-lo) 0%, transparent 70%)",
+          filter: "blur(120px)",
+          opacity: 0.6,
+          zIndex: 0,
           pointerEvents: "none",
         }}
       />
@@ -62,7 +82,7 @@ export function HeroSection() {
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          background: "var(--gradient-hero-top)",
+          background: "var(--gradient-hero-bg)",
           pointerEvents: "none",
         }}
       />

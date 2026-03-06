@@ -21,7 +21,7 @@ export function ProblemSection() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 80% 50% at 50% 30%, rgba(190, 27, 42, 0.07) 0%, transparent 65%)",
+            "radial-gradient(ellipse 80% 50% at 50% 30%, var(--orb-warm) 0%, transparent 65%)",
           pointerEvents: "none",
         }}
       />

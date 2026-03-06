@@ -28,7 +28,7 @@ export function SocialProofSection() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 60% 50% at 60% 40%, rgba(217, 119, 57, 0.06) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 50% at 60% 40%, var(--orb-amber) 0%, transparent 60%)",
           pointerEvents: "none",
         }}
       />
