@@ -45,7 +45,7 @@ export function HeroSection() {
         }}
       />
 
-      {/* Hyper-Foundation solid strict background color. Removes orbs and gradients.*/}
+      {/* Aurora Interactive Light Background */}
       <div
         aria-hidden
         style={{
@@ -53,9 +53,64 @@ export function HeroSection() {
           inset: 0,
           zIndex: 0,
           background: "var(--color-bg)",
+          overflow: "hidden",
           pointerEvents: "none",
         }}
-      />
+      >
+        <motion.div
+          animate={{
+            x: ["0%", "25%", "-15%", "0%"],
+            y: ["0%", "15%", "-25%", "0%"],
+            scale: [1, 1.25, 0.85, 1],
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+          style={{
+            position: "absolute",
+            top: "-10%",
+            left: "10%",
+            width: "60vw",
+            height: "60vw",
+            background: "rgba(217, 28, 45, 0.12)", // Premium Sentinel Red
+            filter: "blur(120px)",
+            borderRadius: "50%",
+          }}
+        />
+        <motion.div
+          animate={{
+            x: ["0%", "-20%", "20%", "0%"],
+            y: ["0%", "-15%", "15%", "0%"],
+            scale: [1, 0.9, 1.2, 1],
+          }}
+          transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+          style={{
+            position: "absolute",
+            bottom: "-20%",
+            right: "-10%",
+            width: "55vw",
+            height: "55vw",
+            background: "rgba(245, 158, 11, 0.08)", // Warm Amber / Orange
+            filter: "blur(140px)",
+            borderRadius: "50%",
+          }}
+        />
+        <motion.div
+          animate={{
+            x: ["-10%", "30%", "-30%", "-10%"],
+            y: ["20%", "-20%", "20%", "20%"],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          style={{
+            position: "absolute",
+            top: "20%",
+            left: "-20%",
+            width: "45vw",
+            height: "45vw",
+            background: "rgba(225, 29, 72, 0.08)", // Rose Accent
+            filter: "blur(100px)",
+            borderRadius: "50%",
+          }}
+        />
+      </div>
 
       {/* Main content: split layout on desktop, stacked on mobile */}
       <div
@@ -179,7 +234,7 @@ export function HeroSection() {
                   style={{
                     position: "absolute",
                     inset: "0px",
-                    background: "rgba(190, 27, 42, 0.1)",
+                    background: "rgba(217, 28, 45, 0.1)",
                     borderRadius: "var(--radius-sm)",
                     pointerEvents: "none",
                     zIndex: -1,
@@ -229,17 +284,28 @@ export function HeroSection() {
               className="btn-primary"
               style={{
                 display: "inline-block",
-                background: "var(--color-accent)",
+                background: "var(--gradient-cta)",
                 color: "#fff",
                 fontFamily: "var(--font-display)",
                 fontWeight: 700,
-                fontSize: "0.78rem",
+                fontSize: "0.85rem",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                padding: "0.85rem 2.5rem",
-                borderRadius: "var(--radius-sm)",
+                padding: "1rem 3rem",
+                borderRadius: "var(--radius-pill)",
                 textDecoration: "none",
-                transition: "background var(--motion-fast) ease",
+                boxShadow: "0 12px 32px rgba(217, 28, 45, 0.3), inset 0 2px 0 rgba(255,255,255,0.2)",
+                transition: "all var(--motion-fast) var(--motion-spring)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.05)";
+                e.currentTarget.style.boxShadow = "0 16px 48px rgba(217, 28, 45, 0.4), inset 0 2px 0 rgba(255,255,255,0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.boxShadow = "0 12px 32px rgba(217, 28, 45, 0.3), inset 0 2px 0 rgba(255,255,255,0.2)";
               }}
             >
               Request Access →
@@ -308,7 +374,7 @@ export function HeroSection() {
                     color: "var(--color-text)",
                   }}
                 >
-                  SENTINEL AI
+                  <span style={{color: "var(--color-text-secondary)", fontWeight: 500}}>Terminal Session / </span> SENTINEL AI
                 </span>
               </div>
               <span

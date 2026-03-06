@@ -36,32 +36,30 @@ export function Nav() {
     <nav
       style={{
         position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
+        top: scrolled ? "1rem" : "1.5rem",
+        left: "50%",
+        transform: "translateX(-50%)",
         zIndex: 50,
-        background: navBg,
-        backdropFilter: scrolled
-          ? "blur(var(--glass-blur-strong))"
-          : "none",
-        WebkitBackdropFilter: scrolled
-          ? "blur(var(--glass-blur-strong))"
-          : "none",
-        borderBottom: navBorder,
-        boxShadow: navShadow,
+        width: "90%",
+        maxWidth: "1000px",
+        background: scrolled ? "var(--glass-bg-strong)" : "var(--glass-bg)",
+        backdropFilter: "blur(var(--glass-blur))",
+        WebkitBackdropFilter: "blur(var(--glass-blur))",
+        border: "1px solid var(--glass-border)",
+        boxShadow: scrolled ? "var(--shadow-glass)" : "var(--shadow-lg)",
+        borderRadius: "var(--radius-pill)",
+        padding: "0.25rem 0.5rem",
         transition:
-          "background 0.22s var(--motion-ease), border-color 0.22s var(--motion-ease), box-shadow 0.22s var(--motion-ease), backdrop-filter 0.22s var(--motion-ease)",
+          "all 0.4s var(--motion-ease)",
       }}
     >
       <div
         style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "0 clamp(1.5rem, 5vw, 2.5rem)",
-          height: "var(--nav-height)",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          padding: "0 1.5rem",
+          height: "4rem",
         }}
       >
         {/* Logo */}
