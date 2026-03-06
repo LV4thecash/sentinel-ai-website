@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   /* ─── Brand palette (Strict Guideline Compliance) ─────── */
   --color-bg:          #FFFFFF;
   --color-bg-alt:      #FAFAFC;
@@ -109,8 +110,9 @@
 img, video, iframe { max-width: 100%; height: auto; }
 
 html {
-  background: var(--zone-light);
-  color: var(--color-text);
+  color-scheme: light;
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
   font-family: var(--font-body), system-ui, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -122,6 +124,8 @@ html {
 }
 
 body {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
