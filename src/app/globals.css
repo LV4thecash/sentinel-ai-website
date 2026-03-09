@@ -3,8 +3,24 @@
 /* Force light mode — disable Tailwind's automatic dark mode */
 @variant dark (&:is(.dark *));
 
+/* Override Tailwind preflight that sets color-scheme: light dark */
+@layer base {
+  html, :host {
+    color-scheme: light only !important;
+  }
+}
+
+/* Nuclear override for dark-mode system preference */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #FFFFFF !important;
+    color: #212323 !important;
+    color-scheme: light only !important;
+  }
+}
+
 :root {
-  color-scheme: light;
+  color-scheme: light only;
   /* ─── Brand palette (Strict Guideline Compliance) ─────── */
   --color-bg:          #FFFFFF;
   --color-bg-alt:      #FAFAFC;
