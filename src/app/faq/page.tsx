@@ -118,7 +118,7 @@ export default function FaqPage() {
           <p style={{ color: "var(--color-text-secondary)", marginTop: "0.75rem" }}>
             Not answered here?{" "}
             <a
-              href="https://discord.gg/placeholder"
+              href="https://discord.gg/saES7e6W"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "var(--color-accent)", textDecoration: "none" }}

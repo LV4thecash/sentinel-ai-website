@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Force light mode — disable Tailwind's automatic dark mode */
+@variant dark (&:is(.dark *));
+
 :root {
   color-scheme: light;
   /* ─── Brand palette (Strict Guideline Compliance) ─────── */

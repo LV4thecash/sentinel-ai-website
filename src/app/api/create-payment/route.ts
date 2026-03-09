@@ -22,7 +22,11 @@ export async function POST(req: NextRequest) {
   }
 
   const config = TIER_PRICES[tier];
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  if (!siteUrl) {
+    console.error("[create-payment] NEXT_PUBLIC_SITE_URL is not configured");
+    return NextResponse.json({ error: "Server misconfiguration" }, { status: 500 });
+  }
 
   try {
     const invoice = await createInvoice({

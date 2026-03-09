@@ -18,10 +18,15 @@ export interface NowPaymentsInvoice {
 export async function createInvoice(
   params: CreateInvoiceParams
 ): Promise<NowPaymentsInvoice> {
+  const apiKey = process.env.NOWPAYMENTS_API_KEY;
+  if (!apiKey) {
+    throw new Error("NOWPAYMENTS_API_KEY is not configured");
+  }
+
   const res = await fetch(`${NOWPAYMENTS_BASE}/invoice`, {
     method: "POST",
     headers: {
-      "x-api-key": process.env.NOWPAYMENTS_API_KEY!,
+      "x-api-key": apiKey,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({

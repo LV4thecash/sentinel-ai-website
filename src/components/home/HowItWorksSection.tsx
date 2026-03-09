@@ -28,7 +28,6 @@ const steps = [
 
 export function HowItWorksSection() {
   return (
-    <>
       <section
         style={{
           padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
@@ -156,6 +155,5 @@ export function HowItWorksSection() {
           </FadeIn>
         </div>
       </section>
-    </>
   );
 }

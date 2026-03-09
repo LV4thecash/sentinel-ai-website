@@ -43,7 +43,7 @@ export function WaitlistForm({ size = "lg" }: WaitlistFormProps) {
   const inputStyle: React.CSSProperties = {
     background: "var(--color-surface)",
     border: "1px solid var(--color-border-hi)",
-    color: "#e8e8ea",
+    color: "var(--color-text)",
     padding: size === "lg" ? "0.85rem 1rem" : "0.6rem 0.85rem",
     borderRadius: 4,
     fontSize: size === "lg" ? "1rem" : "0.875rem",
@@ -82,7 +82,7 @@ export function WaitlistForm({ size = "lg" }: WaitlistFormProps) {
         disabled={state === "loading"}
         style={{
           background: "var(--color-accent)",
-          color: "#000",
+          color: "#fff",
           fontWeight: 700,
           fontSize: size === "lg" ? "0.92rem" : "0.78rem",
           letterSpacing: "0.08em",

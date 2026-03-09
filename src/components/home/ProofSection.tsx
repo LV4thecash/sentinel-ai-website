@@ -164,7 +164,6 @@ function ProofCard({ card, index }: { card: DemoCard; index: number }) {
 
 export function ProofSection() {
   return (
-    <>
       <section
         style={{
           padding: "var(--section-gap) clamp(1.5rem, 5vw, 4rem)",
@@ -228,6 +227,5 @@ export function ProofSection() {
           </FadeIn>
         </div>
       </section>
-    </>
   );
 }
