@@ -14,7 +14,7 @@ export default function PricingPage() {
   const [hoveredTier, setHoveredTier] = useState<string | null>(null);
 
   return (
-    <main style={{ position: "relative" }}>
+    <main>
       {/* Hero */}
       <section
         style={{

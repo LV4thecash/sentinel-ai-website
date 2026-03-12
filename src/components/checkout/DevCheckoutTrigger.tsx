@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { PLANS } from "@/lib/checkout";
 
@@ -11,8 +12,14 @@ export function DevCheckoutTrigger() {
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
   const [error, setError] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  // Portal needs client-side mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Close on outside click — hooks must be before any early return
   useEffect(() => {
@@ -32,8 +39,8 @@ export function DevCheckoutTrigger() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [open]);
 
-  // Don't render if feature flag is off
-  if (process.env.NEXT_PUBLIC_CHECKOUT_ENABLED !== "true") {
+  // Don't render if feature flag is off or not yet mounted (SSR)
+  if (process.env.NEXT_PUBLIC_CHECKOUT_ENABLED !== "true" || !mounted) {
     return null;
   }
 
@@ -51,14 +58,14 @@ export function DevCheckoutTrigger() {
     router.push(`/checkout?plan=${planId}`);
   }
 
-  return (
+  return createPortal(
     <div
       ref={popoverRef}
       style={{
-        position: "absolute",
+        position: "fixed",
         bottom: 16,
         right: 16,
-        zIndex: 50,
+        zIndex: 9999,
       }}
     >
       {/* Gear trigger button */}
@@ -220,6 +227,7 @@ export function DevCheckoutTrigger() {
           )}
         </div>
       )}
-    </div>
+    </div>,
+    document.body
   );
 }
