@@ -15,7 +15,7 @@ export default function CheckoutCancelPage() {
         }}
       >
         <FadeIn>
-          <SectionLabel>Checkout</SectionLabel>
+          <SectionLabel>CHECKOUT</SectionLabel>
           <h1
             style={{
               fontFamily: "var(--font-display)",

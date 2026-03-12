@@ -88,7 +88,7 @@ export function CheckoutForm({ plan }: CheckoutFormProps) {
 
       {/* Header */}
       <FadeIn delay={0.05}>
-        <SectionLabel>Checkout</SectionLabel>
+        <SectionLabel>CHECKOUT</SectionLabel>
         <h1
           style={{
             fontFamily: "var(--font-display)",

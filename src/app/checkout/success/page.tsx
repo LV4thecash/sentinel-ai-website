@@ -40,7 +40,7 @@ export default function CheckoutSuccessPage() {
         }}
       >
         <FadeIn>
-          <SectionLabel>Payment</SectionLabel>
+          <SectionLabel>PAYMENT</SectionLabel>
           <h1
             style={{
               fontFamily: "var(--font-display)",
