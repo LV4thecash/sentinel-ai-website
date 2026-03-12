@@ -1,36 +1,8 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-
-const tiers = [
-  {
-    id: "monthly",
-    label: "Monthly",
-    price: "1 SOL",
-    period: "/ month",
-    effective: null,
-    save: null,
-    popular: false,
-  },
-  {
-    id: "quarterly",
-    label: "Quarterly",
-    price: "2 SOL",
-    period: "/ quarter",
-    effective: "0.67 SOL / mo",
-    save: "Save 33%",
-    popular: true,
-  },
-  {
-    id: "annual",
-    label: "Annual",
-    price: "5 SOL",
-    period: "/ year",
-    effective: "0.42 SOL / mo",
-    save: "Save 58%",
-    popular: false,
-  },
-];
+import { PLANS } from "@/lib/checkout";
+import { DevCheckoutTrigger } from "@/components/checkout/DevCheckoutTrigger";
 
 const objections = [
   "Cancel anytime on monthly",
@@ -42,7 +14,7 @@ export default function PricingPage() {
   const [hoveredTier, setHoveredTier] = useState<string | null>(null);
 
   return (
-    <main>
+    <main style={{ position: "relative" }}>
       {/* Hero */}
       <section
         style={{
@@ -100,7 +72,7 @@ export default function PricingPage() {
             gap: "1.25rem",
           }}
         >
-          {tiers.map((t) => {
+          {PLANS.map((t) => {
             const isHovered = hoveredTier === t.id;
             return (
               <div
@@ -357,6 +329,7 @@ export default function PricingPage() {
           Join the waitlist to unlock your referral link at launch.
         </p>
       </section>
+      <DevCheckoutTrigger />
     </main>
   );
 }
