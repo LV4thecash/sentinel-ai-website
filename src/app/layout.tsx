@@ -3,6 +3,7 @@ import { displayFont, bodyFont, monoFont } from "@/lib/fonts";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -41,6 +42,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
