@@ -67,7 +67,7 @@ export interface CheckoutOrder {
 export async function createCheckoutOrder(
   params: CreateCheckoutOrderParams
 ): Promise<CheckoutOrder> {
-  const res = await fetch("/api/checkout", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/checkout`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(params),
